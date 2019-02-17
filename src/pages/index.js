@@ -5,6 +5,7 @@ import SEO from "../components/seo";
 import Intro from "../pages/Intro/Intro";
 import About from "../pages/About/About";
 import History from "../pages/History/History";
+import Contact from "../pages/Contact/Contact";
 
 const IndexPage = () => (
   <Layout>
@@ -12,6 +13,7 @@ const IndexPage = () => (
     <Intro />
     <About />
     <History />
+    <Contact />
   </Layout>
 );
 
