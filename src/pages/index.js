@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import SmoothScroll from "smooth-scroll";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -15,17 +16,23 @@ const Content = styled.div`
   width: 100%;
 `;
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <Nav />
-    <Content>
-      <Intro id="intro" />
-      <About id="about" />
-      <History id="work" />
-      <Contact id="contact" />
-    </Content>
-  </Layout>
-);
+const IndexPage = () => {
+  React.useEffect(() => {
+    var scroll = new SmoothScroll("a[data-scroll]");
+  }, []);
+
+  return (
+    <Layout>
+      <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+      <Nav />
+      <Content>
+        <Intro id="intro" />
+        <About id="about" />
+        <History id="work" />
+        <Contact id="contact" />
+      </Content>
+    </Layout>
+  );
+};
 
 export default IndexPage;

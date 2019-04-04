@@ -84,7 +84,9 @@ const SocialList = styled.ul`
 const Nav = () => (
   <Sidebar>
     <header>
-      <Brand href="#intro">@dougmacknz</Brand>
+      <Brand href="#intro" data-scroll>
+        @dougmacknz
+      </Brand>
     </header>
     <nav>
       <NavList>
