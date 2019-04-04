@@ -35,9 +35,9 @@ const AboutSubHeading = styled.h4`
   margin: 0 0 2px;
 `;
 
-const About = () => {
+const About = props => {
   return (
-    <Section>
+    <Section id={props.id}>
       <SectionHeader>About me</SectionHeader>
       <FeatureText>
         I like problem solving and making software experiences{" "}

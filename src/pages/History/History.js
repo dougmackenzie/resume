@@ -15,6 +15,27 @@ import schoolboxLogo from "../../images/schoolbox-logo.png";
 import kdsLogo from "../../images/kds-logo.png";
 import etapLogo from "../../images/etap-logo.png";
 
+const History = props => {
+  return (
+    <Section id={props.id} style={{ backgroundColor: "#f5f5f5" }}>
+      <SectionHeader>Job history</SectionHeader>
+      <Grid>
+        <Column>
+          <AlaressCard />
+        </Column>
+
+        <Column>
+          <KDSCard />
+        </Column>
+
+        <Column>
+          <EtapCard />
+        </Column>
+      </Grid>
+    </Section>
+  );
+};
+
 const AlaressCard = () => (
   <Card>
     <CardImage backgroundColor="#0066b0">
@@ -68,28 +89,5 @@ const EtapCard = () => (
     </CardContent>
   </Card>
 );
-
-const History = () => {
-  return (
-    <>
-      <Section style={{ backgroundColor: "#f5f5f5" }}>
-        <SectionHeader>Job history</SectionHeader>
-        <Grid>
-          <Column>
-            <AlaressCard />
-          </Column>
-
-          <Column>
-            <KDSCard />
-          </Column>
-
-          <Column>
-            <EtapCard />
-          </Column>
-        </Grid>
-      </Section>
-    </>
-  );
-};
 
 export default History;

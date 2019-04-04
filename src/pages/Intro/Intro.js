@@ -15,8 +15,12 @@ const IntroContainer = styled.div`
 
 const BackgroundImage = styled.div`
   position: absolute;
-  width: 100%;
-  height: 100vh;
+  //width: 100%;
+  //height: 100vh;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   background-attachment: fixed;
 `;
 
@@ -59,8 +63,8 @@ const IntroSubTitle = styled.h2`
   text-align: center;
 `;
 
-const Intro = () => (
-  <IntroContainer>
+const Intro = props => (
+  <IntroContainer id={props.id}>
     <IntroCard>
       <IntroTitle>Doug MacKenzie</IntroTitle>
       <IntroSubTitle>Front-end &amp; UI guy</IntroSubTitle>
