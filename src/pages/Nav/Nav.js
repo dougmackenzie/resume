@@ -1,5 +1,12 @@
 import * as React from "react";
 import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faLinkedin,
+  faGithub,
+  faMedium
+} from "@fortawesome/fontawesome-free-brands";
+
 import Sidebar from "../../components/Sidebar/Sidebar";
 import Button from "../../components/Button/Button";
 
@@ -49,12 +56,12 @@ const SocialList = styled.ul`
 
   > li {
     display: inline-block;
-    padding: 0 5px;
+    padding: 0 10px;
 
     > a {
       color: #ccc;
       text-decoration: none;
-      font-size: 15px;
+      font-size: 22px;
       font-weight: 500;
     }
   }
@@ -99,7 +106,7 @@ const Nav = () => (
             rel="noopener"
             aria-label="GitHub"
           >
-            GitHub
+            <FontAwesomeIcon icon={faGithub} />
           </a>
         </li>
         <li>
@@ -109,7 +116,7 @@ const Nav = () => (
             rel="noopener"
             aria-label="Medium"
           >
-            Medium
+            <FontAwesomeIcon icon={faMedium} />
           </a>
         </li>
         <li>
@@ -119,7 +126,7 @@ const Nav = () => (
             rel="noopener"
             aria-label="LinkedIn"
           >
-            LinkedIn
+            <FontAwesomeIcon icon={faLinkedin} />
           </a>
         </li>
       </SocialList>
