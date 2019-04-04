@@ -30,12 +30,19 @@ const NavList = styled.ul`
 
     > a {
       display: block;
-      color: #ccc;
+      color: #fff;
+      opacity: 0.7;
       text-decoration: none;
       font-size: 17px;
       text-transform: uppercase;
       font-weight: 300;
       letter-spacing: 2px;
+      -webkit-transition: opacity 0.2s;
+      transition: opacity 0.2s;
+
+      :hover {
+        opacity: 1;
+      }
     }
   }
 `;
@@ -59,10 +66,17 @@ const SocialList = styled.ul`
     padding: 0 10px;
 
     > a {
-      color: #ccc;
+      color: #fff;
+      opacity: 0.7;
       text-decoration: none;
       font-size: 22px;
       font-weight: 500;
+      -webkit-transition: opacity 0.2s;
+      transition: opacity 0.2s;
+
+      :hover {
+        opacity: 1;
+      }
     }
   }
 `;
@@ -75,22 +89,34 @@ const Nav = () => (
     <nav>
       <NavList>
         <li>
-          <a href="#intro">Home</a>
+          <a href="#intro" data-scroll>
+            Home
+          </a>
         </li>
         <li>
-          <a href="#about">About</a>
+          <a href="#about" data-scroll>
+            About
+          </a>
         </li>
         <li>
-          <a href="#work">Skills</a>
+          <a href="#work" data-scroll>
+            Skills
+          </a>
         </li>
         <li>
-          <a href="#work">History</a>
+          <a href="#work" data-scroll>
+            History
+          </a>
         </li>
         <li>
-          <a href="#work">Portfolio</a>
+          <a href="#work" data-scroll>
+            Portfolio
+          </a>
         </li>
         <li>
-          <a href="#contact">Contact</a>
+          <a href="#contact" data-scroll>
+            Contact
+          </a>
         </li>
       </NavList>
     </nav>
