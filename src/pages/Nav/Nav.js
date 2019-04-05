@@ -35,7 +35,7 @@ const NavList = styled.ul`
       text-decoration: none;
       font-size: 17px;
       text-transform: uppercase;
-      font-weight: 300;
+      font-weight: 400;
       letter-spacing: 2px;
       -webkit-transition: opacity 0.2s;
       transition: opacity 0.2s;
@@ -70,7 +70,6 @@ const SocialList = styled.ul`
       opacity: 0.7;
       text-decoration: none;
       font-size: 22px;
-      font-weight: 500;
       -webkit-transition: opacity 0.2s;
       transition: opacity 0.2s;
 
@@ -101,7 +100,7 @@ const Nav = () => (
           </a>
         </li>
         <li>
-          <a href="#work" data-scroll>
+          <a href="#skills" data-scroll>
             Skills
           </a>
         </li>

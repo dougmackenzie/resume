@@ -1,20 +1,30 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import Section, { SectionHeader } from "../../components/Section/Section";
+import Section, {
+  SectionHeader,
+  SectionTitle,
+  SectionSubTitle
+} from "../../components/Section/Section";
 import Grid from "../../components/Grid/Grid";
 import Column from "../../components/Grid/Column";
+
+import butterflyImage from "../../images/about/butterfly.jpg";
 
 const FeatureText = styled.p`
   font-size: 30px;
   color: #a0a0a0;
-  margin-bottom: 70px;
+  margin: 0 0 30px;
 `;
 
 const FeatureTextHighlight = styled.strong`
   color: #0f0e10;
   font-weight: 300;
   font-size: inherit;
+`;
+
+const SupportingText = styled.p`
+  margin-bottom: 40px;
 `;
 
 const AboutSection = styled(Column)`
@@ -29,53 +39,84 @@ const AboutSection = styled(Column)`
 
 const AboutSubHeading = styled.h4`
   font-size: 13px;
-  font-weight: 400;
+  font-weight: 300;
   text-transform: uppercase;
-  color: #a0a0a0;
+  color: #999;
   margin: 0 0 2px;
+  letter-spacing: 1px;
+`;
+
+const Caption = styled.div`
+  font-size: 13px;
+  text-align: center;
 `;
 
 const About = props => {
   return (
     <Section id={props.id}>
-      <SectionHeader>About me</SectionHeader>
-      <FeatureText>
-        I like problem solving and making software experiences{" "}
-        <FeatureTextHighlight>less painful for people</FeatureTextHighlight>.
-      </FeatureText>
+      <SectionHeader>
+        <SectionTitle>About me</SectionTitle>
+        <SectionSubTitle>What I'm all about</SectionSubTitle>
+      </SectionHeader>
+
       <Grid>
-        <AboutSection>
-          <AboutSubHeading>Location</AboutSubHeading>
-          Melbourne, AU
-        </AboutSection>
-        <AboutSection>
-          <AboutSubHeading>Years in Development</AboutSubHeading>9
-        </AboutSection>
-        <AboutSection>
-          <AboutSubHeading>Current Role</AboutSubHeading>
-          Product Developer @{" "}
-          <a
-            href="https://www.alaress.com.au/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Alaress
-          </a>
-        </AboutSection>
-      </Grid>
-      <Grid>
-        <AboutSection>
-          <AboutSubHeading>Preferred Stack</AboutSubHeading>
-          React &bull; TypeScript &bull; Styled Components
-        </AboutSection>
-        <AboutSection>
-          <AboutSubHeading>Favourite TV Show</AboutSubHeading>
-          Arrested Development
-        </AboutSection>
-        <AboutSection>
-          <AboutSubHeading>Hobbies</AboutSubHeading>
-          Bass Guitar &bull; Gymnastics &bull; Cycling
-        </AboutSection>
+        <Column style={{ flexGrow: 3 }}>
+          <FeatureText>
+            I like problem solving and making software experiences{" "}
+            <FeatureTextHighlight>less painful for people</FeatureTextHighlight>
+            .
+          </FeatureText>
+
+          <SupportingText>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta
+            massa non felis rhoncus placerat. Morbi leo arcu, sollicitudin eget
+            sapien ac, elementum ornare magna. Aliquam eu blandit nunc, at
+            blandit risus. Aliquam vel sem diam. Phasellus id condimentum
+            tellus. Cras eu augue est. Phasellus a purus nulla.
+          </SupportingText>
+
+          <Grid>
+            <AboutSection>
+              <AboutSubHeading>Location</AboutSubHeading>
+              Melbourne, AU
+            </AboutSection>
+            <AboutSection>
+              <AboutSubHeading>Years in Development</AboutSubHeading>9
+            </AboutSection>
+          </Grid>
+          <Grid>
+            <AboutSection>
+              <AboutSubHeading>Current Role</AboutSubHeading>
+              Product Developer @{" "}
+              <a
+                href="https://www.alaress.com.au/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Alaress
+              </a>
+            </AboutSection>
+            <AboutSection>
+              <AboutSubHeading>Preferred Stack</AboutSubHeading>
+              React &bull; TypeScript &bull; Styled Components
+            </AboutSection>
+          </Grid>
+          <Grid>
+            <AboutSection>
+              <AboutSubHeading>Favourite TV Show</AboutSubHeading>
+              Arrested Development
+            </AboutSection>
+            <AboutSection>
+              <AboutSubHeading>Hobbies</AboutSubHeading>
+              Bass Guitar &bull; Gymnastics &bull; Cycling
+            </AboutSection>
+          </Grid>
+        </Column>
+
+        <Column style={{ textAlign: "center" }}>
+          <img src={butterflyImage} style={{ width: "100%" }} />
+          <Caption>I'm a special butterfly</Caption>
+        </Column>
       </Grid>
     </Section>
   );

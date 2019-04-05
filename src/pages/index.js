@@ -7,13 +7,17 @@ import SEO from "../components/seo";
 import Nav from "../pages/Nav/Nav";
 import Intro from "../pages/Intro/Intro";
 import About from "../pages/About/About";
+import Skills from "../pages/Skills/Skills";
 import History from "../pages/History/History";
 import Contact from "../pages/Contact/Contact";
 
 const Content = styled.div`
-  padding-left: 300px;
-  float: left;
   width: 100%;
+  transition: padding 0.2s;
+
+  @media (min-width: 769px) {
+    padding-left: 300px;
+  }
 `;
 
 const IndexPage = () => {
@@ -28,6 +32,7 @@ const IndexPage = () => {
       <Content>
         <Intro id="intro" />
         <About id="about" />
+        <Skills id="skills" />
         <History id="work" />
         <Contact id="contact" />
       </Content>

@@ -11,12 +11,26 @@ const Section = styled.section`
   }
 `;
 
-const SectionHeader = styled.h3`
-  font-weight: 400;
-  font-size: 18px;
-  color: #c6a869;
-  margin: 0 0 20px;
+const SectionHeader = styled.div`
+  margin: 0 0 80px;
+`;
+
+const SectionTitle = styled.h3`
+  font-weight: 600;
+  font-size: 36px;
+  color: #ffcf9d;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+`;
+
+const SectionSubTitle = styled.h4`
+  font-size: 15px;
+  margin: 0;
+  font-weight: 300;
+  color: #888;
+  letter-spacing: 1px;
 `;
 
 export default Section;
-export { SectionHeader };
+export { SectionHeader, SectionTitle, SectionSubTitle };

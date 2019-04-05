@@ -44,7 +44,7 @@ const IntroTitle = styled.h1`
   font-family: "Playfair Display SC", times, sans-serif;
   font-style: italic;
   font-weight: 400;
-  letter-spacing: 4px;
+  letter-spacing: 2px;
   font-size: 40px;
   color: #eee;
   margin: 0 0 10px;
@@ -53,10 +53,10 @@ const IntroTitle = styled.h1`
 `;
 
 const IntroSubTitle = styled.h2`
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 300;
   text-transform: uppercase;
-  letter-spacing: 0.4em;
+  letter-spacing: 0.3rem;
   color: #ccc;
   margin: 0;
   flex: 0 0 100%;
@@ -67,7 +67,7 @@ const Intro = props => (
   <IntroContainer id={props.id}>
     <IntroCard>
       <IntroTitle>Doug MacKenzie</IntroTitle>
-      <IntroSubTitle>Front-end &amp; UI guy</IntroSubTitle>
+      <IntroSubTitle>Front End Engineer</IntroSubTitle>
     </IntroCard>
     <Pattern />
     <FeatureImage />

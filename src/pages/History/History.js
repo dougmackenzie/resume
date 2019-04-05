@@ -1,6 +1,10 @@
 import * as React from "react";
 
-import Section, { SectionHeader } from "../../components/Section/Section";
+import Section, {
+  SectionHeader,
+  SectionTitle,
+  SectionSubTitle
+} from "../../components/Section/Section";
 
 import Grid from "../../components/Grid/Grid";
 import Column from "../../components/Grid/Column";
@@ -17,8 +21,11 @@ import etapLogo from "../../images/etap-logo.png";
 
 const History = props => {
   return (
-    <Section id={props.id} style={{ backgroundColor: "#f5f5f5" }}>
-      <SectionHeader>Job history</SectionHeader>
+    <Section id={props.id}>
+      <SectionHeader>
+        <SectionTitle>History</SectionTitle>
+        <SectionSubTitle>My education and employment</SectionSubTitle>
+      </SectionHeader>
       <Grid>
         <Column>
           <AlaressCard />
