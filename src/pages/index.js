@@ -22,7 +22,7 @@ const Content = styled.div`
 
 const IndexPage = () => {
   React.useEffect(() => {
-    var scroll = new SmoothScroll("a[data-scroll]");
+    new SmoothScroll("a[data-scroll]");
   }, []);
 
   return (
