@@ -130,7 +130,7 @@ const Nav = () => (
           <a
             href="https://github.com/dougmacknz"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
             aria-label="GitHub"
           >
             <FontAwesomeIcon icon={faGithub} />
@@ -140,7 +140,7 @@ const Nav = () => (
           <a
             href="https://medium.com/@dougmacknz"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
             aria-label="Medium"
           >
             <FontAwesomeIcon icon={faMedium} />
@@ -150,7 +150,7 @@ const Nav = () => (
           <a
             href="https://www.linkedin.com/in/dougmacknz"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
             aria-label="LinkedIn"
           >
             <FontAwesomeIcon icon={faLinkedin} />
