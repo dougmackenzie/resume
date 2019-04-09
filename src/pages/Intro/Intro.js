@@ -29,7 +29,7 @@ const BackgroundImage = styled.div`
 
 const Pattern = styled(BackgroundImage)`
   background-image: url(${bgPattern});
-  opacity: 0.2;
+  opacity: 0.3;
 `;
 
 const FeatureImage = styled(BackgroundImage)`
@@ -72,7 +72,13 @@ const DownArrow = styled.div`
   z-index: 99;
 
   a {
-    color: #aaa;
+    color: #fff;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+
+    :hover {
+      opacity: 1;
+    }
   }
 `;
 
