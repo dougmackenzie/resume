@@ -81,7 +81,7 @@ const AccordionPanel = styled.dd`
 `;
 
 const AccordionPanelInner = styled.div`
-  padding: 1rem 1.5rem;
+  //padding: 1rem 1.5rem;
 `;
 
 export default Accordion;
