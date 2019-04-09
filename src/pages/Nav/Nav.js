@@ -19,6 +19,12 @@ const Brand = styled.a`
   padding: 60px 0;
   font-weight: 300;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  opacity: 0.7;
+  transition: opacity 0.2s;
+
+  &.active {
+    opacity: 1;
+  }
 `;
 
 const NavList = styled.ul`
@@ -37,10 +43,10 @@ const NavList = styled.ul`
       text-transform: uppercase;
       font-weight: 400;
       letter-spacing: 2px;
-      -webkit-transition: opacity 0.2s;
       transition: opacity 0.2s;
 
-      :hover {
+      :hover,
+      &.active {
         opacity: 1;
       }
     }
@@ -69,11 +75,10 @@ const SocialList = styled.ul`
       color: #fff;
       opacity: 0.7;
       text-decoration: none;
-      font-size: 22px;
-      -webkit-transition: opacity 0.2s;
+      font-size: 24px;
       transition: opacity 0.2s;
 
-      :hover {
+      &:hover {
         opacity: 1;
       }
     }
@@ -82,40 +87,39 @@ const SocialList = styled.ul`
 
 const Nav = () => (
   <Sidebar>
-    <header>
-      <Brand href="#intro" data-scroll>
-        @dougmacknz
-      </Brand>
+    <header role="banner">
+      <ul style={{ margin: 0, padding: 0 }}>
+        <li>
+          <Brand href="#intro" data-smoothscroll data-scrollspy>
+            @dougmacknz
+          </Brand>
+        </li>
+      </ul>
     </header>
-    <nav>
+    <nav role="navigation">
       <NavList>
         <li>
-          <a href="#intro" data-scroll>
-            Home
-          </a>
-        </li>
-        <li>
-          <a href="#about" data-scroll>
+          <a href="#about" data-smoothscroll data-scrollspy>
             About
           </a>
         </li>
         <li>
-          <a href="#skills" data-scroll>
+          <a href="#skills" data-smoothscroll data-scrollspy>
             Skills
           </a>
         </li>
         <li>
-          <a href="#history" data-scroll>
+          <a href="#history" data-smoothscroll data-scrollspy>
             History
           </a>
         </li>
         <li>
-          <a href="#work" data-scroll>
+          <a href="#work" data-smoothscroll data-scrollspy>
             Portfolio
           </a>
         </li>
         <li>
-          <a href="#contact" data-scroll>
+          <a href="#contact" data-smoothscroll data-scrollspy>
             Contact
           </a>
         </li>

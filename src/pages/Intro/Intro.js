@@ -89,7 +89,7 @@ const Intro = props => (
       <IntroSubTitle>Front End Engineer</IntroSubTitle>
     </IntroCard>
     <DownArrow>
-      <a href="#about" data-scroll>
+      <a href="#about" data-smoothscroll>
         <FontAwesomeIcon icon={faAngleDoubleDown} size="2x" />
       </a>
     </DownArrow>
