@@ -1,5 +1,8 @@
 import * as React from "react";
 import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleDoubleDown } from "@fortawesome/pro-light-svg-icons";
+
 import bgPattern from "../../images/bg-pattern.png";
 import featureImage from "../../images/feature-image.jpg";
 
@@ -63,12 +66,27 @@ const IntroSubTitle = styled.h2`
   text-align: center;
 `;
 
+const DownArrow = styled.div`
+  position: absolute;
+  bottom: 5%;
+  z-index: 99;
+
+  a {
+    color: #aaa;
+  }
+`;
+
 const Intro = props => (
   <IntroContainer id={props.id}>
     <IntroCard>
       <IntroTitle>Doug MacKenzie</IntroTitle>
       <IntroSubTitle>Front End Engineer</IntroSubTitle>
     </IntroCard>
+    <DownArrow>
+      <a href="#about" data-scroll>
+        <FontAwesomeIcon icon={faAngleDoubleDown} size="2x" />
+      </a>
+    </DownArrow>
     <Pattern />
     <FeatureImage />
   </IntroContainer>
