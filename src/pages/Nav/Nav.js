@@ -105,7 +105,7 @@ const Nav = () => (
           </a>
         </li>
         <li>
-          <a href="#work" data-scroll>
+          <a href="#history" data-scroll>
             History
           </a>
         </li>

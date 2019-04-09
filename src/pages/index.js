@@ -8,6 +8,7 @@ import Nav from "../pages/Nav/Nav";
 import Intro from "../pages/Intro/Intro";
 import About from "../pages/About/About";
 import Skills from "../pages/Skills/Skills";
+import Work from "../pages/Work/Work";
 import History from "../pages/History/History";
 import Contact from "../pages/Contact/Contact";
 
@@ -33,7 +34,8 @@ const IndexPage = () => {
         <Intro id="intro" />
         <About id="about" />
         <Skills id="skills" />
-        <History id="work" />
+        <History id="history" />
+        <Work id="work" />
         <Contact id="contact" />
       </Content>
     </Layout>

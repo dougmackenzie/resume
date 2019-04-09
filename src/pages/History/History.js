@@ -45,7 +45,10 @@ const History = props => {
 
 const AlaressCard = () => (
   <Card>
-    <CardImage backgroundColor="#0066b0">
+    <CardImage
+      backgroundColor="#0066b0"
+      style={{ height: "250px", padding: "40px" }}
+    >
       <img src={schoolboxLogo} alt="" />
     </CardImage>
     <CardContent>
@@ -62,7 +65,10 @@ const AlaressCard = () => (
 
 const KDSCard = () => (
   <Card>
-    <CardImage backgroundColor="#001F4B">
+    <CardImage
+      backgroundColor="#001F4B"
+      style={{ height: "250px", padding: "40px" }}
+    >
       <img src={kdsLogo} alt="" />
     </CardImage>
     <CardContent>
@@ -79,7 +85,10 @@ const KDSCard = () => (
 
 const EtapCard = () => (
   <Card>
-    <CardImage backgroundColor="#fff">
+    <CardImage
+      backgroundColor="#fff"
+      style={{ height: "250px", padding: "40px" }}
+    >
       <img src={etapLogo} alt="" />
     </CardImage>
     <CardContent>
