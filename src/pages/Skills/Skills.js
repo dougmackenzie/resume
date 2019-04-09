@@ -162,6 +162,7 @@ const Skills = props => {
                   <FontAwesomeIcon
                     icon={mainSkill.icon}
                     size="3x"
+                    fixedWidth
                     style={{ color: mainSkill.iconColor }}
                   />
                 </div>
@@ -190,6 +191,7 @@ const Skills = props => {
                     <FontAwesomeIcon
                       icon={additionalSkill.icon}
                       size="2x"
+                      fixedWidth
                       style={{
                         marginRight: "10px",
                         color: additionalSkill.iconColor
