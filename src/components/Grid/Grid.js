@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 const Grid = styled.div`
   margin-left: -0.75rem;
@@ -8,6 +8,6 @@ const Grid = styled.div`
   @media (min-width: 769px) {
     display: flex;
   }
-`
+`;
 
-export default Grid
+export default Grid;
