@@ -51,6 +51,50 @@ const Caption = styled.div`
   text-align: center;
 `;
 
+const infolets = [
+  [
+    {
+      label: "Location",
+      value: "Melbourne, Australia"
+    },
+    {
+      label: "Years in Development",
+      value: "10"
+    }
+  ],
+  [
+    {
+      label: "Current Role",
+      value: (
+        <>
+          Product Developer @{" "}
+          <a
+            href="https://www.alaress.com.au/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Alaress
+          </a>
+        </>
+      )
+    },
+    {
+      label: "Preferred Stack",
+      value: <>React &bull; TypeScript &bull; Styled Components</>
+    }
+  ],
+  [
+    {
+      label: "Favourite TV Show",
+      value: "Arrested Development"
+    },
+    {
+      label: "Hobbies",
+      value: <>Bass Guitar &bull; Gymnastics &bull; Cycling</>
+    }
+  ]
+];
+
 const About = props => {
   return (
     <Section id={props.id}>
@@ -75,42 +119,16 @@ const About = props => {
             tellus. Cras eu augue est. Phasellus a purus nulla.
           </SupportingText>
 
-          <Grid>
-            <AboutSection>
-              <AboutSubHeading>Location</AboutSubHeading>
-              Melbourne, AU
-            </AboutSection>
-            <AboutSection>
-              <AboutSubHeading>Years in Development</AboutSubHeading>9
-            </AboutSection>
-          </Grid>
-          <Grid>
-            <AboutSection>
-              <AboutSubHeading>Current Role</AboutSubHeading>
-              Product Developer @{" "}
-              <a
-                href="https://www.alaress.com.au/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Alaress
-              </a>
-            </AboutSection>
-            <AboutSection>
-              <AboutSubHeading>Preferred Stack</AboutSubHeading>
-              React &bull; TypeScript &bull; Styled Components
-            </AboutSection>
-          </Grid>
-          <Grid>
-            <AboutSection>
-              <AboutSubHeading>Favourite TV Show</AboutSubHeading>
-              Arrested Development
-            </AboutSection>
-            <AboutSection>
-              <AboutSubHeading>Hobbies</AboutSubHeading>
-              Bass Guitar &bull; Gymnastics &bull; Cycling
-            </AboutSection>
-          </Grid>
+          {infolets.map(infoRow => (
+            <Grid>
+              {infoRow.map(info => (
+                <AboutSection>
+                  <AboutSubHeading>{info.label}</AboutSubHeading>
+                  {info.value}
+                </AboutSection>
+              ))}
+            </Grid>
+          ))}
         </Column>
 
         <Column style={{ textAlign: "center" }}>
