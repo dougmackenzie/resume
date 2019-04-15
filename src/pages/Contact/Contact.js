@@ -33,10 +33,9 @@ const Contact = props => {
           <ContactCard>
             <ContactIcon className="fa-6x">
               <span className="fa-layers fa-fw">
-                <FontAwesomeIcon icon={faCircle} color="navy" size="6x" />
+                <FontAwesomeIcon icon={faCircle} color="navy" />
                 <FontAwesomeIcon
                   icon={faEnvelope}
-                  size="6x"
                   inverse
                   transform="shrink-6"
                 />
@@ -51,13 +50,8 @@ const Contact = props => {
           <ContactCard>
             <ContactIcon className="fa-6x">
               <span className="fa-layers fa-fw">
-                <FontAwesomeIcon icon={faCircle} color="orange" size="6x" />
-                <FontAwesomeIcon
-                  icon={faMobile}
-                  size="6x"
-                  inverse
-                  transform="shrink-6"
-                />
+                <FontAwesomeIcon icon={faCircle} color="orange" />
+                <FontAwesomeIcon icon={faMobile} inverse transform="shrink-6" />
               </span>
             </ContactIcon>
             <ContactCardSub>Add me on WhatsApp</ContactCardSub>

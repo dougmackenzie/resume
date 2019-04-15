@@ -2,6 +2,7 @@ import * as React from "react";
 import styled from "styled-components";
 import "swiper/dist/css/swiper.css";
 import Swiper from "swiper";
+import { CountUp } from "countup.js";
 
 import Section, {
   SectionHeader,
@@ -53,11 +54,11 @@ const stats = [
     label: "Years in Development"
   },
   {
-    value: "10,000",
+    value: "10000",
     label: "Lines of code written"
   },
   {
-    value: "1,006",
+    value: "1006",
     label: "Contributions on GitHub"
   }
 ];
@@ -77,10 +78,28 @@ const images = [
 
 const About = props => {
   React.useEffect(() => {
+    // Init slider
     new Swiper("[data-slider]", {
       pagination: {
         el: "[data-swiper-pagination]",
         clickable: true
+      }
+    });
+
+    // Count the fun facts up from 0 when this section appears
+    let animated = false;
+    document.addEventListener("gumshoeActivate", event => {
+      if (event.detail.content.getAttribute("id") === "about" && !animated) {
+        const funFactValues = document.querySelectorAll("[data-count-up]");
+        for (let funFactValue of funFactValues) {
+          const countUp = new CountUp(
+            funFactValue,
+            funFactValue.getAttribute("data-count-up")
+          );
+          countUp.start();
+        }
+
+        animated = true;
       }
     });
   }, []);
@@ -124,7 +143,7 @@ const About = props => {
           <Grid>
             {stats.map((stat, index) => (
               <Fact key={index}>
-                <FactValue>{stat.value}</FactValue>
+                <FactValue data-count-up={stat.value}>{stat.value}</FactValue>
                 <FactLabel>{stat.label}</FactLabel>
               </Fact>
             ))}
