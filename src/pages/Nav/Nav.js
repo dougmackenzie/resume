@@ -10,49 +10,6 @@ import {
 import Sidebar from "../../components/Sidebar/Sidebar";
 import Button from "../../components/Button/Button";
 
-const Brand = styled.a`
-  color: #fff;
-  text-align: center;
-  display: block;
-  text-decoration: none;
-  font-size: 1.5rem;
-  padding: 60px 0;
-  font-weight: 300;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  opacity: 0.7;
-  transition: opacity 0.2s;
-
-  &.active {
-    opacity: 1;
-  }
-`;
-
-const NavList = styled.ul`
-  list-style-type: none;
-  padding: 40px 0;
-
-  > li {
-    padding: 10px 50px;
-
-    > a {
-      display: block;
-      color: #fff;
-      opacity: 0.7;
-      text-decoration: none;
-      font-size: 17px;
-      text-transform: uppercase;
-      font-weight: 400;
-      letter-spacing: 2px;
-      transition: opacity 0.2s;
-
-      :hover,
-      &.active {
-        opacity: 1;
-      }
-    }
-  }
-`;
-
 const BottomSection = styled.div`
   width: 100%;
   position: absolute;
@@ -164,5 +121,52 @@ const Nav = () => (
     </BottomSection>
   </Sidebar>
 );
+
+const Brand = styled.a`
+  color: #fff;
+  text-align: center;
+  display: block;
+  text-decoration: none;
+  font-size: 1.5rem;
+  padding: 60px 0;
+  font-weight: 300;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  opacity: 0.7;
+  transition: opacity 0.2s;
+
+  &.active {
+    opacity: 1;
+  }
+`;
+
+const NavList = styled.ul`
+  list-style-type: none;
+  padding: 40px 0;
+
+  > li {
+    padding: 10px 50px;
+
+    > a {
+      display: block;
+      color: #fff;
+      opacity: 0.7;
+      text-decoration: none;
+      font-size: 17px;
+      text-transform: uppercase;
+      font-weight: 400;
+      letter-spacing: 2px;
+      transition: all 0.2s;
+
+      :hover,
+      &.active {
+        opacity: 1;
+      }
+
+      &.active {
+        margin-left: 10px;
+      }
+    }
+  }
+`;
 
 export default Nav;
