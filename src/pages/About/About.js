@@ -27,23 +27,12 @@ const infolets = [
   ],
   [
     {
-      label: "Current Role",
-      value: (
-        <>
-          Product Developer @{" "}
-          <a
-            href="https://www.alaress.com.au/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Alaress
-          </a>
-        </>
-      )
+      label: "Preferred Dev Environment",
+      value: <>Ubuntu &bull; VSCode</>
     },
     {
       label: "Preferred Stack",
-      value: <>React &bull; TypeScript &bull; Styled Components</>
+      value: <>React &bull; Styled Components</>
     }
   ],
   [
@@ -58,20 +47,37 @@ const infolets = [
   ]
 ];
 
+const stats = [
+  {
+    value: "10",
+    label: "Years in Development"
+  },
+  {
+    value: "10,000",
+    label: "Lines of code written"
+  },
+  {
+    value: "1,006",
+    label: "Contributions on GitHub"
+  }
+];
+
 const images = [
   {
     image: butterflyImage,
+    alt: "",
     caption: "I live in Melbourne - the land of street art"
   },
   {
     image: vivianImage,
+    alt: "",
     caption: "I have a partner in crime - Vivian"
   }
 ];
 
 const About = props => {
   React.useEffect(() => {
-    var mySwiper = new Swiper("[data-slider]", {
+    new Swiper("[data-slider]", {
       pagination: {
         el: "[data-swiper-pagination]",
         clickable: true
@@ -89,7 +95,7 @@ const About = props => {
       <Grid>
         <Column style={{ flexGrow: 3 }}>
           <FeatureText>
-            I like problem solving and making software experiences{" "}
+            I like problem solving and making software{" "}
             <FeatureTextHighlight>less painful for people</FeatureTextHighlight>
             .
           </FeatureText>
@@ -102,16 +108,27 @@ const About = props => {
             tellus. Cras eu augue est. Phasellus a purus nulla.
           </SupportingText>
 
-          {infolets.map(infoRow => (
-            <Grid>
-              {infoRow.map(info => (
-                <AboutSection>
-                  <AboutSubHeading>{info.label}</AboutSubHeading>
-                  {info.value}
-                </AboutSection>
-              ))}
-            </Grid>
-          ))}
+          <Infolets>
+            {infolets.map((infoRow, rowIndex) => (
+              <Grid key={rowIndex}>
+                {infoRow.map((info, index) => (
+                  <AboutSection key={`${rowIndex}-${index}`}>
+                    <AboutSubHeading>{info.label}</AboutSubHeading>
+                    {info.value}
+                  </AboutSection>
+                ))}
+              </Grid>
+            ))}
+          </Infolets>
+
+          <Grid>
+            {stats.map((stat, index) => (
+              <Fact key={index}>
+                <FactValue>{stat.value}</FactValue>
+                <FactLabel>{stat.label}</FactLabel>
+              </Fact>
+            ))}
+          </Grid>
         </Column>
 
         <Column style={{ textAlign: "center" }}>
@@ -121,9 +138,9 @@ const About = props => {
             style={{ width: "500px", paddingBottom: "18px" }}
           >
             <div className="swiper-wrapper">
-              {images.map(image => (
-                <div className="swiper-slide">
-                  <img src={image.image} />
+              {images.map((image, index) => (
+                <div className="swiper-slide" key={index}>
+                  <img src={image.image} alt={image.alt} />
                 </div>
               ))}
             </div>
@@ -133,7 +150,7 @@ const About = props => {
               style={{ bottom: "0" }}
             />
           </div>
-          <Caption>Captions here</Caption>
+          {/* <Caption>Captions here</Caption> */}
         </Column>
       </Grid>
     </Section>
@@ -178,6 +195,36 @@ const AboutSubHeading = styled.h4`
 const Caption = styled.div`
   font-size: 13px;
   text-align: center;
+`;
+
+const Infolets = styled.div`
+  margin-bottom: 40px;
+`;
+
+const Fact = styled(Column)`
+  text-align: center;
+  position: relative;
+
+  @media (min-width: 769px) {
+    &:nth-child(1n + 2):before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: calc(50% - 15px);
+      height: 30px;
+      width: 2px;
+      border-left: medium double #ccc;
+    }
+  }
+`;
+
+const FactValue = styled.div`
+  font-size: 40px;
+  font-weight: 600;
+`;
+
+const FactLabel = styled.div`
+  font-size: 14px;
 `;
 
 export default About;
