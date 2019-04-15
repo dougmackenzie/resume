@@ -86,7 +86,7 @@ const About = props => {
       }
     });
 
-    // Count the fun facts up from 0 when this section appears
+    // Count the stats up from 0 when this section appears
     let animated = false;
     document.addEventListener("gumshoeActivate", event => {
       if (event.detail.content.getAttribute("id") === "about" && !animated) {
@@ -221,20 +221,19 @@ const Infolets = styled.div`
 `;
 
 const Fact = styled(Column)`
-  text-align: center;
   position: relative;
 
-  @media (min-width: 769px) {
-    &:nth-child(1n + 2):before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: calc(50% - 15px);
-      height: 30px;
-      width: 2px;
-      border-left: medium double #ccc;
-    }
-  }
+  // @media (min-width: 769px) {
+  //   &:nth-child(1n + 2):before {
+  //     content: "";
+  //     position: absolute;
+  //     left: 0;
+  //     top: calc(50% - 15px);
+  //     height: 30px;
+  //     width: 2px;
+  //     border-left: medium double #ccc;
+  //   }
+  // }
 `;
 
 const FactValue = styled.div`
