@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDoubleDown } from "@fortawesome/pro-light-svg-icons";
 
+import "animate.css/animate.css";
+
 import bgPattern from "../../images/bg-pattern.png";
 import featureImage from "../../images/feature-image.jpg";
 
@@ -90,7 +92,11 @@ const Intro = props => (
     </IntroCard>
     <DownArrow>
       <a href="#about" data-smoothscroll>
-        <FontAwesomeIcon icon={faAngleDoubleDown} size="2x" />
+        <FontAwesomeIcon
+          icon={faAngleDoubleDown}
+          size="2x"
+          className="animated fadeInDown infinite delay-2s"
+        />
       </a>
     </DownArrow>
     <Pattern />
