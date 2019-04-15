@@ -68,21 +68,21 @@ const Contact = props => {
             <Column>
               <FormControl>
                 <Label>Name:</Label>
-                <Input type="text" required />
+                <Input type="text" name="name" required />
               </FormControl>
             </Column>
 
             <Column>
               <FormControl>
                 <Label>Email:</Label>
-                <Input type="email" required />
+                <Input type="email" name="email" required />
               </FormControl>
             </Column>
           </Grid>
 
           <FormControl>
             <Label>Message:</Label>
-            <TextArea rows="5" required />
+            <TextArea rows="5" name="message" required />
           </FormControl>
 
           <FormControl>
