@@ -42,8 +42,8 @@ const Work = props => {
         <SectionSubTitle>Examples of my work</SectionSubTitle>
       </SectionHeader>
       <Grid>
-        {workExamples.map(workExample => (
-          <Column>
+        {workExamples.map((workExample, index) => (
+          <Column key={index}>
             <Card>
               <CardImage>
                 <img src="https://placeimg.com/400/200/any" alt="" />

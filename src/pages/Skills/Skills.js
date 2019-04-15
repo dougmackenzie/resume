@@ -169,8 +169,8 @@ const Skills = props => {
       <h5>Specialties</h5>
 
       <Grid>
-        {mainSkills.map(mainSkill => (
-          <Column>
+        {mainSkills.map((mainSkill, index) => (
+          <Column key={index}>
             <Card>
               <CardContent>
                 <div style={{ textAlign: "center", marginBottom: "20px" }}>
@@ -200,10 +200,10 @@ const Skills = props => {
 
       <h5>Additional Skills</h5>
 
-      {additionalSkills.map(additionalSkillsRow => (
-        <Grid>
-          {additionalSkillsRow.map(additionalSkill => (
-            <Column>
+      {additionalSkills.map((additionalSkillsRow, rowIndex) => (
+        <Grid key={rowIndex}>
+          {additionalSkillsRow.map((additionalSkill, index) => (
+            <Column key={`${rowIndex}-${index}`}>
               <Accordion data-accordion>
                 <AccordionHeader>
                   <AccordionButton className="js-badger-accordion-header">
