@@ -10,45 +10,13 @@ import {
 import Sidebar from "../../components/Sidebar/Sidebar";
 import Button from "../../components/Button/Button";
 
-const BottomSection = styled.div`
-  width: 100%;
-  position: absolute;
-  bottom: 30px;
-  text-align: center;
-`;
-
-const SocialList = styled.ul`
-  list-style-type: none;
-  padding: 0;
-  display: block;
-  text-align: center;
-  margin-top: 40px;
-
-  > li {
-    display: inline-block;
-    padding: 0 10px;
-
-    > a {
-      color: #fff;
-      opacity: 0.7;
-      text-decoration: none;
-      font-size: 24px;
-      transition: opacity 0.2s;
-
-      &:hover {
-        opacity: 1;
-      }
-    }
-  }
-`;
-
 const Nav = () => (
   <Sidebar>
     <header role="banner">
       <ul style={{ margin: 0, padding: 0 }}>
         <li>
           <Brand href="#intro" data-smoothscroll data-scrollspy>
-            @dougmacknz
+            dougmacknz
           </Brand>
         </li>
       </ul>
@@ -123,13 +91,16 @@ const Nav = () => (
 );
 
 const Brand = styled.a`
+  position: relative;
+  font-family: "Playfair Display", times, sans-serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.85rem;
   color: #fff;
   text-align: center;
   display: block;
   text-decoration: none;
-  font-size: 1.5rem;
   padding: 60px 0;
-  font-weight: 300;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   opacity: 0.7;
   transition: opacity 0.2s;
@@ -164,6 +135,38 @@ const NavList = styled.ul`
 
       &.active {
         margin-left: 10px;
+      }
+    }
+  }
+`;
+
+const BottomSection = styled.div`
+  width: 100%;
+  position: absolute;
+  bottom: 30px;
+  text-align: center;
+`;
+
+const SocialList = styled.ul`
+  list-style-type: none;
+  padding: 0;
+  display: block;
+  text-align: center;
+  margin-top: 40px;
+
+  > li {
+    display: inline-block;
+    padding: 0 10px;
+
+    > a {
+      color: #fff;
+      opacity: 0.7;
+      text-decoration: none;
+      font-size: 24px;
+      transition: opacity 0.2s;
+
+      &:hover {
+        opacity: 1;
       }
     }
   }

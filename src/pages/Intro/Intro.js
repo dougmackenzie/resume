@@ -8,6 +8,26 @@ import "animate.css/animate.css";
 import bgPattern from "../../images/bg-pattern.png";
 import featureImage from "../../images/feature-image.jpg";
 
+const Intro = props => (
+  <IntroContainer id={props.id}>
+    <IntroCard>
+      <IntroTitle>Doug MacKenzie</IntroTitle>
+      <IntroSubTitle>Front End Engineer</IntroSubTitle>
+    </IntroCard>
+    <DownArrow>
+      <a href="#about" data-smoothscroll>
+        <FontAwesomeIcon
+          icon={faAngleDoubleDown}
+          size="2x"
+          className="animated fadeInDown infinite delay-2s"
+        />
+      </a>
+    </DownArrow>
+    <Pattern />
+    <FeatureImage />
+  </IntroContainer>
+);
+
 const IntroContainer = styled.div`
   background: #1c1e26;
   width: 100%;
@@ -20,8 +40,6 @@ const IntroContainer = styled.div`
 
 const BackgroundImage = styled.div`
   position: absolute;
-  //width: 100%;
-  //height: 100vh;
   top: 0;
   right: 0;
   bottom: 0;
@@ -46,13 +64,14 @@ const IntroCard = styled.div`
 `;
 
 const IntroTitle = styled.h1`
-  font-family: "Playfair Display SC", times, sans-serif;
+  font-family: "Playfair Display", times, sans-serif;
   font-style: italic;
   font-weight: 400;
-  letter-spacing: 2px;
-  font-size: 40px;
+  letter-spacing: 3px;
+  font-size: 52px;
+  text-transform: lowercase;
   color: #eee;
-  margin: 0 0 10px;
+  margin: 0 0 5px;
   flex: 0 0 100%;
   text-align: center;
 `;
@@ -83,25 +102,5 @@ const DownArrow = styled.div`
     }
   }
 `;
-
-const Intro = props => (
-  <IntroContainer id={props.id}>
-    <IntroCard>
-      <IntroTitle>Doug MacKenzie</IntroTitle>
-      <IntroSubTitle>Front End Engineer</IntroSubTitle>
-    </IntroCard>
-    <DownArrow>
-      <a href="#about" data-smoothscroll>
-        <FontAwesomeIcon
-          icon={faAngleDoubleDown}
-          size="2x"
-          className="animated fadeInDown infinite delay-2s"
-        />
-      </a>
-    </DownArrow>
-    <Pattern />
-    <FeatureImage />
-  </IntroContainer>
-);
 
 export default Intro;
