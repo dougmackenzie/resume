@@ -88,7 +88,7 @@ const About = props => {
           <div
             data-slider
             className="swiper-container"
-            style={{ width: "500px", paddingBottom: "18px" }}
+            style={{ width: "500px", paddingBottom: "15px" }}
           >
             <div className="swiper-wrapper">
               {slideshowImages.map((image, index) => (
@@ -97,10 +97,9 @@ const About = props => {
                 </div>
               ))}
             </div>
-            <div
+            <SwiperPagination
               className="swiper-pagination"
               data-swiper-pagination
-              style={{ bottom: "0" }}
             />
           </div>
           {/* <Caption>Captions here</Caption> */}
@@ -156,18 +155,6 @@ const Infolets = styled.div`
 
 const Fact = styled(Column)`
   position: relative;
-
-  // @media (min-width: 769px) {
-  //   &:nth-child(1n + 2):before {
-  //     content: "";
-  //     position: absolute;
-  //     left: 0;
-  //     top: calc(50% - 15px);
-  //     height: 30px;
-  //     width: 2px;
-  //     border-left: medium double #ccc;
-  //   }
-  // }
 `;
 
 const FactValue = styled.div`
@@ -177,6 +164,18 @@ const FactValue = styled.div`
 
 const FactLabel = styled.div`
   font-size: 14px;
+`;
+
+const SwiperPagination = styled.div`
+  display: flex;
+  bottom: 0;
+
+  .swiper-pagination-bullet {
+    flex-grow: 1;
+    border-radius: 0;
+    height: 4px;
+    margin: 0 !important;
+  }
 `;
 
 export default About;
