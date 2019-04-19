@@ -60,7 +60,10 @@ const About = props => {
       </SectionHeader>
 
       <Grid>
-        <Column style={{ flexGrow: 3, marginRight: "1.5rem" }}>
+        <Column
+          className="wow animated fadeIn"
+          style={{ flexGrow: 3, marginRight: "1.5rem" }}
+        >
           <FeatureText>{featureText}</FeatureText>
 
           <SupportingText>{supportingText}</SupportingText>
@@ -88,7 +91,10 @@ const About = props => {
           </Grid> */}
         </Column>
 
-        <Column style={{ textAlign: "center", marginLeft: "1.5rem" }}>
+        <Column
+          className="wow animated fadeInRight"
+          style={{ textAlign: "center", marginLeft: "1.5rem" }}
+        >
           <div
             data-slider
             className="swiper-container"

@@ -47,6 +47,7 @@ const IndexPage = () => {
 const Content = styled.main`
   width: 100%;
   transition: padding 0.2s;
+  overflow: hidden;
 
   @media (min-width: 769px) {
     padding-left: 300px;
