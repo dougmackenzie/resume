@@ -35,7 +35,7 @@ const Nav = () => (
     </nav>
 
     <BottomSection>
-      <Button href={resumeLink}>Download Resume</Button>
+      {resumeLink && <Button href={resumeLink}>Download Resume</Button>}
 
       <SocialList>
         {socialLinks.map((socialLink, index) => (
