@@ -56,7 +56,7 @@ const About = props => {
       </SectionHeader>
 
       <Grid>
-        <Column style={{ flexGrow: 3 }}>
+        <Column style={{ flexGrow: 3, marginRight: "1.5rem" }}>
           <FeatureText>{featureText}</FeatureText>
 
           <SupportingText>{supportingText}</SupportingText>
@@ -74,33 +74,44 @@ const About = props => {
             ))}
           </Infolets>
 
-          <Grid>
+          {/* <Grid>
             {funFacts.map((stat, index) => (
               <Fact key={index}>
-                <FactValue data-count-up={stat.value}>{stat.value}</FactValue>
+                <FactValue data-count-up={stat.value}>0</FactValue>
                 <FactLabel>{stat.label}</FactLabel>
               </Fact>
             ))}
-          </Grid>
+          </Grid> */}
         </Column>
 
-        <Column style={{ textAlign: "center" }}>
+        <Column style={{ textAlign: "center", marginLeft: "1.5rem" }}>
           <div
             data-slider
             className="swiper-container"
-            style={{ width: "500px", paddingBottom: "15px" }}
+            style={{
+              width: "400px",
+              boxShadow: "0 1.5rem 3rem rgba(0,0,0,.2)"
+            }}
           >
             <div className="swiper-wrapper">
               {slideshowImages.map((image, index) => (
-                <div className="swiper-slide" key={index}>
-                  <img src={image.image} alt={image.alt} />
+                <div
+                  className="swiper-slide"
+                  key={index}
+                  style={{ lineHeight: 0 }}
+                >
+                  <img
+                    src={image.image}
+                    alt={image.alt}
+                    style={{ width: "100%" }}
+                  />
                 </div>
               ))}
             </div>
-            <SwiperPagination
+            {/* <SwiperPagination
               className="swiper-pagination"
               data-swiper-pagination
-            />
+            /> */}
           </div>
           {/* <Caption>Captions here</Caption> */}
         </Column>
@@ -110,7 +121,8 @@ const About = props => {
 };
 
 const FeatureText = styled.p`
-  font-size: 30px;
+  font-size: 34px;
+  font-weight: 300;
   color: #a0a0a0;
   margin: 0 0 30px;
 `;
@@ -128,7 +140,7 @@ const SupportingText = styled.p`
 const AboutSection = styled(Column)`
   font-size: 15px;
   margin: 0;
-  font-weight: 300;
+  font-weight: 400;
 
   @media (min-width: 769px) {
     margin: 0 0 10px;
@@ -139,7 +151,7 @@ const AboutSubHeading = styled.h4`
   font-size: 13px;
   font-weight: 300;
   text-transform: uppercase;
-  color: #999;
+  color: #666;
   margin: 0 0 2px;
   letter-spacing: 1px;
 `;

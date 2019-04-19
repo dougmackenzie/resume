@@ -54,7 +54,7 @@ export const pages = [
   {
     id: "about",
     page: About,
-    title: "About Me",
+    title: "About",
     subtitle: "What I'm all about",
     navTitle: "About"
   },
@@ -117,8 +117,19 @@ export const socialLinks = [
 //-------------------------------------------
 export const featureText =
   "I like problem solving and making software less painful for people.";
-export const supportingText =
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta massa non felis rhoncus placerat. Morbi leo arcu, sollicitudin eget sapien ac, elementum ornare magna. Aliquam eu blandit nunc, at blandit risus. Aliquam vel sem diam. Phasellus id condimentum tellus. Cras eu augue est. Phasellus a purus nulla.";
+export const supportingText = (
+  <>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta massa
+      non felis rhoncus placerat. Morbi leo arcu, sollicitudin eget sapien ac,
+      elementum ornare magna.
+    </p>
+    <p>
+      Aliquam eu blandit nunc, at blandit risus. Aliquam vel sem diam. Phasellus
+      id condimentum tellus. Cras eu augue est. Phasellus a purus nulla.
+    </p>
+  </>
+);
 
 export const slideshowImages = [
   {

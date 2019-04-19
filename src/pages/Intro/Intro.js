@@ -70,17 +70,18 @@ const IntroTitle = styled.h1`
   font-style: italic;
   font-weight: 400;
   letter-spacing: 3px;
-  font-size: 52px;
-  text-transform: lowercase;
+  font-size: 46px;
   color: #eee;
   margin: 0 0 5px;
   flex: 0 0 100%;
   text-align: center;
+  animation: slideIn 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) both;
+}
 `;
 
 const IntroSubTitle = styled.h2`
   font-size: 14px;
-  font-weight: 300;
+  font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.3rem;
   color: #ccc;
