@@ -20,6 +20,8 @@ import Input from "../../components/Form/Input";
 import TextArea from "../../components/Form/TextArea";
 import SubmitButton from "../../components/Form/SubmitButton";
 
+import { email, phone } from "../../content";
+
 const Contact = props => {
   return (
     <Section id={props.id}>
@@ -42,7 +44,7 @@ const Contact = props => {
               </span>
             </ContactIcon>
             <ContactCardSub>Send me an email</ContactCardSub>
-            <ContactCardMain>dougmacknz@gmail.com</ContactCardMain>
+            <ContactCardMain>{email}</ContactCardMain>
           </ContactCard>
         </Column>
 
@@ -55,7 +57,7 @@ const Contact = props => {
               </span>
             </ContactIcon>
             <ContactCardSub>Add me on WhatsApp</ContactCardSub>
-            <ContactCardMain>+61413620431</ContactCardMain>
+            <ContactCardMain>{phone}</ContactCardMain>
           </ContactCard>
         </Column>
       </Grid>
