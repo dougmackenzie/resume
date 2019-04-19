@@ -195,14 +195,14 @@ export const funFacts = [
 //-------------------------------------------
 // Skills
 //-------------------------------------------
-export const totalYearsExperience = 9; // Used to calculate widths on skill cards
+export const totalYearsExperience = 10; // Used to calculate widths on skill cards
 
 export const mainSkills = [
   {
     title: "JavaScript",
     icon: faJs,
     iconColor: "#f7df1e",
-    yearsExperience: 9,
+    yearsExperience: 10,
     description:
       "I've been working with JavaScript for my entire career, however like many developers in my era- I didn't take the time to learn the language properly. In the past year I have been focusing on understanding the core of the language."
   },
@@ -218,7 +218,7 @@ export const mainSkills = [
     title: "UI Design",
     icon: faPenAlt,
     iconColor: "#f6921e",
-    yearsExperience: 9,
+    yearsExperience: 10,
     description:
       "Creating intuitive interfaces for users has long been a passion of mine.I am often called upon when there is a creative solution required for a user need or problem."
   },
@@ -226,7 +226,7 @@ export const mainSkills = [
     title: "CSS & Scoped Styling",
     icon: faCss3Alt,
     iconColor: "#4771b5",
-    yearsExperience: 9,
+    yearsExperience: 10,
     description:
       "Dealing with CSS quirks has long been a speciality of mine. More recently I have been working with Styled Components for scoped styling."
   }
@@ -254,7 +254,7 @@ export const additionalSkills = [
       title: "PHP",
       icon: faPhp,
       iconColor: "#4f5b93",
-      yearsExperience: 9,
+      yearsExperience: 10,
       description:
         "I have worked with PHP my entire career. Though I specialise in front-end development - I am capable of working with PHP to get things done when needed."
     },
