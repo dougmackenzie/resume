@@ -153,7 +153,7 @@ const FeatureTextHighlight = styled.strong`
   font-size: inherit;
 `;
 
-const SupportingText = styled.p`
+const SupportingText = styled.div`
   margin-bottom: 40px;
 `;
 

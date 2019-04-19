@@ -10,25 +10,30 @@ import "animate.css/animate.css";
 import bgPattern from "../../images/bg-pattern.png";
 import featureImage from "../../images/feature-image.jpg";
 
-const Intro = props => (
-  <IntroContainer id={props.id}>
-    <IntroCard>
-      <IntroTitle>{title}</IntroTitle>
-      <IntroSubTitle>{subtitle}</IntroSubTitle>
-    </IntroCard>
-    <DownArrow>
-      <a href="#about" data-smoothscroll>
-        <FontAwesomeIcon
-          icon={faAngleDoubleDown}
-          size="2x"
-          className="animated fadeInDown infinite delay-2s"
-        />
-      </a>
-    </DownArrow>
-    <Pattern />
-    <FeatureImage />
-  </IntroContainer>
-);
+const Intro = props => {
+  // Grab the ID of the next page for the down arrow link
+  const nextPage = props.pages[1].id;
+
+  return (
+    <IntroContainer id={props.id}>
+      <IntroCard>
+        <IntroTitle>{title}</IntroTitle>
+        <IntroSubTitle>{subtitle}</IntroSubTitle>
+      </IntroCard>
+      <DownArrow>
+        <a href={`#${nextPage}`} data-smoothscroll>
+          <FontAwesomeIcon
+            icon={faAngleDoubleDown}
+            size="2x"
+            className="animated fadeInDown infinite delay-2s"
+          />
+        </a>
+      </DownArrow>
+      <Pattern />
+      <FeatureImage />
+    </IntroContainer>
+  );
+};
 
 const IntroContainer = styled.div`
   background: #1c1e26;

@@ -37,7 +37,7 @@ const IndexPage = () => {
       <Content role="main">
         {pages.map(page => {
           const PageComponent = page.page;
-          return <PageComponent key={page.id} {...page} />;
+          return <PageComponent key={page.id} pages={pages} {...page} />;
         })}
       </Content>
     </Layout>
