@@ -24,10 +24,14 @@ const About = props => {
   React.useEffect(() => {
     // Init slider
     new Swiper("[data-slider]", {
-      pagination: {
-        el: "[data-swiper-pagination]",
-        clickable: true
+      navigation: {
+        nextEl: "[data-slider-next]",
+        prevEl: "[data-slider-prev]"
       }
+      // pagination: {
+      //   el: "[data-swiper-pagination]",
+      //   clickable: true
+      // }
     });
 
     // Count the stats up from 0 when this section appears
@@ -108,6 +112,16 @@ const About = props => {
                 </div>
               ))}
             </div>
+
+            <SwiperNav
+              className="swiper-button-prev swiper-button-white"
+              data-slider-prev
+            />
+            <SwiperNav
+              className="swiper-button-next swiper-button-white"
+              data-slider-next
+            />
+
             {/* <SwiperPagination
               className="swiper-pagination"
               data-swiper-pagination
@@ -189,5 +203,7 @@ const SwiperPagination = styled.div`
     margin: 0 !important;
   }
 `;
+
+const SwiperNav = styled.div``;
 
 export default About;
