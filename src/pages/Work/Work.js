@@ -38,8 +38,8 @@ const Work = props => {
   return (
     <Section id={props.id} style={{ backgroundColor: "#f5f5f5" }}>
       <SectionHeader>
-        <SectionTitle>Portfolio</SectionTitle>
-        <SectionSubTitle>Examples of my work</SectionSubTitle>
+        <SectionTitle>{props.title}</SectionTitle>
+        <SectionSubTitle>{props.subtitle}</SectionSubTitle>
       </SectionHeader>
       <Grid>
         {workExamples.map((workExample, index) => (

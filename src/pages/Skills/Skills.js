@@ -164,8 +164,8 @@ const Skills = props => {
   return (
     <Section id={props.id} style={{ backgroundColor: "#f5f5f5" }}>
       <SectionHeader>
-        <SectionTitle>Skills</SectionTitle>
-        <SectionSubTitle>What I can do</SectionSubTitle>
+        <SectionTitle>{props.title}</SectionTitle>
+        <SectionSubTitle>{props.subtitle}</SectionSubTitle>
       </SectionHeader>
 
       <h5>Specialties</h5>

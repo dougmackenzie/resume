@@ -4,24 +4,10 @@ import SmoothScroll from "smooth-scroll";
 import Gumshoe from "gumshoejs";
 import WOW from "wow.js";
 
+import { pages } from "../content";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Nav from "../pages/Nav/Nav";
-import Intro from "../pages/Intro/Intro";
-import About from "../pages/About/About";
-import Skills from "../pages/Skills/Skills";
-import Work from "../pages/Work/Work";
-import History from "../pages/History/History";
-import Contact from "../pages/Contact/Contact";
-
-const Content = styled.main`
-  width: 100%;
-  transition: padding 0.2s;
-
-  @media (min-width: 769px) {
-    padding-left: 300px;
-  }
-`;
 
 const IndexPage = () => {
   React.useEffect(() => {
@@ -49,15 +35,22 @@ const IndexPage = () => {
       <SEO keywords={[`web developer`, `portfolio`, "front-end", `react`]} />
       <Nav />
       <Content role="main">
-        <Intro id="intro" />
-        <About id="about" />
-        <Skills id="skills" />
-        <History id="history" />
-        <Work id="work" />
-        <Contact id="contact" />
+        {pages.map(page => {
+          const PageComponent = page.page;
+          return <PageComponent key={page.id} {...page} />;
+        })}
       </Content>
     </Layout>
   );
 };
+
+const Content = styled.main`
+  width: 100%;
+  transition: padding 0.2s;
+
+  @media (min-width: 769px) {
+    padding-left: 300px;
+  }
+`;
 
 export default IndexPage;

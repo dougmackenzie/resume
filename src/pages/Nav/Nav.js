@@ -1,14 +1,11 @@
 import * as React from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faLinkedin,
-  faGithub,
-  faMedium
-} from "@fortawesome/fontawesome-free-brands";
 
 import Sidebar from "../../components/Sidebar/Sidebar";
 import Button from "../../components/Button/Button";
+
+import { brand, socialLinks, resumeLink, pages } from "../../content";
 
 const Nav = () => (
   <Sidebar>
@@ -16,75 +13,39 @@ const Nav = () => (
       <ul style={{ margin: 0, padding: 0 }}>
         <li>
           <Brand href="#intro" data-smoothscroll data-scrollspy>
-            dougmacknz
+            {brand}
           </Brand>
         </li>
       </ul>
     </header>
     <nav role="navigation">
       <NavList>
-        <li>
-          <a href="#about" data-smoothscroll data-scrollspy>
-            About
-          </a>
-        </li>
-        <li>
-          <a href="#skills" data-smoothscroll data-scrollspy>
-            Skills
-          </a>
-        </li>
-        <li>
-          <a href="#history" data-smoothscroll data-scrollspy>
-            History
-          </a>
-        </li>
-        <li>
-          <a href="#work" data-smoothscroll data-scrollspy>
-            Portfolio
-          </a>
-        </li>
-        <li>
-          <a href="#contact" data-smoothscroll data-scrollspy>
-            Contact
-          </a>
-        </li>
+        {pages.map(page => (
+          <li key={page.id}>
+            <a href={`#${page.id}`} data-smoothscroll data-scrollspy>
+              {page.title}
+            </a>
+          </li>
+        ))}
       </NavList>
     </nav>
 
     <BottomSection>
-      <Button href="#">Download Resume</Button>
+      <Button href={resumeLink}>Download Resume</Button>
 
       <SocialList>
-        <li>
-          <a
-            href="https://github.com/dougmacknz"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub"
-          >
-            <FontAwesomeIcon icon={faGithub} />
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://medium.com/@dougmacknz"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Medium"
-          >
-            <FontAwesomeIcon icon={faMedium} />
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://www.linkedin.com/in/dougmacknz"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn"
-          >
-            <FontAwesomeIcon icon={faLinkedin} />
-          </a>
-        </li>
+        {socialLinks.map((socialLink, index) => (
+          <li key={index}>
+            <a
+              href={socialLink.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={socialLink.name}
+            >
+              <FontAwesomeIcon icon={socialLink.icon} />
+            </a>
+          </li>
+        ))}
       </SocialList>
     </BottomSection>
   </Sidebar>

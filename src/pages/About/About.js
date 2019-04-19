@@ -12,69 +12,13 @@ import Section, {
 import Grid from "../../components/Grid/Grid";
 import Column from "../../components/Grid/Column";
 
-import butterflyImage from "../../images/about/butterfly.jpg";
-import vivianImage from "../../images/about/vvn.jpg";
-
-const infolets = [
-  [
-    {
-      label: "Location",
-      value: "Melbourne, Australia"
-    },
-    {
-      label: "Years in Development",
-      value: "10"
-    }
-  ],
-  [
-    {
-      label: "Preferred Dev Environment",
-      value: <>Ubuntu &bull; VSCode</>
-    },
-    {
-      label: "Preferred Stack",
-      value: <>React &bull; Styled Components</>
-    }
-  ],
-  [
-    {
-      label: "Favourite TV Show",
-      value: "Arrested Development"
-    },
-    {
-      label: "Hobbies",
-      value: <>Bass Guitar &bull; Gymnastics &bull; Cycling</>
-    }
-  ]
-];
-
-const stats = [
-  {
-    value: "10",
-    label: "Years in Development"
-  },
-  {
-    value: "10000",
-    label: "Lines of code written"
-  },
-  {
-    value: "1006",
-    label: "Contributions on GitHub"
-  }
-];
-
-const images = [
-  {
-    image: butterflyImage,
-    alt: "",
-    caption: "I live in Melbourne - the land of street art"
-  },
-  {
-    image: vivianImage,
-    alt: "",
-    caption: "I have a partner in crime - Vivian"
-  }
-];
+import {
+  slideshowImages,
+  stats,
+  funFacts,
+  featureText,
+  supportingText
+} from "../../content";
 
 const About = props => {
   React.useEffect(() => {
@@ -107,28 +51,18 @@ const About = props => {
   return (
     <Section id={props.id}>
       <SectionHeader>
-        <SectionTitle>About me</SectionTitle>
-        <SectionSubTitle>What I'm all about</SectionSubTitle>
+        <SectionTitle>{props.title}</SectionTitle>
+        <SectionSubTitle>{props.subtitle}</SectionSubTitle>
       </SectionHeader>
 
       <Grid>
         <Column style={{ flexGrow: 3 }}>
-          <FeatureText>
-            I like problem solving and making software{" "}
-            <FeatureTextHighlight>less painful for people</FeatureTextHighlight>
-            .
-          </FeatureText>
+          <FeatureText>{featureText}</FeatureText>
 
-          <SupportingText>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta
-            massa non felis rhoncus placerat. Morbi leo arcu, sollicitudin eget
-            sapien ac, elementum ornare magna. Aliquam eu blandit nunc, at
-            blandit risus. Aliquam vel sem diam. Phasellus id condimentum
-            tellus. Cras eu augue est. Phasellus a purus nulla.
-          </SupportingText>
+          <SupportingText>{supportingText}</SupportingText>
 
           <Infolets>
-            {infolets.map((infoRow, rowIndex) => (
+            {stats.map((infoRow, rowIndex) => (
               <Grid key={rowIndex}>
                 {infoRow.map((info, index) => (
                   <AboutSection key={`${rowIndex}-${index}`}>
@@ -141,7 +75,7 @@ const About = props => {
           </Infolets>
 
           <Grid>
-            {stats.map((stat, index) => (
+            {funFacts.map((stat, index) => (
               <Fact key={index}>
                 <FactValue data-count-up={stat.value}>{stat.value}</FactValue>
                 <FactLabel>{stat.label}</FactLabel>
@@ -157,7 +91,7 @@ const About = props => {
             style={{ width: "500px", paddingBottom: "18px" }}
           >
             <div className="swiper-wrapper">
-              {images.map((image, index) => (
+              {slideshowImages.map((image, index) => (
                 <div className="swiper-slide" key={index}>
                   <img src={image.image} alt={image.alt} />
                 </div>

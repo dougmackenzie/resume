@@ -24,8 +24,8 @@ const Contact = props => {
   return (
     <Section id={props.id}>
       <SectionHeader>
-        <SectionTitle>Contact</SectionTitle>
-        <SectionSubTitle>Get in touch</SectionSubTitle>
+        <SectionTitle>{props.title}</SectionTitle>
+        <SectionSubTitle>{props.subtitle}</SectionSubTitle>
       </SectionHeader>
 
       <Grid>

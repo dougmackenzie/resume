@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDoubleDown } from "@fortawesome/pro-light-svg-icons";
 
+import { title, subtitle } from "../../content";
+
 import "animate.css/animate.css";
 
 import bgPattern from "../../images/bg-pattern.png";
@@ -11,8 +13,8 @@ import featureImage from "../../images/feature-image.jpg";
 const Intro = props => (
   <IntroContainer id={props.id}>
     <IntroCard>
-      <IntroTitle>Doug MacKenzie</IntroTitle>
-      <IntroSubTitle>Front End Engineer</IntroSubTitle>
+      <IntroTitle>{title}</IntroTitle>
+      <IntroSubTitle>{subtitle}</IntroSubTitle>
     </IntroCard>
     <DownArrow>
       <a href="#about" data-smoothscroll>

@@ -23,8 +23,8 @@ const History = props => {
   return (
     <Section id={props.id}>
       <SectionHeader>
-        <SectionTitle>History</SectionTitle>
-        <SectionSubTitle>My education and employment</SectionSubTitle>
+        <SectionTitle>{props.title}</SectionTitle>
+        <SectionSubTitle>{props.subtitle}</SectionSubTitle>
       </SectionHeader>
       <Grid>
         <Column>
