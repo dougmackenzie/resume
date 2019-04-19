@@ -30,37 +30,43 @@ export const pages = [
     id: "intro",
     page: Intro,
     title: title,
-    subtitle: subtitle
+    subtitle: subtitle,
+    navTitle: ""
   },
   {
     id: "about",
     page: About,
-    title: "About",
-    subtitle: "What I'm all about"
+    title: "About Me",
+    subtitle: "What I'm all about",
+    navTitle: "About"
   },
   {
     id: "skills",
     page: Skills,
     title: "Skills",
-    subtitle: "What I can do"
+    subtitle: "What I can do",
+    navTitle: "Skills"
   },
   {
     id: "history",
     page: History,
     title: "History",
-    subtitle: "My education and employment"
+    subtitle: "My education and employment",
+    navTitle: "History"
   },
   {
     id: "work",
     page: Work,
     title: "Portfolio",
-    subtitle: "Examples of my work"
+    subtitle: "Examples of my work",
+    navTitle: "Portfolio"
   },
   {
     id: "contact",
     page: Contact,
     title: "Contact",
-    subtitle: "Get in touch"
+    subtitle: "Get in touch",
+    navTitle: "Contact"
   }
 ];
 

@@ -20,13 +20,17 @@ const Nav = () => (
     </header>
     <nav role="navigation">
       <NavList>
-        {pages.map(page => (
-          <li key={page.id}>
-            <a href={`#${page.id}`} data-smoothscroll data-scrollspy>
-              {page.title}
-            </a>
-          </li>
-        ))}
+        {pages.map(page => {
+          return (
+            page.navTitle && (
+              <li key={page.id}>
+                <a href={`#${page.id}`} data-smoothscroll data-scrollspy>
+                  {page.navTitle}
+                </a>
+              </li>
+            )
+          );
+        })}
       </NavList>
     </nav>
 
