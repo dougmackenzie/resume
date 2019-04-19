@@ -28,7 +28,8 @@ import {
 } from "../../content";
 
 const Skills = props => {
-  let skillDelay = 0;
+  let delayMainSkill = 0;
+  let delayAdditionalSkill = 0;
 
   React.useEffect(() => {
     const accordions = document.querySelectorAll("[data-accordion]");
@@ -59,7 +60,7 @@ const Skills = props => {
             <Column key={index}>
               <Card
                 className="wow flipInY animated"
-                data-wow-delay={`${skillDelay}s`}
+                data-wow-delay={`${delayMainSkill}s`}
               >
                 <CardContent>
                   <div style={{ textAlign: "center", marginBottom: "20px" }}>
@@ -86,7 +87,7 @@ const Skills = props => {
             </Column>
           );
 
-          skillDelay += 0.2;
+          delayMainSkill += 0.2;
           return content;
         })}
       </Grid>
@@ -101,7 +102,7 @@ const Skills = props => {
                 <Accordion
                   data-accordion
                   className="wow fadeIn animated"
-                  data-wow-delay={`${skillDelay}s`}
+                  data-wow-delay={`${delayAdditionalSkill}s`}
                 >
                   <AccordionHeader>
                     <AccordionButton className="js-badger-accordion-header">
@@ -138,7 +139,7 @@ const Skills = props => {
           </Grid>
         );
 
-        skillDelay += 0.2;
+        delayAdditionalSkill += 0.2;
         return content;
       })}
     </Section>
