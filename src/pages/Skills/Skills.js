@@ -95,52 +95,56 @@ const Skills = props => {
       <h5>Additional Skills</h5>
 
       {additionalSkills.map((additionalSkillsRow, rowIndex) => {
-        const content = (
+        const rowContent = (
           <Grid key={rowIndex}>
-            {additionalSkillsRow.map((additionalSkill, index) => (
-              <Column key={`${rowIndex}-${index}`}>
-                <Accordion
-                  data-accordion
-                  className="wow fadeIn animated"
-                  data-wow-delay={`${delayAdditionalSkill}s`}
-                >
-                  <AccordionHeader>
-                    <AccordionButton className="js-badger-accordion-header">
-                      <FontAwesomeIcon
-                        icon={additionalSkill.icon}
-                        size="2x"
-                        fixedWidth
-                        style={{
-                          marginRight: "10px",
-                          color: additionalSkill.iconColor
-                        }}
-                      />
-                      <AccordionTitle>{additionalSkill.title}</AccordionTitle>
-                      <AccordionIcon />
-                    </AccordionButton>
-                  </AccordionHeader>
-                  <AccordionPanel className="badger-accordion__panel js-badger-accordion-panel">
-                    <AccordionPanelInner className="js-badger-accordion-panel-inner">
-                      <div style={{ padding: "1rem 1.5rem" }}>
-                        {additionalSkill.description}
-                      </div>
-                      <SkillBar
-                        yearsExperience={additionalSkill.yearsExperience}
-                      >
-                        {additionalSkill.yearsExperience} year
-                        {additionalSkill.yearsExperience > 1 ? "s" : ""} of
-                        experience
-                      </SkillBar>
-                    </AccordionPanelInner>
-                  </AccordionPanel>
-                </Accordion>
-              </Column>
-            ))}
+            {additionalSkillsRow.map((additionalSkill, index) => {
+              const skillContent = (
+                <Column key={`${rowIndex}-${index}`}>
+                  <Accordion
+                    data-accordion
+                    className="wow fadeInUp animated"
+                    data-wow-delay={`${delayAdditionalSkill}s`}
+                  >
+                    <AccordionHeader>
+                      <AccordionButton className="js-badger-accordion-header">
+                        <FontAwesomeIcon
+                          icon={additionalSkill.icon}
+                          size="2x"
+                          fixedWidth
+                          style={{
+                            marginRight: "10px",
+                            color: additionalSkill.iconColor
+                          }}
+                        />
+                        <AccordionTitle>{additionalSkill.title}</AccordionTitle>
+                        <AccordionIcon />
+                      </AccordionButton>
+                    </AccordionHeader>
+                    <AccordionPanel className="badger-accordion__panel js-badger-accordion-panel">
+                      <AccordionPanelInner className="js-badger-accordion-panel-inner">
+                        <div style={{ padding: "1rem 1.5rem" }}>
+                          {additionalSkill.description}
+                        </div>
+                        <SkillBar
+                          yearsExperience={additionalSkill.yearsExperience}
+                        >
+                          {additionalSkill.yearsExperience} year
+                          {additionalSkill.yearsExperience > 1 ? "s" : ""} of
+                          experience
+                        </SkillBar>
+                      </AccordionPanelInner>
+                    </AccordionPanel>
+                  </Accordion>
+                </Column>
+              );
+
+              return skillContent;
+            })}
           </Grid>
         );
 
         delayAdditionalSkill += 0.2;
-        return content;
+        return rowContent;
       })}
     </Section>
   );

@@ -21,6 +21,8 @@ import {
 } from "../../content";
 
 const About = props => {
+  let statDelay = 0.2;
+
   React.useEffect(() => {
     // Init slider
     new Swiper("[data-slider]", {
@@ -35,21 +37,21 @@ const About = props => {
     });
 
     // Count the stats up from 0 when this section appears
-    let animated = false;
-    document.addEventListener("gumshoeActivate", event => {
-      if (event.detail.content.getAttribute("id") === "about" && !animated) {
-        const funFactValues = document.querySelectorAll("[data-count-up]");
-        for (let funFactValue of funFactValues) {
-          const countUp = new CountUp(
-            funFactValue,
-            funFactValue.getAttribute("data-count-up")
-          );
-          countUp.start();
-        }
+    // let animated = false;
+    // document.addEventListener("gumshoeActivate", event => {
+    //   if (event.detail.content.getAttribute("id") === "about" && !animated) {
+    //     const funFactValues = document.querySelectorAll("[data-count-up]");
+    //     for (let funFactValue of funFactValues) {
+    //       const countUp = new CountUp(
+    //         funFactValue,
+    //         funFactValue.getAttribute("data-count-up")
+    //       );
+    //       countUp.start();
+    //     }
 
-        animated = true;
-      }
-    });
+    //     animated = true;
+    //   }
+    // });
   }, []);
 
   return (
@@ -60,25 +62,33 @@ const About = props => {
       </SectionHeader>
 
       <Grid>
-        <Column
-          className="wow animated fadeIn"
-          style={{ flexGrow: 3, marginRight: "1.5rem" }}
-        >
-          <FeatureText>{featureText}</FeatureText>
+        <Column style={{ flexGrow: 3, marginRight: "1.5rem" }}>
+          <FeatureText className="wow animated fadeIn">
+            {featureText}
+          </FeatureText>
 
-          <SupportingText>{supportingText}</SupportingText>
+          <SupportingText className="wow animated fadeIn">
+            {supportingText}
+          </SupportingText>
 
           <Infolets>
             {stats.map((infoRow, rowIndex) => (
               <Grid key={rowIndex}>
-                {infoRow.map((info, index) => (
-                  <Column key={`${rowIndex}-${index}`}>
-                    <AboutSection>
-                      <AboutSubHeading>{info.label}</AboutSubHeading>
-                      {info.value}
-                    </AboutSection>
-                  </Column>
-                ))}
+                {infoRow.map((info, index) => {
+                  const content = (
+                    <Column key={`${rowIndex}-${index}`}>
+                      <AboutSection
+                        className="wow animated fadeInUp"
+                        data-wow-delay={`${statDelay}s`}
+                      >
+                        <AboutSubHeading>{info.label}</AboutSubHeading>
+                        {info.value}
+                      </AboutSection>
+                    </Column>
+                  );
+                  statDelay += 0.1;
+                  return content;
+                })}
               </Grid>
             ))}
           </Infolets>
