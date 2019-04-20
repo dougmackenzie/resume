@@ -1,13 +1,5 @@
 import * as React from "react";
 
-// Pages
-import Intro from "./pages/Intro/Intro";
-import About from "./pages/About/About";
-import Skills from "./pages/Skills/Skills";
-import Work from "./pages/Work/Work";
-import History from "./pages/History/History";
-import Contact from "./pages/Contact/Contact";
-
 // Icons
 import {
   faLinkedin,
@@ -42,51 +34,6 @@ export const title = "Doug MacKenzie";
 export const subtitle = "Front End Engineer";
 export const email = "dougmacknz@gmail.com";
 export const phone = "+61 413 620 431";
-
-export const pages = [
-  {
-    id: "intro",
-    page: Intro,
-    title: title,
-    subtitle: subtitle,
-    navTitle: ""
-  },
-  {
-    id: "about",
-    page: About,
-    title: "About",
-    subtitle: "What I'm all about",
-    navTitle: "About"
-  },
-  {
-    id: "skills",
-    page: Skills,
-    title: "Skills",
-    subtitle: "What I can do",
-    navTitle: "Skills"
-  },
-  {
-    id: "history",
-    page: History,
-    title: "History",
-    subtitle: "My education and employment",
-    navTitle: "History"
-  },
-  {
-    id: "work",
-    page: Work,
-    title: "Portfolio",
-    subtitle: "Examples of my work",
-    navTitle: "Portfolio"
-  },
-  {
-    id: "contact",
-    page: Contact,
-    title: "Contact",
-    subtitle: "Get in touch",
-    navTitle: "Contact"
-  }
-];
 
 //-------------------------------------------
 // Sidebar

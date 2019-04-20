@@ -4,13 +4,67 @@ import SmoothScroll from "smooth-scroll";
 import Gumshoe from "gumshoejs";
 import WOW from "wow.js";
 
-import { pages } from "../content";
+//import { pages } from "../content";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Nav from "../pages/Nav/Nav";
 
+// Pages
+import Intro from "./Intro/Intro";
+import About from "./About/About";
+import Skills from "./Skills/Skills";
+import Work from "./Work/Work";
+import History from "./History/History";
+import Contact from "./Contact/Contact";
+
+const pages = [
+  {
+    id: "intro",
+    page: Intro,
+    title: "Doug MacKenzie",
+    subtitle: "Front End Engineer",
+    navTitle: ""
+  },
+  {
+    id: "about",
+    page: About,
+    title: "About",
+    subtitle: "What I'm all about",
+    navTitle: "About"
+  },
+  {
+    id: "skills",
+    page: Skills,
+    title: "Skills",
+    subtitle: "What I can do",
+    navTitle: "Skills"
+  },
+  {
+    id: "history",
+    page: History,
+    title: "History",
+    subtitle: "My education and employment",
+    navTitle: "History"
+  },
+  {
+    id: "work",
+    page: Work,
+    title: "Portfolio",
+    subtitle: "Examples of my work",
+    navTitle: "Portfolio"
+  },
+  {
+    id: "contact",
+    page: Contact,
+    title: "Contact",
+    subtitle: "Get in touch",
+    navTitle: "Contact"
+  }
+];
+
 const IndexPage = () => {
   React.useEffect(() => {
+    console.log(pages);
     new SmoothScroll("a[data-smoothscroll]");
     new Gumshoe("a[data-scrollspy]");
     new WOW().init();
@@ -33,7 +87,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO keywords={[`web developer`, `portfolio`, "front-end", `react`]} />
-      <Nav />
+      <Nav pages={pages} />
       <Content role="main">
         {pages.map(page => {
           const PageComponent = page.page;

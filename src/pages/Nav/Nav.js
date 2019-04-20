@@ -5,9 +5,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import Button from "../../components/Button/Button";
 
-import { brand, socialLinks, resumeLink, pages } from "../../content";
+import { brand, socialLinks, resumeLink } from "../../content";
 
-const Nav = () => (
+const Nav = props => (
   <Sidebar>
     <header role="banner">
       <ul style={{ margin: 0, padding: 0 }}>
@@ -20,7 +20,7 @@ const Nav = () => (
     </header>
     <nav role="navigation">
       <NavList>
-        {pages.map(page => {
+        {props.pages.map(page => {
           return (
             page.navTitle && (
               <li key={page.id}>
