@@ -54,7 +54,7 @@ const Skills = props => {
 
       <StyledHeading>Specialties</StyledHeading>
 
-      <Grid>
+      <Grid style={{ marginBottom: "3rem" }}>
         {mainSkills.map((mainSkill, index) => {
           const content = (
             <Column key={index}>
