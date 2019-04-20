@@ -72,10 +72,12 @@ const About = props => {
             {stats.map((infoRow, rowIndex) => (
               <Grid key={rowIndex}>
                 {infoRow.map((info, index) => (
-                  <AboutSection key={`${rowIndex}-${index}`}>
-                    <AboutSubHeading>{info.label}</AboutSubHeading>
-                    {info.value}
-                  </AboutSection>
+                  <Column key={`${rowIndex}-${index}`}>
+                    <AboutSection>
+                      <AboutSubHeading>{info.label}</AboutSubHeading>
+                      {info.value}
+                    </AboutSection>
+                  </Column>
                 ))}
               </Grid>
             ))}
@@ -157,10 +159,12 @@ const SupportingText = styled.div`
   margin-bottom: 40px;
 `;
 
-const AboutSection = styled(Column)`
+const AboutSection = styled.div`
   font-size: 15px;
   margin: 0;
   font-weight: 400;
+  border-left: medium double #f6921e;
+  padding-left: 1rem;
 
   @media (min-width: 769px) {
     margin: 0 0 10px;
