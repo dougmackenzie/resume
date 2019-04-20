@@ -52,7 +52,7 @@ const Skills = props => {
         <SectionSubTitle>{props.subtitle}</SectionSubTitle>
       </SectionHeader>
 
-      <h5>Specialties</h5>
+      <StyledHeading>Specialties</StyledHeading>
 
       <Grid>
         {mainSkills.map((mainSkill, index) => {
@@ -92,7 +92,7 @@ const Skills = props => {
         })}
       </Grid>
 
-      <h5>Additional Skills</h5>
+      <StyledHeading>Additional Skills</StyledHeading>
 
       {additionalSkills.map((additionalSkillsRow, rowIndex) => {
         const rowContent = (
@@ -168,6 +168,31 @@ const SkillBar = styled.div`
     width: ${props =>
       Math.ceil((props.yearsExperience / totalYearsExperience) * 100)}%;
     opacity: 0.3;
+  }
+`;
+
+const StyledHeading = styled.h5`
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: #666;
+  text-transform: uppercase;
+  margin: 1rem 0;
+  text-align: center;
+
+  display: grid;
+  grid-template-columns: 3rem max-content 0;
+  grid-template-rows: 1rem 0;
+  grid-gap: 0 1rem;
+  align-items: center;
+
+  :after,
+  :before {
+    content: " ";
+    display: block;
+    border-top: 1px solid #f6921e;
+    border-bottom: 1px solid #f6921e;
+    height: 1px;
   }
 `;
 
