@@ -74,7 +74,7 @@ const IntroTitle = styled.h1`
   font-family: "Playfair Display", times, sans-serif;
   font-style: italic;
   font-weight: 400;
-  letter-spacing: 3px;
+  letter-spacing: 0.2rem;
   font-size: 46px;
   color: #eee;
   margin: 0 0 5px;

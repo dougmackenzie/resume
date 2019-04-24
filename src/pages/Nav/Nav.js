@@ -71,8 +71,11 @@ const Brand = styled.a`
   transition: opacity 0.2s;
 
   span {
-    transition: background-size 1s ease-in;
-    background-image: linear-gradient(120deg, #777 0%, #777 100%);
+    background-image: linear-gradient(
+      120deg,
+      rgba(132, 250, 176, 0.5) 0%,
+      rgba(143, 211, 244, 0.5) 100%
+    );
     background-repeat: no-repeat;
     background-size: 0 0.2em;
     background-position: 0 92%;
