@@ -13,7 +13,7 @@ const Nav = props => (
       <ul style={{ margin: 0, padding: 0 }}>
         <li>
           <Brand href="#intro" data-smoothscroll data-scrollspy>
-            {brand}
+            <MagicalUnderline>{brand}</MagicalUnderline>
           </Brand>
         </li>
       </ul>
@@ -70,9 +70,29 @@ const Brand = styled.a`
   opacity: 0.7;
   transition: opacity 0.2s;
 
-  &.active {
-    opacity: 1;
+  span {
+    transition: background-size 1s ease-in;
+    background-image: linear-gradient(120deg, #777 0%, #777 100%);
+    background-repeat: no-repeat;
+    background-size: 0 0.2em;
+    background-position: 0 92%;
+    transition: background-size 0.25s ease-in;
   }
+
+  &.active,
+  :hover {
+    opacity: 1;
+
+    span {
+      background-size: 100% 0.2em;
+    }
+  }
+`;
+
+const MagicalUnderline = styled.span`
+  // &:hover {
+  //   background-size: 100% 88%;
+  // }
 `;
 
 const NavList = styled.ul`
