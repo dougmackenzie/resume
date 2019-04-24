@@ -5,8 +5,6 @@ import { faAngleDoubleDown } from "@fortawesome/pro-light-svg-icons";
 
 import { title, subtitle } from "../../content";
 
-import "animate.css/animate.css";
-
 import bgPattern from "../../images/bg-pattern.png";
 import featureImage from "../../images/feature-image.jpg";
 
