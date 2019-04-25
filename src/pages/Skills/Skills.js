@@ -151,23 +151,20 @@ const Skills = props => {
 };
 
 const SkillBar = styled.div`
-  font-size: 12px;
   width: 100%;
+  font-size: 0.75rem;
+  font-style: italic;
   text-align: center;
-  padding: 0;
-  color: #333;
-  font-weight: 400;
 
   &:before {
     position: absolute;
-    content: "";
+    content: " ";
     left: 0;
     bottom: 0;
     height: 18px;
-    background-color: #ffcf9d;
+    background-color: rgba(143, 211, 244, 0.3);
     width: ${props =>
       Math.ceil((props.yearsExperience / totalYearsExperience) * 100)}%;
-    opacity: 0.3;
   }
 `;
 
