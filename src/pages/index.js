@@ -64,7 +64,6 @@ const pages = [
 
 const IndexPage = () => {
   React.useEffect(() => {
-    console.log(pages);
     new SmoothScroll("a[data-smoothscroll]");
     new Gumshoe("a[data-scrollspy]");
     new WOW().init();
