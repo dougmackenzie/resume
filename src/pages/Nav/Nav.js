@@ -106,10 +106,9 @@ const NavList = styled.ul`
       color: #fff;
       opacity: 0.7;
       text-decoration: none;
-      font-size: 17px;
-      text-transform: uppercase;
+      font-size: 1.2rem;
       font-weight: 400;
-      letter-spacing: 2px;
+      letter-spacing: 0.1rem;
       transition: all 0.2s;
 
       :hover,
@@ -140,7 +139,7 @@ const SocialList = styled.ul`
 
   > li {
     display: inline-block;
-    padding: 0 10px;
+    margin: 0 10px;
 
     > a {
       color: #fff;
