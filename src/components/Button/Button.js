@@ -1,3 +1,5 @@
+// Animation credit: https://codemyui.com/button-border-and-text-color-fill-on-hover/
+
 import styled from "styled-components";
 
 const color = "#58afd1";
