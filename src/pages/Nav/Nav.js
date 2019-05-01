@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import Sidebar from "../../components/Sidebar/Sidebar";
 import Button from "../../components/Button/Button";
+import RainbowUnderline from "../../components/RainbowUnderline/RainbowUnderline";
 
 import { brand, socialLinks, resumeLink } from "../../content";
 
@@ -13,7 +14,7 @@ const Nav = props => (
       <ul style={{ margin: 0, padding: 0 }}>
         <li>
           <Brand href="#intro" data-smoothscroll data-scrollspy>
-            <span>{brand}</span>
+            <RainbowUnderline opacity="0.5">{brand}</RainbowUnderline>
           </Brand>
         </li>
       </ul>
@@ -69,18 +70,6 @@ const Brand = styled.a`
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   opacity: 0.7;
   transition: opacity 0.2s;
-
-  span {
-    background-image: linear-gradient(
-      120deg,
-      rgba(132, 250, 176, 0.5) 0%,
-      rgba(143, 211, 244, 0.5) 100%
-    );
-    background-repeat: no-repeat;
-    background-size: 0 0.2em;
-    background-position: 0 92%;
-    transition: background-size 0.25s ease-in;
-  }
 
   &.active,
   :hover {

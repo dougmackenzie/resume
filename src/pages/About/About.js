@@ -12,13 +12,7 @@ import Section, {
 import Grid from "../../components/Grid/Grid";
 import Column from "../../components/Grid/Column";
 
-import {
-  slideshowImages,
-  stats,
-  funFacts,
-  featureText,
-  supportingText
-} from "../../content";
+import { slideshowImages, stats, aboutText } from "../../content";
 
 const About = props => {
   let statDelay = 0.2;
@@ -63,13 +57,7 @@ const About = props => {
 
       <Grid>
         <Column style={{ flexGrow: 3, marginRight: "1.5rem" }}>
-          <FeatureText className="wow animated fadeIn">
-            {featureText}
-          </FeatureText>
-
-          <SupportingText className="wow animated fadeIn">
-            {supportingText}
-          </SupportingText>
+          <div className="wow animated fadeIn">{aboutText}</div>
 
           <Infolets>
             {stats.map((infoRow, rowIndex) => (
@@ -151,23 +139,6 @@ const About = props => {
     </Section>
   );
 };
-
-const FeatureText = styled.p`
-  font-size: 34px;
-  font-weight: 300;
-  color: #a0a0a0;
-  margin: 0 0 30px;
-`;
-
-const FeatureTextHighlight = styled.strong`
-  color: #0f0e10;
-  font-weight: 300;
-  font-size: inherit;
-`;
-
-const SupportingText = styled.div`
-  margin-bottom: 40px;
-`;
 
 const AboutSection = styled.div`
   font-size: 15px;

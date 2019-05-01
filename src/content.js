@@ -1,4 +1,5 @@
 import * as React from "react";
+import styled from "styled-components";
 
 // Icons
 import {
@@ -23,6 +24,8 @@ import {
   faPortrait
 } from "@fortawesome/pro-light-svg-icons";
 
+import RainbowUnderline from "./components/RainbowUnderline/RainbowUnderline";
+
 // Images for about slider
 import butterflyImage from "./images/about/butterfly.jpg";
 import vivianImage from "./images/about/vvn.jpg";
@@ -45,36 +48,63 @@ export const socialLinks = [
   {
     name: "GitHub",
     href: "https://github.com/dougmacknz",
-    icon: faGithub
+    icon: faGithub,
+    color: "#333"
   },
   {
     name: "Medium",
     href: "https://medium.com/@dougmacknz",
-    icon: faMedium
+    icon: faMedium,
+    color: "#00ab6c"
   },
   {
     name: "LinkedIn",
     href: "https://www.linkedin.com/in/dougmacknz",
-    icon: faLinkedin
+    icon: faLinkedin,
+    color: "#0077b5"
   }
 ];
 
 //-------------------------------------------
 // About
 //-------------------------------------------
-export const featureText =
-  "I like problem solving and making software less painful for people.";
-export const supportingText = (
+const FeatureText = styled.p`
+  font-size: 34px;
+  font-weight: 300;
+  color: #666;
+  margin: 0 0 30px;
+`;
+
+const FeatureTextHighlight = styled(RainbowUnderline)`
+  color: #333;
+  background-size: 100% 0.2em;
+`;
+
+const SupportingText = styled.div`
+  margin-bottom: 40px;
+`;
+
+export const aboutText = (
   <>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta massa
-      non felis rhoncus placerat. Morbi leo arcu, sollicitudin eget sapien ac,
-      elementum ornare magna.
-    </p>
-    <p>
-      Aliquam eu blandit nunc, at blandit risus. Aliquam vel sem diam. Phasellus
-      id condimentum tellus. Cras eu augue est. Phasellus a purus nulla.
-    </p>
+    <FeatureText>
+      I like making software{" "}
+      <FeatureTextHighlight opacity="0.7">
+        less painful for people
+      </FeatureTextHighlight>
+      .
+    </FeatureText>
+    <SupportingText>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta
+        massa non felis rhoncus placerat. Morbi leo arcu, sollicitudin eget
+        sapien ac, elementum ornare magna.
+      </p>
+      <p>
+        Aliquam eu blandit nunc, at blandit risus. Aliquam vel sem diam.
+        Phasellus id condimentum tellus. Cras eu augue est. Phasellus a purus
+        nulla.
+      </p>
+    </SupportingText>
   </>
 );
 
