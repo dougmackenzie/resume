@@ -6,7 +6,7 @@ import Sidebar from "../../components/Sidebar/Sidebar";
 import Button from "../../components/Button/Button";
 import RainbowUnderline from "../../components/RainbowUnderline/RainbowUnderline";
 
-import { brand, socialLinks, resumeLink } from "../../content";
+import { brand, socialLinks, resumePDF } from "../../content";
 
 const Nav = props => (
   <Sidebar>
@@ -36,7 +36,11 @@ const Nav = props => (
     </nav>
 
     <BottomSection>
-      {resumeLink && <Button href={resumeLink}>Download Resume</Button>}
+      {resumePDF && (
+        <Button href={resumePDF} target="_blank" rel="noopener noreferrer">
+          Download Resume
+        </Button>
+      )}
 
       <SocialList>
         {socialLinks.map((socialLink, index) => (

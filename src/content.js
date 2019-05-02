@@ -30,6 +30,9 @@ import RainbowUnderline from "./components/RainbowUnderline/RainbowUnderline";
 import butterflyImage from "./images/about/butterfly.jpg";
 import vivianImage from "./images/about/vvn.jpg";
 
+// Resume PDF file
+import resume from "./files/resume-doug-mackenzie.pdf";
+
 //-------------------------------------------
 // General
 //-------------------------------------------
@@ -42,7 +45,7 @@ export const phone = "+61 413 620 431";
 // Sidebar
 //-------------------------------------------
 export const brand = "dougmacknz";
-export const resumeLink = "doug-mackenzie-resume.pdf";
+export const resumePDF = resume;
 
 export const socialLinks = [
   {

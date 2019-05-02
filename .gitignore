@@ -72,3 +72,6 @@ yarn-error.log
 amplify/
 src/aws-exports.js
 .amplifyrc
+
+# Resume file (can be created be npm run build-pdf)
+src/files/resume*
