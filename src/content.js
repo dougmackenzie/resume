@@ -95,15 +95,29 @@ export const aboutText = (
     </FeatureText>
     <SupportingText>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta
-        massa non felis rhoncus placerat. Morbi leo arcu, sollicitudin eget
-        sapien ac, elementum ornare magna.
+        I'm passionate about creating and improving software on the web. Ten
+        years ago I studied design &amp; web development &mdash; since then I
+        have worked on numerous commerical and personal projects to improve user
+        experience, internal processes, and coding standards.
       </p>
-      <p>
-        Aliquam eu blandit nunc, at blandit risus. Aliquam vel sem diam.
-        Phasellus id condimentum tellus. Cras eu augue est. Phasellus a purus
-        nulla.
-      </p>
+      <p>Some of my greatest achievements include:</p>
+      <ul>
+        <li>
+          Leading front-end development on a product used by over 500,000 people
+          &mdash; including the uphill task of introducing React &amp;
+          TypeScript to the codebase and porting old code.
+        </li>
+        <li>
+          Contributions to widely used open source projects such as Storybook
+          &amp; React Styleguidist &mdash; including integrating E2E tests with
+          Cypress.
+        </li>
+        <li>
+          Going from zero Agile knowledge to leading a development team in
+          improving processes and taking on all Scrum Master responsibilities in
+          the space of a year.
+        </li>
+      </ul>
     </SupportingText>
   </>
 );
@@ -134,7 +148,7 @@ export const stats = [
   ],
   [
     {
-      label: "Preferred Dev Environment",
+      label: "Dev Environment",
       value: <>Ubuntu &bull; VSCode</>
     },
     {
@@ -181,7 +195,7 @@ export const mainSkills = [
     iconColor: "#f7df1e",
     yearsExperience: 10,
     description:
-      "I've been working with JavaScript for my entire career, however like many developers in my era- I didn't take the time to learn the language properly. In the past year I have been focusing on understanding the core of the language."
+      "I've been working with JavaScript for a while. In the past year I have been solidifying my core JS knowledge, moving away from jQuery and hacky JS."
   },
   {
     title: "React",
@@ -189,7 +203,7 @@ export const mainSkills = [
     iconColor: "rgb(0, 216, 255)",
     yearsExperience: 1,
     description:
-      "I was a bit late to the party with React, I only picked it up a year ago. However I've been working with it heavily since that point."
+      "React has been my component based JS framework of choice. For the past year I have been working with it exclusively and I am looking to continue working and improving in creating scalable React applications."
   },
   {
     title: "UI Design",
@@ -197,15 +211,15 @@ export const mainSkills = [
     iconColor: "#f6921e",
     yearsExperience: 10,
     description:
-      "Creating intuitive interfaces for users has long been a passion of mine.I am often called upon when there is a creative solution required for a user need or problem."
+      "Creating intuitive interfaces for users has long been a passion of mine. I am often called upon when there is an innovative solution required for a user need or problem."
   },
   {
-    title: "CSS & Scoped Styling",
+    title: "CSS",
     icon: faCss3Alt,
     iconColor: "#4771b5",
     yearsExperience: 10,
     description:
-      "Dealing with CSS quirks has long been a speciality of mine. More recently I have been working with Styled Components for scoped styling."
+      "Styling interfaces and dealing with CSS quirks has been a speciality of mine since starting in web development. More recently I have been working with Styled Components for maintainable and large scale CSS."
   }
 ];
 
@@ -217,7 +231,7 @@ export const additionalSkills = [
       iconColor: "#4678c7",
       yearsExperience: 1,
       description:
-        "I worked with TypeScript for 6 months while integrating React at Schoolbox."
+        "Along with React, I have implemented TypeScript into a large scale product. This is a skill that I will continue to improve over the next few years."
     },
     {
       title: "Vue.js",
@@ -225,7 +239,7 @@ export const additionalSkills = [
       iconColor: "rgb(65, 184, 131)",
       yearsExperience: 1,
       description:
-        "Vue was the first component based framework I learned. I created a couple of interfaces using Vue at Schoolbox."
+        "Vue was the first component based framework I learned before moving onto React. I have created a few interfaces with Vue."
     },
     {
       title: "PHP",
@@ -233,14 +247,15 @@ export const additionalSkills = [
       iconColor: "#4f5b93",
       yearsExperience: 10,
       description:
-        "I have worked with PHP my entire career. Though I specialise in front-end development - I am capable of working with PHP to get things done when needed."
+        "I have worked with PHP my entire career. Though I specialise in front-end development - I am capable of working with some PHP when required."
     },
     {
       title: "Laravel",
       icon: faLaravel,
       iconColor: "#4771b5",
       yearsExperience: 1,
-      description: "I have built a couple of side projects with Laravel. "
+      description:
+        "Some of my side projects have been built with Laravel. This was my introduction to MVC pattern which has proven helpful in other contexts."
     }
   ],
   [
@@ -250,7 +265,7 @@ export const additionalSkills = [
       iconColor: "#345292",
       yearsExperience: 3,
       description:
-        "Accessibility is an important focus point when I create interfaces."
+        "Accessibility is an important focus for me as a front end developer. I am continuously looking to improve my knowledge and meet accessibility standards in my work."
     },
     {
       title: "Scrum",
@@ -265,7 +280,7 @@ export const additionalSkills = [
       icon: faCode,
       yearsExperience: 2.5,
       description:
-        "Code review has been large part of my responsibilites over the last two and a half years. I pride myself in being able to find performance and practice improvements, whilst finding the balance in effort vs time."
+        "Code review has been large part of my responsibilites over the last two and a half years. I pride myself in being able to find improvements, whilst finding the balance in effort vs time."
     },
 
     {
@@ -274,7 +289,7 @@ export const additionalSkills = [
       iconColor: "#077bf6",
       yearsExperience: 1.5,
       description:
-        "I have been a part of designing and conducting surveys, interviews, testing."
+        "I have been part of a few UX research projects. I have helped with surveys, interviews, brainstorming, wireframing, prototyping & user testing."
     }
   ]
 ];
