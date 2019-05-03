@@ -159,8 +159,8 @@ const Resume = () => (
 
         <Section>
           <SectionHeading>Specialities</SectionHeading>
-          {mainSkills.map(skill => (
-            <Skill>
+          {mainSkills.map((skill, index) => (
+            <Skill key={index}>
               <Text>{skill.title}</Text>
               <SkillSubtext>
                 {skill.yearsExperience} years of experience
@@ -171,8 +171,10 @@ const Resume = () => (
 
         <Section>
           <SectionHeading>Additional Skills</SectionHeading>
-          {additionalSkills.map(skill => (
-            <Text>{skill.title}</Text>
+          {additionalSkills.map((skill, index) => (
+            <Text key={index} style={{ marginBottom: 1 }}>
+              {skill.title}
+            </Text>
           ))}
         </Section>
       </Side>
