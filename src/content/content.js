@@ -24,7 +24,7 @@ import {
   faPortrait
 } from "@fortawesome/pro-light-svg-icons";
 
-import RainbowUnderline from "./components/RainbowUnderline/RainbowUnderline";
+import RainbowUnderline from "../components/RainbowUnderline/RainbowUnderline";
 
 // Images for about slider
 import butterflyImage from "./images/about/butterfly.jpg";
