@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDoubleDown } from "@fortawesome/pro-light-svg-icons";
 
-import { title, subtitle } from "../../content";
+import { title, subtitle } from "../../content/content";
 
 import bgPattern from "../../images/bg-pattern.png";
 import featureImage from "../../images/feature-image.jpg";

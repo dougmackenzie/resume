@@ -12,7 +12,7 @@ import Section, {
 import Grid from "../../components/Grid/Grid";
 import Column from "../../components/Grid/Column";
 
-import { slideshowImages, stats, aboutText } from "../../content";
+import { slideshowImages, stats, aboutText } from "../../content/content";
 
 const About = props => {
   let statDelay = 0.2;

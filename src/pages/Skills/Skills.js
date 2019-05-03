@@ -25,7 +25,7 @@ import {
   mainSkills,
   additionalSkills,
   totalYearsExperience
-} from "../../content";
+} from "../../content/content";
 
 const Skills = props => {
   let delayMainSkill = 0;

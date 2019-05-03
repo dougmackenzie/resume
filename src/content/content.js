@@ -27,11 +27,11 @@ import {
 import RainbowUnderline from "../components/RainbowUnderline/RainbowUnderline";
 
 // Images for about slider
-import butterflyImage from "./images/about/butterfly.jpg";
-import vivianImage from "./images/about/vvn.jpg";
+import butterflyImage from "../images/about/butterfly.jpg";
+import vivianImage from "../images/about/vvn.jpg";
 
 // Resume PDF file
-import resume from "./files/resume-doug-mackenzie.pdf";
+import resume from "../files/resume-doug-mackenzie.pdf";
 
 //-------------------------------------------
 // General

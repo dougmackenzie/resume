@@ -6,7 +6,7 @@ import Sidebar from "../../components/Sidebar/Sidebar";
 import Button from "../../components/Button/Button";
 import RainbowUnderline from "../../components/RainbowUnderline/RainbowUnderline";
 
-import { brand, socialLinks, resumePDF } from "../../content";
+import { brand, socialLinks, resumePDF } from "../../content/content";
 
 const Nav = props => (
   <Sidebar>
