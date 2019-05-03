@@ -23,3 +23,12 @@ export const workHistory = [
     summary: "Bla bla bla. Bla bla bla"
   }
 ];
+
+export const educationHistory = [
+  {
+    school: "Yoobee",
+    course: "Diploma of Web Development",
+    period: "2008 - 2009",
+    summary: "Yep yep yep"
+  }
+];
