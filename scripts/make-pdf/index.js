@@ -1,4 +1,5 @@
 import * as path from "path";
+import fs from "fs";
 import React from "react";
 import ReactPDF, {
   Page,
@@ -11,7 +12,16 @@ import ReactPDF, {
 } from "@react-pdf/renderer";
 import styled from "@react-pdf/styled-components";
 
-import { title, subtitle, workHistory } from "../../src/content/pdf";
+import {
+  title,
+  subtitle,
+  workHistory,
+  location,
+  website,
+  email,
+  phone,
+  mainSkills
+} from "../../src/content/pdf";
 
 Font.register({
   family: "Playfair Display",
@@ -22,7 +32,41 @@ Font.register({
 
 Font.register({
   family: "Lato",
-  src: "http://fonts.gstatic.com/s/lato/v15/S6uyw4BMUTPHjx4wWyWtFCc.ttf"
+  fonts: [
+    { src: "http://fonts.gstatic.com/s/lato/v15/S6uyw4BMUTPHjx4wWyWtFCc.ttf" },
+    {
+      src:
+        "http://fonts.gstatic.com/s/lato/v15/S6u9w4BMUTPHh6UVSwiPHA3q5d0.ttf",
+      fontWeight: 700
+    }
+  ]
+});
+
+Font.register({
+  family: "Oswald",
+  fonts: [
+    {
+      src:
+        "http://fonts.gstatic.com/s/oswald/v17/TK3iWkUHHAIjg752GT8Dl-1PKw.ttf",
+      fontWeight: 400
+    },
+    // {
+    //   src:
+    //     "http://fonts.gstatic.com/s/oswald/v17/TK3hWkUHHAIjg75-6hwTus9HAZek1w.ttf",
+    //   fontWeight: 500
+    // },
+    {
+      src:
+        "http://fonts.gstatic.com/s/oswald/v17/TK3hWkUHHAIjg75-xhsTus9HAZek1w.ttf",
+      fontStyle: "normal",
+      fontWeight: 600
+    }
+    // {
+    //   src:
+    //     "http://fonts.gstatic.com/s/oswald/v17/TK3hWkUHHAIjg75-ohoTus9HAZek1w.ttf",
+    //   fontWeight: 700
+    // }
+  ]
 });
 
 const pageStyles = StyleSheet.create({
@@ -30,51 +74,57 @@ const pageStyles = StyleSheet.create({
   flexDirection: "row",
   backgroundColor: "#E4E4E4",
   fontSize: 11,
-  color: "#333",
-  letterSpacing: 0.5
+  color: "#444"
+  //letterSpacing: 0
 });
 
 const Side = styled.View`
   padding: 30px;
   background-color: #1c1e26;
-  width: 200;
+  width: 30%;
   color: #ccc;
 `;
 
 const Main = styled.View`
   background: #fff;
   padding: 30px;
-  flexgrow: 1;
+  width: 70%;
 `;
 
 const Section = styled.View`
-  margin-bottom: 10;
+  margin-bottom: 25px;
 `;
 
 const SectionHeading = styled.Text`
-  font-size: 14;
+  font-family: "Oswald";
+  font-size: 12px;
   margin-bottom: 8;
   color: #58afd1;
+  text-transform: uppercase;
 `;
 
 const Brand = styled.View`
   margin-bottom: 70;
 `;
 
+const Header = styled.View`
+  margin-bottom: 30px;
+`;
+
 const Title = styled.Text`
-  font-family: "Playfair Display";
-  font-size: 24;
-  font-style: italic;
-  color: #fff;
-  margin-bottom: 8;
-  letter-spacing: 1;
+  font-family: "Oswald";
+  font-size: 28px;
+  font-weight: 600;
+  //text-transform: uppercase;
+  color: #1c1e26;
+  margin-bottom: 3px;
 `;
 
 const Subtitle = styled.Text`
-  font-size: 9;
+  font-size: 10px;
   text-transform: uppercase;
-  letter-spacing: 2;
-  color: #ccc;
+  letter-spacing: 2px;
+  color: #aaa;
 `;
 
 const HistorySection = styled.View`
@@ -89,29 +139,38 @@ const HistorySubheading = styled.Text`
   font-size: 9;
   text-transform: uppercase;
   margin-bottom: 5;
+  color: #aaa;
 `;
 
-// Create Document Component
 const Resume = () => (
   <Document>
     <Page size="A4" style={pageStyles}>
       <Side>
-        <Brand>
-          <Title>{title}</Title>
-          <Subtitle>{subtitle}</Subtitle>
-        </Brand>
+        <Brand />
 
         <Section>
-          <SectionHeading>Contact</SectionHeading>
-          <ContactItem>+61 413 620 431</ContactItem>
-          <ContactItem>dougmacknz@gmail.com</ContactItem>
+          <ContactItem>{location}</ContactItem>
+          <ContactItem>{phone}</ContactItem>
+          <ContactItem>{email}</ContactItem>
           <ContactItem>
-            <Link src="http://www.dougmack.nz">dougmack.nz</Link>
+            <Link src="http://www.dougmack.nz">{website}</Link>
           </ContactItem>
+        </Section>
+
+        <Section>
+          <SectionHeading>Skills</SectionHeading>
+          {mainSkills.map(skill => (
+            <Text>{skill.title}</Text>
+          ))}
         </Section>
       </Side>
 
       <Main>
+        <Header>
+          <Title>{title}</Title>
+          <Subtitle>{subtitle}</Subtitle>
+        </Header>
+
         <Section>
           <SectionHeading>Summary</SectionHeading>
           <Text>
@@ -120,11 +179,6 @@ const Resume = () => (
             I have worked on numerous commerical and personal projects to
             improve user experience, internal processes, and coding standards.
           </Text>
-        </Section>
-
-        <Section>
-          <SectionHeading>Skills</SectionHeading>
-          <Text>asdasdasd</Text>
         </Section>
 
         <Section>
