@@ -21,7 +21,8 @@ import {
   website,
   email,
   phone,
-  mainSkills
+  mainSkills,
+  additionalSkills
 } from "../../src/content/pdf";
 
 Font.register({
@@ -165,6 +166,13 @@ const Resume = () => (
                 {skill.yearsExperience} years of experience
               </SkillSubtext>
             </Skill>
+          ))}
+        </Section>
+
+        <Section>
+          <SectionHeading>Additional Skills</SectionHeading>
+          {additionalSkills.map(skill => (
+            <Text>{skill.title}</Text>
           ))}
         </Section>
       </Side>
