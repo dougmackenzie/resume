@@ -80,7 +80,7 @@ const pageStyles = StyleSheet.create({
 });
 
 const Side = styled.View`
-  padding: 30px;
+  padding: 30pt;
   background-color: #1c1e26;
   width: 30%;
   color: #ccc;
@@ -88,17 +88,17 @@ const Side = styled.View`
 
 const Main = styled.View`
   background: #fff;
-  padding: 30px;
+  padding: 30pt;
   width: 70%;
 `;
 
 const Section = styled.View`
-  margin-bottom: 25px;
+  margin-bottom: 25pt;
 `;
 
 const SectionHeading = styled.Text`
   font-family: "Oswald";
-  font-size: 12px;
+  font-size: 12pt;
   margin-bottom: 8;
   color: #58afd1;
   text-transform: uppercase;
@@ -109,22 +109,22 @@ const Brand = styled.View`
 `;
 
 const Header = styled.View`
-  margin-bottom: 30px;
+  margin-bottom: 30pt;
 `;
 
 const Title = styled.Text`
   font-family: "Oswald";
-  font-size: 28px;
+  font-size: 28pt;
   font-weight: 600;
   //text-transform: uppercase;
   color: #1c1e26;
-  margin-bottom: 3px;
+  margin-bottom: 3pt;
 `;
 
 const Subtitle = styled.Text`
-  font-size: 10px;
+  font-size: 10pt;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 2pt;
   color: #aaa;
 `;
 
