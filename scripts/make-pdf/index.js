@@ -25,13 +25,6 @@ import {
 } from "../../src/content/pdf";
 
 Font.register({
-  family: "Playfair Display",
-  src:
-    "http://fonts.gstatic.com/s/playfairdisplay/v14/nuFkD-vYSZviVYUb_rj3ij__anPXDTnogkk-yRZrPA.ttf",
-  fontStyle: "italic"
-});
-
-Font.register({
   family: "Lato",
   fonts: [
     { src: "http://fonts.gstatic.com/s/lato/v15/S6uyw4BMUTPHjx4wWyWtFCc.ttf" },
@@ -50,23 +43,7 @@ Font.register({
       src:
         "http://fonts.gstatic.com/s/oswald/v17/TK3iWkUHHAIjg752GT8Dl-1PKw.ttf",
       fontWeight: 400
-    },
-    // {
-    //   src:
-    //     "http://fonts.gstatic.com/s/oswald/v17/TK3hWkUHHAIjg75-6hwTus9HAZek1w.ttf",
-    //   fontWeight: 500
-    // },
-    {
-      src:
-        "http://fonts.gstatic.com/s/oswald/v17/TK3hWkUHHAIjg75-xhsTus9HAZek1w.ttf",
-      fontStyle: "normal",
-      fontWeight: 600
     }
-    // {
-    //   src:
-    //     "http://fonts.gstatic.com/s/oswald/v17/TK3hWkUHHAIjg75-ohoTus9HAZek1w.ttf",
-    //   fontWeight: 700
-    // }
   ]
 });
 
@@ -75,8 +52,7 @@ const pageStyles = StyleSheet.create({
   flexDirection: "row",
   backgroundColor: "#E4E4E4",
   fontSize: 11,
-  color: "#444"
-  //letterSpacing: 0
+  color: "#555"
 });
 
 const Side = styled.View`
@@ -104,10 +80,6 @@ const SectionHeading = styled.Text`
   text-transform: uppercase;
 `;
 
-const Brand = styled.View`
-  margin-bottom: 70;
-`;
-
 const Header = styled.View`
   margin-bottom: 30pt;
 `;
@@ -115,8 +87,7 @@ const Header = styled.View`
 const Title = styled.Text`
   font-family: "Oswald";
   font-size: 28pt;
-  font-weight: 600;
-  //text-transform: uppercase;
+  font-weight: normal;
   color: #1c1e26;
   margin-bottom: 3pt;
 `;
@@ -129,18 +100,24 @@ const Subtitle = styled.Text`
 `;
 
 const HistorySection = styled.View`
-  margin-bottom: 8;
+  margin-bottom: 16pt;
 `;
 
 const ContactItem = styled.Text`
-  margin-bottom: 3;
+  margin-bottom: 3pt;
+`;
+
+const HistoryHeading = styled.View`
+  flex-direction: row;
+  margin-bottom: 2pt;
 `;
 
 const HistorySubheading = styled.Text`
-  font-size: 9;
+  font-size: 9pt;
   text-transform: uppercase;
-  margin-bottom: 5;
+  margin-bottom: 5pt;
   color: #aaa;
+  letter-spacing: 0.5pt;
 `;
 
 const portraitImage = fs.readFileSync(
@@ -151,14 +128,15 @@ const Resume = () => (
   <Document>
     <Page size="A4" style={pageStyles}>
       <Side>
-        <Brand>
+        <Section>
           <Image
             src={{ data: portraitImage, format: "png" }}
             style={{ border: "2pt solid #ccc", borderRadius: "1000pt" }}
           />
-        </Brand>
+        </Section>
 
         <Section>
+          <SectionHeading>@dougmacknz</SectionHeading>
           <ContactItem>{location}</ContactItem>
           <ContactItem>{phone}</ContactItem>
           <ContactItem>{email}</ContactItem>
@@ -192,12 +170,16 @@ const Resume = () => (
         </Section>
 
         <Section>
-          <SectionHeading>Work Experience</SectionHeading>
+          <SectionHeading>Experience</SectionHeading>
 
           {workHistory.map((workHistoryItem, index) => (
             <HistorySection key={index}>
-              <Text>{workHistoryItem.company},</Text>
-              <Text> {workHistoryItem.position}</Text>
+              <HistoryHeading>
+                <Text style={{ fontWeight: 700, marginRight: 3 }}>
+                  {workHistoryItem.company},
+                </Text>
+                <Text>{workHistoryItem.position}</Text>
+              </HistoryHeading>
 
               <HistorySubheading>{workHistoryItem.period}</HistorySubheading>
 
