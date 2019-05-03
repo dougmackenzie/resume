@@ -39,7 +39,7 @@ export const workHistory = [
   {
     company: "The King David School",
     position: "Web Developer",
-    period: "Aug 2012 - Apr 2016",
+    period: "Sep 2012 - Apr 2016",
     summary: "Bla bla bla. Bla bla bla"
   },
   {
