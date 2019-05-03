@@ -120,6 +120,17 @@ const HistorySubheading = styled.Text`
   letter-spacing: 0.5pt;
 `;
 
+const Skill = styled.View`
+  padding-left: 5pt;
+  border-left: 1pt double #f6921e;
+  margin-bottom: 8pt;
+`;
+
+const SkillSubtext = styled.Text`
+  color: #666;
+  font-size: 10pt;
+`;
+
 const portraitImage = fs.readFileSync(
   path.join(__dirname, "../../src/images/portrait.png")
 );
@@ -146,9 +157,14 @@ const Resume = () => (
         </Section>
 
         <Section>
-          <SectionHeading>Skills</SectionHeading>
+          <SectionHeading>Specialities</SectionHeading>
           {mainSkills.map(skill => (
-            <Text>{skill.title}</Text>
+            <Skill>
+              <Text>{skill.title}</Text>
+              <SkillSubtext>
+                {skill.yearsExperience} years of experience
+              </SkillSubtext>
+            </Skill>
           ))}
         </Section>
       </Side>
