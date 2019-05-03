@@ -8,7 +8,8 @@ import ReactPDF, {
   Document,
   StyleSheet,
   Font,
-  Link
+  Link,
+  Image
 } from "@react-pdf/renderer";
 import styled from "@react-pdf/styled-components";
 
@@ -142,11 +143,20 @@ const HistorySubheading = styled.Text`
   color: #aaa;
 `;
 
+const portraitImage = fs.readFileSync(
+  path.join(__dirname, "../../src/images/portrait.png")
+);
+
 const Resume = () => (
   <Document>
     <Page size="A4" style={pageStyles}>
       <Side>
-        <Brand />
+        <Brand>
+          <Image
+            src={{ data: portraitImage, format: "png" }}
+            style={{ border: "2pt solid #ccc", borderRadius: "1000pt" }}
+          />
+        </Brand>
 
         <Section>
           <ContactItem>{location}</ContactItem>
