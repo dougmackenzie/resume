@@ -46,13 +46,13 @@ const pages = [
     subtitle: "My education and employment",
     navTitle: "History"
   },
-  {
-    id: "work",
-    page: Work,
-    title: "Portfolio",
-    subtitle: "Examples of my work",
-    navTitle: "Portfolio"
-  },
+  // {
+  //   id: "work",
+  //   page: Work,
+  //   title: "Portfolio",
+  //   subtitle: "Examples of my work",
+  //   navTitle: "Portfolio"
+  // },
   {
     id: "contact",
     page: Contact,
