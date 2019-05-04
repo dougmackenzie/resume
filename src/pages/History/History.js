@@ -9,7 +9,9 @@ import Section, {
 import Timeline, {
   TimelineHeading,
   TimelineMain,
-  TimelineSide
+  TimelineSide,
+  TimelineSideHeading,
+  TimelineSideImage
 } from "../../components/Timeline/Timeline";
 
 import { workHistory } from "../../content/content";
@@ -24,7 +26,12 @@ const History = props => {
       <Timeline>
         {workHistory.map((historyItem, index) => (
           <>
-            <TimelineSide>{historyItem.period}</TimelineSide>
+            <TimelineSide>
+              <TimelineSideHeading>{historyItem.period}</TimelineSideHeading>
+              <TimelineSideImage>
+                <img src={historyItem.logo} />
+              </TimelineSideImage>
+            </TimelineSide>
             <TimelineMain>
               <TimelineHeading>{historyItem.company}</TimelineHeading>
               {historyItem.summary.map(paragraph => (

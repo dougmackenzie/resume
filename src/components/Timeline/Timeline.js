@@ -60,3 +60,18 @@ export const TimelineHeading = styled.h5`
   font-size: 1.15rem;
   font-weight: bold;
 `;
+
+export const TimelineSideHeading = styled.div`
+  text-transform: uppercase;
+  color: #666;
+  margin-bottom: 0.5rem;
+`;
+
+export const TimelineSideImage = styled.div`
+  max-width: 80px;
+  float: right;
+
+  > img {
+    width: 100%;
+  }
+`;

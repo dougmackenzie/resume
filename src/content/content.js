@@ -30,6 +30,12 @@ import RainbowUnderline from "../components/RainbowUnderline/RainbowUnderline";
 import butterflyImage from "../images/about/butterfly.jpg";
 import vivianImage from "../images/about/vvn.jpg";
 
+// Company logos for employment history
+import schoolboxLogo from "../images/schoolbox-logo-square.png";
+import kdsLogo from "../images/kds-logo.png";
+import etapLogo from "../images/etap-logo.png";
+import webCoLogo from "../images/webco-logo.png";
+
 // Resume PDF file
 import resume from "../files/resume-doug-mackenzie.pdf";
 
@@ -305,6 +311,7 @@ export const workHistory = [
     company: "Schoolbox",
     position: "Web Developer",
     period: "Sep 2016 — Feb 2019",
+    logo: schoolboxLogo,
     summary: [
       "I was brought on to the Schoolbox development team to help out wherever I could. I quickly started contributing with bug fixes, UI & design improvements, and code reviews.",
       "After time I took on responsibilities in the front-end & Scrum areas. My produest work was initiating a project to introduce a new structured front-end code & UI standard with React & TypeScript, moving away from spaghetti jQuery and markup."
@@ -314,6 +321,7 @@ export const workHistory = [
     company: "The King David School",
     position: "Web Developer",
     period: "Sep 2012 — Apr 2016",
+    logo: kdsLogo,
     summary: [
       "I was brought on to build web solutions for many staff and parent processes such as attendance marking, assessment marking and reporting, excursion management.",
       "Many of the solutions I built were a success in the school and are still being used today."
@@ -323,6 +331,7 @@ export const workHistory = [
     company: "ETAP School Management System",
     position: "Web Developer",
     period: "May 2010 — Jul 2012",
+    logo: etapLogo,
     summary: [
       "My role revolved largely around building custom PDF reports for clients. I liaised with clients to gather requirements, quoted for the work, and created the reports with PHP.",
       "As I progressed I was put in charge of a new developer and managed his work. That allowed me to make improvements to the core product. Most notably I rebuilt the helpdesk system to improve support processes for both our staff and our clients."
@@ -332,6 +341,7 @@ export const workHistory = [
     company: "The Web Company",
     position: "Web Developer (Freelance)",
     period: "Jun 2009 — Mar 2010",
+    logo: webCoLogo,
     summary: [
       "My first commerical experience in web development was doing freelance work for a web agency. I built sites for small companies with e-commerce solutions. As I progressed I started to become a go to consultant for payment gateway integrations."
     ]
