@@ -110,13 +110,13 @@ const ContactItem = styled.Text`
 
 const HistoryHeading = styled.View`
   flex-direction: row;
-  margin-bottom: 2pt;
+  margin-bottom: 4pt;
 `;
 
 const HistorySubheading = styled.Text`
   font-size: 9pt;
   text-transform: uppercase;
-  margin-bottom: 5pt;
+  margin-bottom: 8pt;
   color: #aaa;
   letter-spacing: 0.5pt;
 `;
@@ -135,6 +135,12 @@ const SkillSubtext = styled.Text`
 const portraitImage = fs.readFileSync(
   path.join(__dirname, "../../src/images/portrait.png")
 );
+
+const Paragraph = styled.Text`
+  font-size: 10pt;
+  line-height: 1.5;
+  color: #777;
+`;
 
 const Resume = () => (
   <Document>
@@ -177,6 +183,11 @@ const Resume = () => (
             </Text>
           ))}
         </Section>
+
+        <Section>
+          <SectionHeading>Education</SectionHeading>
+          <Text>asdasdasd</Text>
+        </Section>
       </Side>
 
       <Main>
@@ -187,12 +198,12 @@ const Resume = () => (
 
         <Section>
           <SectionHeading>Summary</SectionHeading>
-          <Text>
+          <Paragraph>
             I'm passionate about creating and improving software on the web. Ten
             years ago I studied design &amp; web development &mdash; since then
             I have worked on numerous commerical and personal projects to
             improve user experience, internal processes, and coding standards.
-          </Text>
+          </Paragraph>
         </Section>
 
         <Section>
@@ -209,14 +220,13 @@ const Resume = () => (
 
               <HistorySubheading>{workHistoryItem.period}</HistorySubheading>
 
-              <Text>{workHistoryItem.summary}</Text>
+              {workHistoryItem.summary.map((paragraph, index) => (
+                <Paragraph key={index} style={index && { marginTop: 10 }}>
+                  {paragraph}
+                </Paragraph>
+              ))}
             </HistorySection>
           ))}
-        </Section>
-
-        <Section>
-          <SectionHeading>Education</SectionHeading>
-          <Text>asdasdasd</Text>
         </Section>
       </Main>
     </Page>
