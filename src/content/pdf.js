@@ -69,10 +69,9 @@ export const workHistory = [
 
 export const educationHistory = [
   {
-    school: "Yoobee",
+    school: "Yoobee School of Design",
     course: "Diploma of Web Development",
-    period: "2008 - 2009",
-    summary: "Yep yep yep"
+    period: "2008 — 2009"
   }
 ];
 

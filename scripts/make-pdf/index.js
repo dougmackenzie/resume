@@ -22,7 +22,8 @@ import {
   email,
   phone,
   mainSkills,
-  additionalSkills
+  additionalSkills,
+  educationHistory
 } from "../../src/content/pdf";
 
 Font.register({
@@ -186,7 +187,15 @@ const Resume = () => (
 
         <Section>
           <SectionHeading>Education</SectionHeading>
-          <Text>asdasdasd</Text>
+          {educationHistory.map((educationItem, index) => (
+            <View key={index}>
+              <Text>{educationItem.course}</Text>
+              <Text style={{ color: "#888" }}>{educationItem.school}</Text>
+              <Text style={{ letterSpacing: 0.5, fontSize: 10 }}>
+                {educationItem.period}
+              </Text>
+            </View>
+          ))}
         </Section>
       </Side>
 
