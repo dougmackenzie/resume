@@ -14,7 +14,7 @@ const Button = styled.a`
   border: none;
   text-decoration: none;
   font-size: 1rem;
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.05rem;
   box-shadow: inset 0 0 0 ${width} ${color};
   color: ${color};
   transition: color ${duration} ${duration} / 3;
