@@ -25,10 +25,9 @@ const SectionTitle = styled.h3`
 
 const SectionSubTitle = styled.h4`
   font-family: "Playfair Display", serif;
-  font-style: italic;
-  font-size: 16px;
+  font-size: 1rem;
   margin: 0;
-  font-weight: 300;
+  font-weight: 400;
   color: #666;
   letter-spacing: 1px;
 `;
