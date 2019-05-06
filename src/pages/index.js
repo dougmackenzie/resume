@@ -41,11 +41,11 @@ const pages = [
     navTitle: "Skills"
   },
   {
-    id: "history",
+    id: "experience",
     page: History,
     title: "Experience",
     subtitle: "My employment history",
-    navTitle: "History"
+    navTitle: "Experience"
   },
   {
     id: "education",
