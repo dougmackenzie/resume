@@ -23,7 +23,7 @@ const History = props => {
         <SectionTitle>{props.title}</SectionTitle>
         <SectionSubTitle>{props.subtitle}</SectionSubTitle>
       </SectionHeader>
-      <Timeline>
+      <Timeline className="wow">
         {workHistory.map((historyItem, index) => (
           <>
             <TimelineSide>

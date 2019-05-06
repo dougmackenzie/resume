@@ -1,18 +1,54 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 const gutter = "30px";
 const borderWidth = "4px";
 const dotDiameter = "8px";
 
-const Timeline = styled.div`
-  display: grid;
-  grid-template-columns: auto 5fr;
-  width: 100%;
-  padding: 0 50px;
-  position: relative;
+const scaleVertical = keyframes`
+  0% {
+    transform:scaleY(0);
+  }
+  100% {
+    transform:scaleY(1);
+  }
 `;
 
-export default Timeline;
+const revealScaleUp = keyframes`
+  0% {
+    opacity:0;
+    transform:scale(0.5);
+  }
+  50% {
+     opacity: 1;
+     transform: scale(1.3);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+`;
+
+const revealFromLeft = keyframes`
+  0% {
+    transform:translateX(-1em);
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+    transform:translateX(0);
+  }
+`;
+
+const revealFromRight = keyframes`
+  0% {
+    transform:translateX(1em);
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+    transform:translateX(0em);
+  }
+`;
 
 export const TimelineSide = styled.div`
   padding-right: ${gutter};
@@ -28,11 +64,36 @@ export const TimelineSide = styled.div`
     bottom: 0;
     width: ${borderWidth};
     background: #ddd;
+    transform-origin: 0 0;
   }
 
   // Cut off top of the line
   &:first-child:after {
     top: ${dotDiameter};
+  }
+
+  &:nth-child(3) > *,
+  &:nth-child(3):before,
+  &:nth-child(3):after {
+    animation-delay: 0.5s !important;
+  }
+
+  &:nth-child(5) > *,
+  &:nth-child(5):before,
+  &:nth-child(5):after {
+    animation-delay: 1s !important;
+  }
+
+  &:nth-child(7) > *,
+  &:nth-child(7):before,
+  &:nth-child(7):after {
+    animation-delay: 1.5s !important;
+  }
+
+  &:nth-child(9) > *,
+  &:nth-child(9):before,
+  &:nth-child(9):after {
+    animation-delay: 2s !important;
   }
 
   // The dot
@@ -53,6 +114,58 @@ export const TimelineSide = styled.div`
 export const TimelineMain = styled.div`
   padding-left: ${gutter};
   padding-bottom: 3rem;
+
+  &:nth-child(4) > *,
+  &:nth-child(4):before,
+  &:nth-child(4):after {
+    animation-delay: 0.5s !important;
+  }
+
+  &:nth-child(6) > *,
+  &:nth-child(6):before,
+  &:nth-child(6):after {
+    animation-delay: 1s !important;
+  }
+
+  &:nth-child(8) > *,
+  &:nth-child(8):before,
+  &:nth-child(8):after {
+    animation-delay: 1.5s !important;
+  }
+
+  &:nth-child(10) > *,
+  &:nth-child(10):before,
+  &:nth-child(10):after {
+    animation-delay: 2s !important;
+  }
+`;
+
+const Timeline = styled.div`
+  display: grid;
+  grid-template-columns: auto 5fr;
+  width: 100%;
+  padding: 0 50px;
+  position: relative;
+
+  &.animated ${TimelineSide} {
+    > * {
+      animation: ${revealFromLeft} 0.5s 0s ease both 1;
+    }
+
+    :before {
+      animation: ${revealScaleUp} 0.75s 0s ease both 1;
+    }
+
+    :after {
+      animation: ${scaleVertical} 0.5s linear both 1;
+    }
+  }
+
+  &.animated ${TimelineMain} {
+    > * {
+      animation: ${revealFromRight} 0.5s 0s ease both 1;
+    }
+  }
 `;
 
 export const TimelineHeading = styled.h5`
@@ -75,3 +188,5 @@ export const TimelineSideImage = styled.div`
     width: 100%;
   }
 `;
+
+export default Timeline;
