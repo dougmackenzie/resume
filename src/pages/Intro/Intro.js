@@ -73,7 +73,7 @@ const IntroTitle = styled.h1`
   font-style: italic;
   font-weight: 400;
   letter-spacing: 0.2rem;
-  font-size: 46px;
+  font-size: 3.25rem;
   color: #eee;
   margin: 0 0 5px;
   flex: 0 0 100%;
@@ -83,11 +83,11 @@ const IntroTitle = styled.h1`
 `;
 
 const IntroSubTitle = styled.h2`
-  font-size: 14px;
+  font-size: 1.1rem;
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.3rem;
-  color: #ccc;
+  color: #bbb;
   margin: 0;
   flex: 0 0 100%;
   text-align: center;
