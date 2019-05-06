@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 const Accordion = styled.dl`
   margin: 0;
-  box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
   background: #fff;
 `;
 
@@ -54,7 +53,7 @@ const AccordionButton = styled.button`
   line-height: 1;
   transition: all ease-in-out 0.2s;
   width: 100%;
-  padding: 1.5rem;
+  padding: 1rem;
 
   &[aria-expanded="true"] {
     ${AccordionIcon} {
