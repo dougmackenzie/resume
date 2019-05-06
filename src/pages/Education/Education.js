@@ -21,7 +21,7 @@ const Education = props => {
       <Grid>
         <Column>
           <StyledHeading style={{ color: "#fff" }}>Education</StyledHeading>
-          <EducationItem>
+          <EducationItem className="wow animated fadeInUp">
             <EducationLogo>
               <img src={yoobeeLogo} />
             </EducationLogo>
@@ -43,7 +43,7 @@ const Education = props => {
           <StyledHeading style={{ color: "#fff" }}>
             Certifications
           </StyledHeading>
-          <EducationItem>
+          <EducationItem className="wow animated fadeInUp">
             <EducationLogo>
               <img src={scrumLogo} />
             </EducationLogo>
