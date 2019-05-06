@@ -121,11 +121,6 @@ export const aboutText = (
           &amp; React Styleguidist &mdash; including integrating E2E tests with
           Cypress.
         </li>
-        <li>
-          Going from zero Agile knowledge to leading a development team in
-          improving processes and taking on all Scrum Master responsibilities in
-          the space of a year.
-        </li>
       </ul>
     </SupportingText>
   </>
@@ -345,5 +340,16 @@ export const workHistory = [
     summary: [
       "My first commerical experience in web development was doing freelance work for a web agency. I built sites for small companies with e-commerce solutions. As I progressed I started to become a go to consultant for payment gateway integrations."
     ]
+  }
+];
+
+//-------------------------------------------
+// Education
+//-------------------------------------------
+export const educationHistory = [
+  {
+    school: "Yoobee School of Design",
+    course: "Diploma of Web Development",
+    period: "2008 — 2009"
   }
 ];
