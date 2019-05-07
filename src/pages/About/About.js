@@ -1,8 +1,6 @@
 import * as React from "react";
 import styled from "styled-components";
-import "swiper/dist/css/swiper.css";
 import Swiper from "swiper";
-import { CountUp } from "countup.js";
 
 import Section, {
   SectionHeader,
@@ -29,23 +27,6 @@ const About = props => {
       //   clickable: true
       // }
     });
-
-    // Count the stats up from 0 when this section appears
-    // let animated = false;
-    // document.addEventListener("gumshoeActivate", event => {
-    //   if (event.detail.content.getAttribute("id") === "about" && !animated) {
-    //     const funFactValues = document.querySelectorAll("[data-count-up]");
-    //     for (let funFactValue of funFactValues) {
-    //       const countUp = new CountUp(
-    //         funFactValue,
-    //         funFactValue.getAttribute("data-count-up")
-    //       );
-    //       countUp.start();
-    //     }
-
-    //     animated = true;
-    //   }
-    // });
   }, []);
 
   return (
@@ -80,15 +61,6 @@ const About = props => {
               </Grid>
             ))}
           </Infolets>
-
-          {/* <Grid>
-            {funFacts.map((stat, index) => (
-              <Fact key={index}>
-                <FactValue data-count-up={stat.value}>0</FactValue>
-                <FactLabel>{stat.label}</FactLabel>
-              </Fact>
-            ))}
-          </Grid> */}
         </Column>
 
         <Column
@@ -168,19 +140,6 @@ const Caption = styled.div`
 
 const Infolets = styled.div`
   margin-bottom: 40px;
-`;
-
-const Fact = styled(Column)`
-  position: relative;
-`;
-
-const FactValue = styled.div`
-  font-size: 40px;
-  font-weight: 600;
-`;
-
-const FactLabel = styled.div`
-  font-size: 14px;
 `;
 
 const SwiperPagination = styled.div`
