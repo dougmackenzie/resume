@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 const StyledHeading = styled.h5`
-  font-size: 14px;
+  font-family: "Oswald", Arial, serif;
+  font-size: 1rem;
   font-weight: 400;
   letter-spacing: 1px;
   color: #666;
@@ -10,7 +11,7 @@ const StyledHeading = styled.h5`
   text-align: center;
 
   display: grid;
-  grid-template-columns: 2rem max-content 0;
+  grid-template-columns: 1rem max-content 0;
   grid-template-rows: 1rem 0;
   grid-gap: 0 1rem;
   align-items: center;
@@ -19,9 +20,7 @@ const StyledHeading = styled.h5`
   :before {
     content: " ";
     display: block;
-    border-top: 1px solid #f6921e;
-    border-bottom: 1px solid #f6921e;
-    height: 1px;
+    border-top: 3px solid #f6921e;
   }
 `;
 

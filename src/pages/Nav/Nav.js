@@ -8,13 +8,16 @@ import RainbowUnderline from "../../components/RainbowUnderline/RainbowUnderline
 
 import { brand, socialLinks, resumePDF } from "../../content/content";
 
+import logo from "../../images/logo.png";
+
 const Nav = props => (
   <Sidebar>
     <header role="banner">
       <ul style={{ margin: 0, padding: 0 }}>
         <li>
           <Brand href="#intro" data-smoothscroll data-scrollspy>
-            <RainbowUnderline opacity="0.5">{brand}</RainbowUnderline>
+            {/* <RainbowUnderline opacity="0.5">{brand}</RainbowUnderline> */}
+            <img src={logo} />
           </Brand>
         </li>
       </ul>
@@ -62,7 +65,6 @@ const Nav = props => (
 
 const Brand = styled.a`
   position: relative;
-  font-family: "Playfair Display", times, sans-serif;
   font-style: italic;
   font-weight: 400;
   font-size: 1.85rem;
@@ -70,8 +72,7 @@ const Brand = styled.a`
   text-align: center;
   display: block;
   text-decoration: none;
-  padding: 60px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 3.5rem 0;
   opacity: 0.7;
   transition: opacity 0.2s;
 
@@ -88,29 +89,31 @@ const Brand = styled.a`
 `;
 
 const NavList = styled.ul`
+  font-family: "Oswald", Arial, serif;
   list-style-type: none;
-  padding: 40px 0;
+  padding: 1rem 0;
 
   > li {
-    padding: 10px 50px;
+    position: relative;
+    padding: 0.65rem 3rem;
 
     > a {
-      display: block;
       color: #fff;
       opacity: 0.7;
       text-decoration: none;
       font-size: 1.2rem;
-      font-weight: 400;
+      text-transform: uppercase;
       letter-spacing: 0.1rem;
       transition: all 0.2s;
 
       :hover,
       &.active {
         opacity: 1;
+        color: #ffe593;
       }
 
       &.active {
-        margin-left: 10px;
+        //margin-left: 0.5rem;
       }
     }
   }
@@ -119,7 +122,7 @@ const NavList = styled.ul`
 const BottomSection = styled.div`
   width: 100%;
   position: absolute;
-  bottom: 30px;
+  bottom: 1.5rem;
   text-align: center;
 `;
 
@@ -128,17 +131,17 @@ const SocialList = styled.ul`
   padding: 0;
   display: block;
   text-align: center;
-  margin-top: 40px;
+  margin-top: 2rem;
 
   > li {
     display: inline-block;
-    margin: 0 10px;
+    margin: 0 0.75rem;
 
     > a {
       color: #fff;
       opacity: 0.7;
       text-decoration: none;
-      font-size: 24px;
+      font-size: 1.5rem;
       transition: opacity 0.2s;
 
       &:hover {

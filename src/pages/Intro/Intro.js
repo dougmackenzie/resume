@@ -7,6 +7,8 @@ import { title, subtitle } from "../../content/content";
 
 import bgPattern from "../../images/bg-pattern.png";
 import featureImage from "../../images/feature-image.jpg";
+import logo from "../../images/logo.png";
+import portrait from "../../images/portrait.png";
 
 const Intro = props => {
   // Grab the ID of the next page for the down arrow link
@@ -15,6 +17,15 @@ const Intro = props => {
   return (
     <IntroContainer id={props.id}>
       <IntroCard>
+        {/* <img src={logo} style={{ opacity: "0.5" }} /> */}
+        {/* <img
+          src={portrait}
+          style={{
+            borderRadius: "50%",
+            border: "2px solid #ccc",
+            width: "175px"
+          }}
+        /> */}
         <IntroTitle>{title}</IntroTitle>
         <IntroSubTitle>{subtitle}</IntroSubTitle>
       </IntroCard>
@@ -66,16 +77,16 @@ const FeatureImage = styled(BackgroundImage)`
 
 const IntroCard = styled.div`
   z-index: 99;
+  text-align: center;
 `;
 
 const IntroTitle = styled.h1`
-  font-family: "Playfair Display", times, sans-serif;
-  font-style: italic;
+  font-family: "Oswald", Arial, serif;
   font-weight: 400;
   letter-spacing: 0.2rem;
-  font-size: 3.25rem;
+  font-size: 3.75rem;
   color: #eee;
-  margin: 0 0 5px;
+  margin: 0 0 0.3rem;
   flex: 0 0 100%;
   text-align: center;
   animation: slideIn 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) both;
@@ -86,7 +97,7 @@ const IntroSubTitle = styled.h2`
   font-size: 1.1rem;
   font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 0.3rem;
+  letter-spacing: 0.4rem;
   color: #bbb;
   margin: 0;
   flex: 0 0 100%;

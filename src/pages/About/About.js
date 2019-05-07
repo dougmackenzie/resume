@@ -116,7 +116,7 @@ const AboutSection = styled.div`
   font-size: 15px;
   margin: 0;
   font-weight: 400;
-  border-left: medium double #f6921e;
+  border-left: 3px solid #f6921e;
   padding-left: 1rem;
 
   @media (min-width: 769px) {

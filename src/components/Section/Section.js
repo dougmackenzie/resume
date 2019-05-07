@@ -16,20 +16,20 @@ const SectionHeader = styled.div`
 `;
 
 const SectionTitle = styled.h3`
+  font-family: "Oswald", Arial, serif;
   font-weight: 400;
-  font-size: 34px;
+  font-size: 2.25rem;
   color: rgb(28, 30, 38);
   margin: 0;
   letter-spacing: 1px;
 `;
 
 const SectionSubTitle = styled.h4`
-  font-family: "Playfair Display", serif;
   font-size: 1rem;
   margin: 0;
   font-weight: 400;
-  color: #666;
-  letter-spacing: 1px;
+  color: #999;
+  letter-spacing: 0.1rem;
 `;
 
 export default Section;
