@@ -1,8 +1,11 @@
+// Animation credit:
+// https://codepen.io/chriswrightdesign/pen/XJzNBN/
+
 import styled, { keyframes } from "styled-components";
 
-const gutter = "30px";
-const borderWidth = "4px";
-const dotDiameter = "8px";
+const gutter = "2rem";
+const borderWidth = "0.25rem";
+const dotDiameter = "0.5rem";
 
 const scaleVertical = keyframes`
   0% {
@@ -144,7 +147,7 @@ const Timeline = styled.div`
   display: grid;
   grid-template-columns: auto 5fr;
   width: 100%;
-  padding: 0 50px;
+  padding: 0 3rem;
   position: relative;
 
   &.animated ${TimelineSide} {
@@ -178,6 +181,9 @@ export const TimelineSideHeading = styled.div`
   text-transform: uppercase;
   color: #666;
   margin-bottom: 0.5rem;
+  letter-spacing: 0.05rem;
+  font-family: "Oswald", Arial, serif;
+  font-size: 0.9rem;
 `;
 
 export const TimelineSideImage = styled.div`
