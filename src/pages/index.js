@@ -17,6 +17,7 @@ import History from "./History/History";
 import Education from "./Education/Education";
 //import Work from "./Work/Work";
 import Contact from "./Contact/Contact";
+import Endorsements from "./Endorsements/Endorsements";
 
 const pages = [
   {
@@ -39,6 +40,13 @@ const pages = [
     title: "Skills",
     subtitle: "What I can do",
     navTitle: "Skills"
+  },
+  {
+    id: "endorsements",
+    page: Endorsements,
+    title: "",
+    subtitle: "",
+    navTitle: "Endorsements"
   },
   {
     id: "experience",
