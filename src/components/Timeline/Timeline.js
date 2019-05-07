@@ -182,7 +182,7 @@ export const TimelineSideHeading = styled.div`
   color: #666;
   margin-bottom: 0.5rem;
   letter-spacing: 0.05rem;
-  font-family: "Oswald", Arial, serif;
+  font-family: ${props => props.theme.font.heading};
   font-size: 0.9rem;
 `;
 

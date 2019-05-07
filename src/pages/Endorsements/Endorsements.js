@@ -103,7 +103,7 @@ const Quote = styled.blockquote`
   color: #fff;
 
   :before {
-    color: #f6921e;
+    color: ${props => props.theme.color.highlight};
     content: open-quote;
     font-size: 4rem;
     line-height: 0.1rem;

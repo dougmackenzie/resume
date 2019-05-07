@@ -89,7 +89,7 @@ const Brand = styled.a`
 `;
 
 const NavList = styled.ul`
-  font-family: "Oswald", Arial, serif;
+  font-family: ${props => props.theme.font.heading};
   list-style-type: none;
   padding: 1rem 0;
 
@@ -109,7 +109,7 @@ const NavList = styled.ul`
       :hover,
       &.active {
         opacity: 1;
-        color: #ffe593;
+        color: ${props => props.theme.color.highlight};
       }
 
       &.active {

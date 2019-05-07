@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const StyledHeading = styled.h5`
-  font-family: "Oswald", Arial, serif;
+  font-family: ${props => props.theme.font.heading};
   font-size: 1rem;
   font-weight: 400;
   letter-spacing: 1px;
@@ -20,7 +20,7 @@ const StyledHeading = styled.h5`
   :before {
     content: " ";
     display: block;
-    border-top: 3px solid #f6921e;
+    border-top: 3px solid ${props => props.theme.color.highlight};
   }
 `;
 

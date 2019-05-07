@@ -102,7 +102,7 @@ const HistoryPeriod = styled.div`
   font-size: 0.8rem;
   letter-spacing: 0.05rem;
   color: #666;
-  font-family: "Oswald", Arial, serif;
+  font-family: ${props => props.theme.font.heading};
 `;
 
 const HistoryMain = styled.div``;

@@ -113,33 +113,32 @@ const About = props => {
 };
 
 const AboutSection = styled.div`
-  font-size: 15px;
+  font-size: 1rem;
   margin: 0;
-  font-weight: 400;
-  border-left: 3px solid #f6921e;
+  border-left: 3px solid ${props => props.theme.color.highlight};
   padding-left: 1rem;
 
   @media (min-width: 769px) {
-    margin: 0 0 10px;
+    margin: 0 0 0.5rem;
   }
 `;
 
 const AboutSubHeading = styled.h4`
-  font-size: 13px;
-  font-weight: 300;
+  font-size: 0.8rem;
+  font-weight: 400;
   text-transform: uppercase;
-  color: #666;
+  color: #999;
   margin: 0 0 2px;
   letter-spacing: 1px;
 `;
 
 const Caption = styled.div`
-  font-size: 13px;
+  font-size: 0.8rem;
   text-align: center;
 `;
 
 const Infolets = styled.div`
-  margin-bottom: 40px;
+  margin-bottom: 2.5rem;
 `;
 
 const SwiperPagination = styled.div`

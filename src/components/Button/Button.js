@@ -2,8 +2,6 @@
 
 import styled from "styled-components";
 
-const color = "#58afd1";
-const hover = "#ffe593";
 const width = "2px";
 const duration = "0.25s";
 
@@ -15,8 +13,8 @@ const Button = styled.a`
   text-decoration: none;
   font-size: 1rem;
   letter-spacing: 0.05rem;
-  box-shadow: inset 0 0 0 ${width} ${color};
-  color: ${color};
+  box-shadow: inset 0 0 0 ${width} ${props => props.theme.color.info};
+  color: ${props => props.theme.color.info};
   transition: color ${duration} ${duration} / 3;
 
   &::before,
@@ -43,11 +41,11 @@ const Button = styled.a`
   }
 
   &:hover {
-    color: ${hover};
+    color: ${props => props.theme.color.highlight};
 
     &::before,
     &::after {
-      border-color: ${hover};
+      border-color: ${props => props.theme.color.highlight};
       transition: border-color 0s, width ${duration}, height ${duration};
       width: 100%;
       height: 100%;

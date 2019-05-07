@@ -1,13 +1,13 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 import SmoothScroll from "smooth-scroll";
 import Gumshoe from "gumshoejs";
 import WOW from "wow.js";
 
-//import { pages } from "../content";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Nav from "../pages/Nav/Nav";
+import theme from "../theme";
 
 // Pages
 import Intro from "./Intro/Intro";
@@ -46,7 +46,7 @@ const pages = [
     page: Endorsements,
     title: "",
     subtitle: "",
-    navTitle: "Endorsements"
+    navTitle: ""
   },
   {
     id: "experience",
@@ -100,16 +100,18 @@ const IndexPage = () => {
   }, []);
 
   return (
-    <Layout>
-      <SEO keywords={[`web developer`, `portfolio`, "front-end", `react`]} />
-      <Nav pages={pages} />
-      <Content role="main">
-        {pages.map(page => {
-          const PageComponent = page.page;
-          return <PageComponent key={page.id} pages={pages} {...page} />;
-        })}
-      </Content>
-    </Layout>
+    <ThemeProvider theme={theme}>
+      <Layout>
+        <SEO keywords={[`web developer`, `portfolio`, "front-end", `react`]} />
+        <Nav pages={pages} />
+        <Content role="main">
+          {pages.map(page => {
+            const PageComponent = page.page;
+            return <PageComponent key={page.id} pages={pages} {...page} />;
+          })}
+        </Content>
+      </Layout>
+    </ThemeProvider>
   );
 };
 

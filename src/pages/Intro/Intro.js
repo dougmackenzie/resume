@@ -45,7 +45,7 @@ const Intro = props => {
 };
 
 const IntroContainer = styled.div`
-  background: #1c1e26;
+  background: ${props => props.theme.color.primary};
   width: 100%;
   height: 100vh;
   display: flex;
@@ -81,7 +81,7 @@ const IntroCard = styled.div`
 `;
 
 const IntroTitle = styled.h1`
-  font-family: "Oswald", Arial, serif;
+  font-family: ${props => props.theme.font.heading};
   font-weight: 400;
   letter-spacing: 0.2rem;
   font-size: 3.75rem;

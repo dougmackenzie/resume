@@ -16,7 +16,7 @@ const SectionHeader = styled.div`
 `;
 
 const SectionTitle = styled.h3`
-  font-family: "Oswald", Arial, serif;
+  font-family: ${props => props.theme.font.heading};
   font-weight: 400;
   font-size: 2.25rem;
   color: rgb(28, 30, 38);
@@ -25,6 +25,7 @@ const SectionTitle = styled.h3`
 `;
 
 const SectionSubTitle = styled.h4`
+  font-family: ${props => props.theme.font.heading};
   font-size: 1rem;
   margin: 0;
   font-weight: 400;
