@@ -6,7 +6,7 @@ const StyledHeading = styled.h5`
   letter-spacing: 1px;
   color: #666;
   text-transform: uppercase;
-  margin: 1rem 0;
+  margin: 1rem 0 1.5rem;
   text-align: center;
 
   display: grid;

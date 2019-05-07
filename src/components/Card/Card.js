@@ -15,6 +15,7 @@ const CardImage = styled.div`
 
 const CardContent = styled.div`
   padding: 1.5rem;
+  color: #666;
 `;
 
 const CardAction = styled.button`
@@ -29,6 +30,7 @@ const CardTitle = styled.h4`
   font-weight: 400;
   font-size: 18px;
   margin: 0 0 5px;
+  color: #333;
 `;
 
 const CardSubtitle = styled.h5`

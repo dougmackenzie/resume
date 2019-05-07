@@ -17,9 +17,9 @@ const AccordionIcon = styled.div`
 
   &:after,
   &:before {
-    background-color: #333;
+    background-color: #666;
     content: "";
-    height: 3px;
+    height: 2px;
     position: absolute;
     top: 10px;
     transition: all ease-in-out 0.2s;
@@ -40,7 +40,7 @@ const AccordionIcon = styled.div`
 `;
 
 const AccordionTitle = styled.div`
-  font-size: 18px;
+  font-size: 1rem;
 `;
 
 const AccordionButton = styled.button`
@@ -79,9 +79,7 @@ const AccordionPanel = styled.dd`
   transition: max-height ease-in-out 0.2s;
 `;
 
-const AccordionPanelInner = styled.div`
-  //padding: 1rem 1.5rem;
-`;
+const AccordionPanelInner = styled.div``;
 
 export default Accordion;
 export {
