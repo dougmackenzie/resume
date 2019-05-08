@@ -35,7 +35,7 @@ const Contact = props => {
           <StyledHeading>Contact Details</StyledHeading>
           <ContactCard
             href="mailto:dougmacknz@0077b5mail.com"
-            className="wow animated 0077b5adeInUp"
+            className="wow animated fadeIn"
           >
             <ContactIcon className="fa-3x">
               <span className="fa-layers fa-fw">
@@ -53,7 +53,7 @@ const Contact = props => {
             </div>
           </ContactCard>
 
-          <ContactCard className="wow animated fadeInUp">
+          <ContactCard className="wow animated fadeIn">
             <ContactIcon className="fa-3x">
               <span className="fa-layers fa-fw">
                 <FontAwesomeIcon icon={faCircle} color="#58afd1" />
@@ -70,7 +70,7 @@ const Contact = props => {
 
           <SocialList>
             {socialLinks.map((socialLink, index) => (
-              <li key={index} className="wow animated flipInX">
+              <li key={index} className="wow animated flipInY">
                 <a
                   href={socialLink.href}
                   target="_blank"
@@ -93,7 +93,7 @@ const Contact = props => {
           <StyledHeading>Send me a message</StyledHeading>
 
           <form
-            className="gform"
+            className="gform wow animated fadeIn"
             method="post"
             action="https://script.google.com/macros/s/AKfycbxZgghwJqlQDPNXmqFgokuzd_56aubcoCMXUdTm/exec"
           >
