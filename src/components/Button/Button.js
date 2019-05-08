@@ -10,9 +10,12 @@ const Button = styled.a`
   background: none;
   padding: 0.75rem 1.25rem;
   border: none;
+  border-radius: 2px;
   text-decoration: none;
-  font-size: 1rem;
-  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
   box-shadow: inset 0 0 0 ${width} ${props => props.theme.color.info};
   color: ${props => props.theme.color.info};
   transition: color ${duration} ${duration} / 3;
