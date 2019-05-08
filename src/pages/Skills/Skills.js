@@ -145,9 +145,11 @@ const Skills = props => {
 
 const SkillBar = styled.div`
   width: 100%;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   text-align: center;
   line-height: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.075rem;
 
   &:before {
     position: absolute;
@@ -167,15 +169,16 @@ const SkillBar = styled.div`
     content: "";
     left: 0;
     bottom: 0;
-    height: 22px;
+    height: 1.5rem;
     width: 100%;
+    z-index: -99;
     background-image: linear-gradient(
       -45deg,
-      rgba(255, 255, 255, 0.2) 25%,
+      rgba(255, 255, 255, 0.4) 25%,
       transparent 25%,
       transparent 50%,
-      rgba(255, 255, 255, 0.2) 50%,
-      rgba(255, 255, 255, 0.2) 75%,
+      rgba(255, 255, 255, 0.4) 50%,
+      rgba(255, 255, 255, 0.4) 75%,
       transparent 75%,
       transparent
     );
