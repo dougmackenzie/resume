@@ -36,37 +36,30 @@ const About = props => {
         <SectionSubTitle>{props.subtitle}</SectionSubTitle>
       </SectionHeader>
 
-      <Grid>
-        <Column style={{ flexGrow: 3, marginRight: "1.5rem" }}>
+      <AboutGrid>
+        <Column style={{ marginRight: "1.5rem" }}>
           <div className="wow animated fadeIn">{aboutText}</div>
-
-          <Infolets>
-            {stats.map((infoRow, rowIndex) => (
-              <Grid key={rowIndex}>
-                {infoRow.map((info, index) => {
-                  const content = (
-                    <Column key={`${rowIndex}-${index}`}>
-                      <AboutSection
-                        className="wow animated fadeInUp"
-                        data-wow-delay={`${statDelay}s`}
-                      >
-                        <AboutSubHeading>{info.label}</AboutSubHeading>
-                        {info.value}
-                      </AboutSection>
-                    </Column>
-                  );
-                  statDelay += 0.1;
-                  return content;
-                })}
-              </Grid>
-            ))}
-          </Infolets>
+          <Grid>
+            {stats.map((info, index) => {
+              const content = (
+                <Column>
+                  <AboutSection
+                    className="wow animated fadeInUp"
+                    data-wow-delay={`${statDelay}s`}
+                    key={index}
+                  >
+                    <AboutSubHeading>{info.label}</AboutSubHeading>
+                    {info.value}
+                  </AboutSection>
+                </Column>
+              );
+              statDelay += 0.1;
+              return content;
+            })}
+          </Grid>
         </Column>
 
-        <Column
-          className="wow animated fadeInRight"
-          style={{ textAlign: "center", marginLeft: "1.5rem" }}
-        >
+        <AboutSlider className="wow animated fadeInRight">
           <div
             data-slider
             className="swiper-container"
@@ -106,21 +99,16 @@ const About = props => {
             /> */}
           </div>
           {/* <Caption>Captions here</Caption> */}
-        </Column>
-      </Grid>
+        </AboutSlider>
+      </AboutGrid>
     </Section>
   );
 };
 
 const AboutSection = styled.div`
   font-size: 1rem;
-  margin: 0;
   border-left: 3px solid ${props => props.theme.color.highlight};
   padding-left: 1rem;
-
-  @media (min-width: 769px) {
-    margin: 0 0 0.5rem;
-  }
 `;
 
 const AboutSubHeading = styled.h4`
@@ -137,8 +125,22 @@ const Caption = styled.div`
   text-align: center;
 `;
 
-const Infolets = styled.div`
-  margin-bottom: 2.5rem;
+const AboutGrid = styled(Grid)`
+  grid-template-columns: 100% !important;
+
+  @media (min-width: ${props => props.theme.breakpoints.lg}) {
+    grid-template-columns: auto 1fr !important;
+  }
+`;
+
+const AboutSlider = styled(Column)`
+  display: none;
+  text-align: center;
+  margin-left: 1.5rem;
+
+  @media (min-width: ${props => props.theme.breakpoints.lg}) {
+    display: block;
+  }
 `;
 
 const SwiperPagination = styled.div`

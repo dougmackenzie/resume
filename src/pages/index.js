@@ -120,7 +120,7 @@ const Content = styled.main`
   transition: padding 0.2s;
   overflow: hidden;
 
-  @media (min-width: 769px) {
+  @media (min-width: ${props => props.theme.breakpoints.xl}) {
     padding-left: 300px;
   }
 `;

@@ -8,7 +8,7 @@ const SubmitButton = styled.button.attrs({
   background: #fff;
   width: 100%;
 
-  @media (min-width: 769px) {
+  @media (min-width: ${props => props.theme.breakpoints.md}) {
     width: 200px;
   }
 `;

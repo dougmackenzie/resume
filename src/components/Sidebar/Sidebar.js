@@ -10,7 +10,7 @@ const Sidebar = styled.div`
   background: rgb(28, 30, 38);
   z-index: 100;
 
-  @media (min-width: 769px) {
+  @media (min-width: ${props => props.theme.breakpoints.xl}) {
     left: 0;
   }
 `;

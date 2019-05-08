@@ -1,13 +1,18 @@
 import styled from "styled-components";
 
 const Grid = styled.div`
-  margin-left: -0.75rem;
-  margin-right: -0.75rem;
-  margin-top: -0.75rem;
+  display: grid;
 
-  @media (min-width: 769px) {
-    display: flex;
+  @media (min-width: ${props => props.theme.breakpoints.md}) {
+    grid-template-columns: repeat(2, 1fr);
   }
+
+  ${props =>
+    props.fours &&
+    `@media (min-width: ${props.theme.breakpoints.xl}) {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    `}
 `;
 
 export default Grid;

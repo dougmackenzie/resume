@@ -43,7 +43,7 @@ import resume from "../files/resume-doug-mackenzie.pdf";
 // General
 //-------------------------------------------
 export const title = "Doug MacKenzie";
-export const subtitle = "Front End Engineer";
+export const subtitle = "Front End Developer";
 export const email = "dougmacknz@gmail.com";
 export const phone = "+61 413 620 431";
 
@@ -140,36 +140,30 @@ export const slideshowImages = [
 ];
 
 export const stats = [
-  [
-    {
-      label: "Location",
-      value: "Melbourne, Australia"
-    },
-    {
-      label: "Years in Development",
-      value: "10"
-    }
-  ],
-  [
-    {
-      label: "Dev Environment",
-      value: <>Ubuntu &bull; VSCode</>
-    },
-    {
-      label: "Preferred Stack",
-      value: <>React &bull; Styled Components</>
-    }
-  ],
-  [
-    {
-      label: "Favourite TV Show",
-      value: "Arrested Development"
-    },
-    {
-      label: "Hobbies",
-      value: <>Bass Guitar &bull; Gymnastics &bull; Cycling</>
-    }
-  ]
+  {
+    label: "Location",
+    value: "Melbourne, Australia"
+  },
+  {
+    label: "Years in Development",
+    value: "10"
+  },
+  {
+    label: "Dev Environment",
+    value: <>Ubuntu &bull; VSCode</>
+  },
+  {
+    label: "Preferred Stack",
+    value: <>React &bull; Styled Components</>
+  },
+  {
+    label: "Favourite TV Show",
+    value: "Arrested Development"
+  },
+  {
+    label: "Hobbies",
+    value: <>Bass Guitar &bull; Gymnastics &bull; Cycling</>
+  }
 ];
 
 export const funFacts = [
@@ -228,74 +222,69 @@ export const mainSkills = [
 ];
 
 export const additionalSkills = [
-  [
-    {
-      title: "TypeScript",
-      icon: faMicrosoft,
-      iconColor: "#4678c7",
-      yearsExperience: 1,
-      description:
-        "Along with React, I have implemented TypeScript into a large scale product. This is a skill that I will continue to improve over the next few years."
-    },
-    {
-      title: "Vue.js",
-      icon: faVuejs,
-      iconColor: "rgb(65, 184, 131)",
-      yearsExperience: 1,
-      description:
-        "Vue was the first component based framework I learned before moving onto React. I have created a few interfaces with Vue."
-    },
-    {
-      title: "PHP",
-      icon: faPhp,
-      iconColor: "#4f5b93",
-      yearsExperience: 10,
-      description:
-        "I have worked with PHP my entire career. Though I specialise in front-end development - I am capable of working with some PHP when required."
-    },
-    {
-      title: "Laravel",
-      icon: faLaravel,
-      iconColor: "#4771b5",
-      yearsExperience: 1,
-      description:
-        "Some of my side projects have been built with Laravel. This was my introduction to MVC pattern which has proven helpful in other contexts."
-    }
-  ],
-  [
-    {
-      title: "Accessibility",
-      icon: faUniversalAccess,
-      iconColor: "#345292",
-      yearsExperience: 3,
-      description:
-        "Accessibility is an important focus for me as a front end developer. I am continuously looking to improve my knowledge and meet accessibility standards in my work."
-    },
-    {
-      title: "Scrum",
-      icon: faUsers,
-      iconColor: "#4a586e",
-      yearsExperience: 2.5,
-      description:
-        "During my time at Schoolbox I spent the last year managing Scrum Master responsibilites on top of my developer responsibilities. I have been part of three PD courses around Scrum and Agile methodologies and was in charge of improving many processes."
-    },
-    {
-      title: "Code Review",
-      icon: faCode,
-      yearsExperience: 2.5,
-      description:
-        "Code review has been large part of my responsibilites over the last two and a half years. I pride myself in being able to find improvements, whilst finding the balance in effort vs time."
-    },
-
-    {
-      title: "UX Research",
-      icon: faPortrait,
-      iconColor: "#077bf6",
-      yearsExperience: 1.5,
-      description:
-        "I have been part of a few UX research projects. I have helped with surveys, interviews, brainstorming, wireframing, prototyping & user testing."
-    }
-  ]
+  {
+    title: "TypeScript",
+    icon: faMicrosoft,
+    iconColor: "#4678c7",
+    yearsExperience: 1,
+    description:
+      "Along with React, I have implemented TypeScript into a large scale product. This is a skill that I will continue to improve over the next few years."
+  },
+  {
+    title: "Vue.js",
+    icon: faVuejs,
+    iconColor: "rgb(65, 184, 131)",
+    yearsExperience: 1,
+    description:
+      "Vue was the first component based framework I learned before moving onto React. I have created a few interfaces with Vue."
+  },
+  {
+    title: "PHP",
+    icon: faPhp,
+    iconColor: "#4f5b93",
+    yearsExperience: 10,
+    description:
+      "I have worked with PHP my entire career. Though I specialise in front-end development - I am capable of working with some PHP when required."
+  },
+  {
+    title: "Laravel",
+    icon: faLaravel,
+    iconColor: "#4771b5",
+    yearsExperience: 1,
+    description:
+      "Some of my side projects have been built with Laravel. This was my introduction to MVC pattern which has proven helpful in other contexts."
+  },
+  {
+    title: "Accessibility",
+    icon: faUniversalAccess,
+    iconColor: "#345292",
+    yearsExperience: 3,
+    description:
+      "Accessibility is an important focus for me as a front end developer. I am continuously looking to improve my knowledge and meet accessibility standards in my work."
+  },
+  {
+    title: "Scrum",
+    icon: faUsers,
+    iconColor: "#4a586e",
+    yearsExperience: 2.5,
+    description:
+      "During my time at Schoolbox I spent the last year managing Scrum Master responsibilites on top of my developer responsibilities. I have been part of three PD courses around Scrum and Agile methodologies and was in charge of improving many processes."
+  },
+  {
+    title: "Code Review",
+    icon: faCode,
+    yearsExperience: 2.5,
+    description:
+      "Code review has been large part of my responsibilites over the last two and a half years. I pride myself in being able to find improvements, whilst finding the balance in effort vs time."
+  },
+  {
+    title: "UX Research",
+    icon: faPortrait,
+    iconColor: "#077bf6",
+    yearsExperience: 1.5,
+    description:
+      "I have been part of a few UX research projects. I have helped with surveys, interviews, brainstorming, wireframing, prototyping & user testing."
+  }
 ];
 
 //-------------------------------------------

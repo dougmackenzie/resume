@@ -71,13 +71,13 @@ const History = props => {
 const ExperienceTimeline = styled(Timeline)`
   display: none;
 
-  @media (min-width: 769px) {
+  @media (min-width: ${props => props.theme.breakpoints.md}) {
     display: grid;
   }
 `;
 
 const ExperienceMobile = styled.div`
-  @media (min-width: 769px) {
+  @media (min-width: ${props => props.theme.breakpoints.md}) {
     display: none;
   }
 `;

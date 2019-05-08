@@ -10,7 +10,7 @@ import megan from "../../images/megan.jpeg";
 const SliderWrapper = styled.div`
   padding: 50px 20px;
 
-  @media (min-width: 769px) {
+  @media (min-width: ${props => props.theme.breakpoints.xxl}) {
     padding: 100px 140px;
   }
 `;

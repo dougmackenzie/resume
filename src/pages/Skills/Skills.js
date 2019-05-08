@@ -55,7 +55,7 @@ const Skills = props => {
 
       <StyledHeading>Specialties</StyledHeading>
 
-      <Grid style={{ marginBottom: "3rem" }}>
+      <Grid fours style={{ marginBottom: "3rem" }}>
         {mainSkills.map((mainSkill, index) => {
           const content = (
             <Column key={index}>
@@ -95,58 +95,50 @@ const Skills = props => {
 
       <StyledHeading>Additional Skills</StyledHeading>
 
-      {additionalSkills.map((additionalSkillsRow, rowIndex) => {
-        const rowContent = (
-          <Grid key={rowIndex}>
-            {additionalSkillsRow.map((additionalSkill, index) => {
-              const skillContent = (
-                <Column key={`${rowIndex}-${index}`}>
-                  <Accordion
-                    data-accordion
-                    className="wow fadeInUp animated"
-                    data-wow-delay={`${delayAdditionalSkill}s`}
-                  >
-                    <AccordionHeader>
-                      <AccordionButton className="js-badger-accordion-header">
-                        <FontAwesomeIcon
-                          icon={additionalSkill.icon}
-                          size="2x"
-                          fixedWidth
-                          style={{
-                            marginRight: "10px",
-                            color: additionalSkill.iconColor
-                          }}
-                        />
-                        <AccordionTitle>{additionalSkill.title}</AccordionTitle>
-                        <AccordionIcon />
-                      </AccordionButton>
-                    </AccordionHeader>
-                    <AccordionPanel className="badger-accordion__panel js-badger-accordion-panel">
-                      <AccordionPanelInner className="js-badger-accordion-panel-inner">
-                        <div style={{ padding: "1rem 1.5rem" }}>
-                          {additionalSkill.description}
-                        </div>
-                        <SkillBar
-                          yearsExperience={additionalSkill.yearsExperience}
-                        >
-                          {additionalSkill.yearsExperience} year
-                          {additionalSkill.yearsExperience > 1 ? "s" : ""} of
-                          experience
-                        </SkillBar>
-                      </AccordionPanelInner>
-                    </AccordionPanel>
-                  </Accordion>
-                </Column>
-              );
+      <Grid fours>
+        {additionalSkills.map((additionalSkill, index) => {
+          const skillContent = (
+            <Column key={index}>
+              <Accordion
+                data-accordion
+                className="wow fadeInUp animated"
+                data-wow-delay={`${delayAdditionalSkill}s`}
+              >
+                <AccordionHeader>
+                  <AccordionButton className="js-badger-accordion-header">
+                    <FontAwesomeIcon
+                      icon={additionalSkill.icon}
+                      size="2x"
+                      fixedWidth
+                      style={{
+                        marginRight: "10px",
+                        color: additionalSkill.iconColor
+                      }}
+                    />
+                    <AccordionTitle>{additionalSkill.title}</AccordionTitle>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </AccordionHeader>
+                <AccordionPanel className="badger-accordion__panel js-badger-accordion-panel">
+                  <AccordionPanelInner className="js-badger-accordion-panel-inner">
+                    <div style={{ padding: "1rem 1.5rem" }}>
+                      {additionalSkill.description}
+                    </div>
+                    <SkillBar yearsExperience={additionalSkill.yearsExperience}>
+                      {additionalSkill.yearsExperience} year
+                      {additionalSkill.yearsExperience > 1 ? "s" : ""} of
+                      experience
+                    </SkillBar>
+                  </AccordionPanelInner>
+                </AccordionPanel>
+              </Accordion>
+            </Column>
+          );
 
-              return skillContent;
-            })}
-          </Grid>
-        );
-
-        delayAdditionalSkill += 0.2;
-        return rowContent;
-      })}
+          return skillContent;
+          delayAdditionalSkill += 0.2;
+        })}
+      </Grid>
     </Section>
   );
 };

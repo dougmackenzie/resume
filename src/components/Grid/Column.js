@@ -1,11 +1,7 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 const Column = styled.div`
-    display: block;
-    flex-basis: 0;
-    flex-grow: 1;
-    flex-shrink: 1;
-    padding: .75rem;
-`
+  padding: 0.5rem 0.75rem;
+`;
 
-export default Column
+export default Column;

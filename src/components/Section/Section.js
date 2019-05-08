@@ -6,13 +6,21 @@ const Section = styled.section`
   color: ${props => props.color};
   position: relative;
 
-  @media (min-width: 769px) {
+  @media (min-width: ${props => props.theme.breakpoints.md}) {
+    padding: 80px 50px;
+  }
+
+  @media (min-width: ${props => props.theme.breakpoints.xxl}) {
     padding: 100px;
   }
 `;
 
 const SectionHeader = styled.div`
-  margin: 0 0 80px;
+  margin-bottom: 50px;
+
+  @media (min-width: ${props => props.theme.breakpoints.md}) {
+    margin-bottom: 80px;
+  }
 `;
 
 const SectionTitle = styled.h3`

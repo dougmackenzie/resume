@@ -83,7 +83,7 @@ const IntroCard = styled.div`
 const IntroTitle = styled.h1`
   font-family: ${props => props.theme.font.heading};
   font-weight: 400;
-  letter-spacing: 0.2rem;
+  letter-spacing: 0.15rem;
   font-size: 3.75rem;
   color: #eee;
   margin: 0 0 0.3rem;
