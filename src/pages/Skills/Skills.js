@@ -1,7 +1,5 @@
 import * as React from "react";
 import styled from "styled-components";
-import BadgerAccordion from "badger-accordion";
-import "badger-accordion/dist/badger-accordion.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import Section, {
@@ -11,14 +9,6 @@ import Section, {
 } from "../../components/Section/Section";
 import Grid from "../../components/Grid/Grid";
 import Column from "../../components/Grid/Column";
-import Accordion, {
-  AccordionHeader,
-  AccordionButton,
-  AccordionIcon,
-  AccordionTitle,
-  AccordionPanel,
-  AccordionPanelInner
-} from "../../components/Accordion/Accordion";
 import Card, { CardContent, CardTitle } from "../../components/Card/Card";
 import StyledHeading from "../../components/StyledHeading/StyledHeading";
 
@@ -31,20 +21,6 @@ import {
 const Skills = props => {
   let delayMainSkill = 0;
   let delayAdditionalSkill = 0;
-
-  React.useEffect(() => {
-    const accordions = document.querySelectorAll("[data-accordion]");
-
-    Array.from(accordions).forEach(accordion => {
-      let accordionOptions = {};
-
-      if (accordion.hasAttribute("data-accordion-open")) {
-        accordionOptions.openHeadersOnLoad = [0];
-      }
-
-      new BadgerAccordion(accordion, accordionOptions);
-    });
-  }, []);
 
   return (
     <Section id={props.id} style={{ backgroundColor: "#f5f5f5" }}>
@@ -99,39 +75,24 @@ const Skills = props => {
         {additionalSkills.map((additionalSkill, index) => {
           const skillContent = (
             <Column key={index}>
-              <Accordion
-                data-accordion
+              <Card
                 className="wow fadeInUp animated"
                 data-wow-delay={`${delayAdditionalSkill}s`}
+                compact
               >
-                <AccordionHeader>
-                  <AccordionButton className="js-badger-accordion-header">
-                    <FontAwesomeIcon
-                      icon={additionalSkill.icon}
-                      size="2x"
-                      fixedWidth
-                      style={{
-                        marginRight: "10px",
-                        color: additionalSkill.iconColor
-                      }}
-                    />
-                    <AccordionTitle>{additionalSkill.title}</AccordionTitle>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </AccordionHeader>
-                <AccordionPanel className="badger-accordion__panel js-badger-accordion-panel">
-                  <AccordionPanelInner className="js-badger-accordion-panel-inner">
-                    <div style={{ padding: "1rem 1.5rem" }}>
-                      {additionalSkill.description}
-                    </div>
-                    <SkillBar yearsExperience={additionalSkill.yearsExperience}>
-                      {additionalSkill.yearsExperience} year
-                      {additionalSkill.yearsExperience > 1 ? "s" : ""} of
-                      experience
-                    </SkillBar>
-                  </AccordionPanelInner>
-                </AccordionPanel>
-              </Accordion>
+                <CardContent style={{ display: "flex", alignItems: "center" }}>
+                  <FontAwesomeIcon
+                    icon={additionalSkill.icon}
+                    size="2x"
+                    fixedWidth
+                    style={{
+                      marginRight: "1rem",
+                      color: additionalSkill.iconColor
+                    }}
+                  />
+                  <CardTitle>{additionalSkill.title}</CardTitle>
+                </CardContent>
+              </Card>
             </Column>
           );
 
@@ -158,7 +119,6 @@ const SkillBar = styled.div`
     bottom: 0;
     height: 1.5rem;
     background-color: ${props => props.theme.color.highlight};
-    //opacity: 0.6;
     z-index: -100;
     width: ${props =>
       Math.ceil((props.yearsExperience / totalYearsExperience) * 100)}%;
