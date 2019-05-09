@@ -1,17 +1,17 @@
 import styled from "styled-components";
 
 const Section = styled.section`
-  padding: 50px 20px;
+  padding: ${props => !props.noPadding && `50px 20px`};
   background-color: ${props => props.backgroundColor};
   color: ${props => props.color};
   position: relative;
 
   @media (min-width: ${props => props.theme.breakpoints.md}) {
-    padding: 80px 50px;
+    padding: ${props => !props.noPadding && `80px 50px`};
   }
 
   @media (min-width: ${props => props.theme.breakpoints.xxl}) {
-    padding: 100px;
+    padding: ${props => !props.noPadding && `100px`};
   }
 `;
 

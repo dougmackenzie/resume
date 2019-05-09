@@ -23,7 +23,7 @@ const Skills = props => {
   let delayAdditionalSkill = 0;
 
   return (
-    <Section id={props.id} style={{ backgroundColor: "#f5f5f5" }}>
+    <Section id={props.id} backgroundColor="#f5f5f5">
       <SectionHeader>
         <SectionTitle>{props.title}</SectionTitle>
         <SectionSubTitle>{props.subtitle}</SectionSubTitle>

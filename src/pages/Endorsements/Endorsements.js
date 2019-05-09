@@ -1,5 +1,5 @@
 import * as React from "react";
-import styled from "styled-components";
+import styled, { withTheme } from "styled-components";
 import Swiper from "swiper";
 
 import Section from "../../components/Section/Section";
@@ -33,11 +33,9 @@ const Endorsements = props => {
   return (
     <Section
       id={props.id}
-      style={{
-        backgroundColor: "#071737cc",
-        color: "#ccc",
-        padding: 0
-      }}
+      backgroundColor={props.theme.color.secondary}
+      color="#ccc"
+      noPadding
     >
       <div data-slider className="swiper-container">
         <SliderWrapper className="swiper-wrapper">
@@ -127,4 +125,4 @@ const PortraitImage = styled.div`
   }
 `;
 
-export default Endorsements;
+export default withTheme(Endorsements);

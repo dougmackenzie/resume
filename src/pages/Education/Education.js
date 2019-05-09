@@ -1,5 +1,5 @@
 import * as React from "react";
-import styled from "styled-components";
+import styled, { withTheme } from "styled-components";
 
 import Section from "../../components/Section/Section";
 
@@ -16,7 +16,8 @@ const Education = props => {
   return (
     <Section
       id={props.id}
-      style={{ backgroundColor: "#071737cc", color: "#ccc" }}
+      backgroundColor={props.theme.color.secondary}
+      color="#ccc"
     >
       <Grid>
         <Column>
@@ -89,4 +90,4 @@ const EducationPeriod = styled.div`
   font-size: 0.85rem;
 `;
 
-export default Education;
+export default withTheme(Education);
