@@ -64,7 +64,7 @@ const Contact = props => {
 
           <SocialList>
             {socialLinks.map((socialLink, index) => (
-              <li key={index} className="wow animated flipInY">
+              <li key={index} className="wow animated fadeIn">
                 <a
                   href={socialLink.href}
                   target="_blank"

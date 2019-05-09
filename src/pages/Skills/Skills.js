@@ -40,7 +40,7 @@ const Skills = props => {
                 data-wow-delay={`${delayMainSkill}s`}
               >
                 <CardContent>
-                  <div style={{ textAlign: "center", marginBottom: "20px" }}>
+                  <div style={{ textAlign: "center", marginBottom: "1.25rem" }}>
                     <FontAwesomeIcon
                       icon={mainSkill.icon}
                       size="3x"
@@ -50,7 +50,11 @@ const Skills = props => {
                   </div>
 
                   <CardTitle
-                    style={{ textAlign: "center", marginBottom: "10px" }}
+                    style={{
+                      fontSize: "1.1rem",
+                      textAlign: "center",
+                      marginBottom: "0.75rem"
+                    }}
                   >
                     {mainSkill.title}
                   </CardTitle>
@@ -96,7 +100,7 @@ const Skills = props => {
             </Column>
           );
 
-          delayAdditionalSkill += 0.2;
+          delayAdditionalSkill += 0.1;
           return skillContent;
         })}
       </Grid>

@@ -78,10 +78,10 @@ export const socialLinks = [
 // About
 //-------------------------------------------
 const FeatureText = styled.p`
-  font-size: 34px;
+  font-size: 2.25rem;
   font-weight: 300;
   color: #666;
-  margin: 0 0 30px;
+  margin: 0 0 2rem;
 `;
 
 const FeatureTextHighlight = styled(RainbowUnderline)`
@@ -90,7 +90,7 @@ const FeatureTextHighlight = styled(RainbowUnderline)`
 `;
 
 const SupportingText = styled.div`
-  margin-bottom: 40px;
+  margin-bottom: 2rem;
 `;
 
 export const aboutText = (
