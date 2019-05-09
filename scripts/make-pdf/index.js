@@ -49,6 +49,8 @@ Font.register({
   ]
 });
 
+Font.registerHyphenationCallback(word => [word]);
+
 const pageStyles = StyleSheet.create({
   fontFamily: "Lato",
   flexDirection: "row",
@@ -145,7 +147,7 @@ const Paragraph = styled.Text`
 
 const Resume = () => (
   <Document>
-    <Page size="A4" style={pageStyles}>
+    <Page size="A4" style={pageStyles} wrap={false}>
       <Side>
         <Section>
           <Image
