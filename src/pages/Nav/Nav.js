@@ -16,7 +16,6 @@ const Nav = props => (
       <ul style={{ margin: 0, padding: 0 }}>
         <li>
           <Brand href="#intro" data-smoothscroll data-scrollspy>
-            {/* <RainbowUnderline opacity="0.5">{brand}</RainbowUnderline> */}
             <img src={logo} />
           </Brand>
         </li>
@@ -65,33 +64,32 @@ const Nav = props => (
 
 const Brand = styled.a`
   position: relative;
-  font-style: italic;
-  font-weight: 400;
-  font-size: 1.85rem;
-  color: #fff;
-  text-align: center;
   display: block;
-  text-decoration: none;
-  padding: 3.5rem 0;
+  text-align: center;
+  padding: 4rem 0;
   opacity: 0.7;
-  transition: opacity 0.2s;
+  transition: all 0.2s;
+  filter: gray;
+  webkit-filter: grayscale(1);
+  filter: grayscale(1);
+
+  > img {
+    height: 7.8125rem;
+  }
 
   &.active,
   :hover {
     opacity: 1;
-  }
-
-  &.active {
-    span {
-      background-size: 100% 0.2em;
-    }
+    -webkit-filter: grayscale(0);
+    filter: none;
   }
 `;
 
 const NavList = styled.ul`
   font-family: ${props => props.theme.font.heading};
   list-style-type: none;
-  padding: 1rem 0;
+  padding: 0;
+  margin: 0;
 
   > li {
     position: relative;
