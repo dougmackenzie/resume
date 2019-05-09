@@ -1,16 +1,31 @@
 import styled from "styled-components";
-import commonInput from "./commonInput";
+import { buttonStyles } from "../Button/Button";
 
 const SubmitButton = styled.button.attrs({
   type: "submit"
 })`
-  ${commonInput};
-  background: #fff;
+  ${buttonStyles}
   width: 100%;
+  color: ${props => (props.success ? "#fff" : "#333")};
+  background-color: ${props =>
+    props.success ? props.theme.color.success : props.theme.color.highlight};
+  transition: all 0.2s;
 
   @media (min-width: ${props => props.theme.breakpoints.md}) {
-    width: 200px;
+    padding: 0.9rem 3rem;
+    width: 14rem;
   }
+
+  :not(:disabled):hover {
+    background: ${props => props.theme.color.primary};
+    color: #fff;
+  }
+
+  ${props =>
+    props.submitting &&
+    `
+    opacity: 0.8;
+  `}
 `;
 
 export default SubmitButton;

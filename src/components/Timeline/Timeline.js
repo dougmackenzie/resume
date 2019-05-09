@@ -105,7 +105,7 @@ export const TimelineSide = styled.div`
     position: absolute;
     width: ${dotDiameter};
     height: ${dotDiameter};
-    border: ${borderWidth} solid #f6921e;
+    border: ${borderWidth} solid ${props => props.theme.color.highdark};
     background-color: #fff;
     border-radius: 100%;
     top: calc(0.5rem - (${dotDiameter} / 2));

@@ -1,21 +1,27 @@
 // Animation credit: https://codemyui.com/button-border-and-text-color-fill-on-hover/
 
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const width = "2px";
 const duration = "0.25s";
 
-const Button = styled.a`
+export const buttonStyles = css`
   position: relative;
   background: none;
-  padding: 0.75rem 1.25rem;
-  border: none;
-  border-radius: 2px;
   text-decoration: none;
   text-transform: uppercase;
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.1rem;
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-radius: 2px;
+  
+`;
+
+const Button = styled.a`
+  ${buttonStyles}
+
   box-shadow: inset 0 0 0 ${width} ${props => props.theme.color.info};
   color: ${props => props.theme.color.info};
   transition: color ${duration} ${duration} / 3;

@@ -96,8 +96,8 @@ const Skills = props => {
             </Column>
           );
 
-          return skillContent;
           delayAdditionalSkill += 0.2;
+          return skillContent;
         })}
       </Grid>
     </Section>

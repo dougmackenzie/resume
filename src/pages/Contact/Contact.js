@@ -12,14 +12,8 @@ import Section, {
 } from "../../components/Section/Section";
 import Grid from "../../components/Grid/Grid";
 import Column from "../../components/Grid/Column";
-
 import StyledHeading from "../../components/StyledHeading/StyledHeading";
-
-import FormControl from "../../components/Form/FormControl";
-import Label from "../../components/Form/Label";
-import Input from "../../components/Form/Input";
-import TextArea from "../../components/Form/TextArea";
-import SubmitButton from "../../components/Form/SubmitButton";
+import ContactForm from "../../components/ContactForm/ContactForm";
 
 import { email, phone, socialLinks } from "../../content/content";
 
@@ -78,10 +72,7 @@ const Contact = props => {
                   aria-label={socialLink.name}
                   style={{ backgroundColor: socialLink.color }}
                 >
-                  {/* <span className="fa-layers fa-fw"> */}
-                  {/* <FontAwesomeIcon icon={faCircle} color={socialLink.color} /> */}
                   <FontAwesomeIcon icon={socialLink.icon} inverse fixedWidth />
-                  {/* </span> */}
                   <span>{socialLink.name}</span>
                 </a>
               </li>
@@ -91,41 +82,7 @@ const Contact = props => {
 
         <Column>
           <StyledHeading>Send me a message</StyledHeading>
-
-          <form
-            className="gform wow animated fadeIn"
-            method="post"
-            action="https://script.google.com/macros/s/AKfycbxZgghwJqlQDPNXmqFgokuzd_56aubcoCMXUdTm/exec"
-          >
-            <FormControl>
-              <Label>Your name:</Label>
-              <Input
-                type="text"
-                name="name"
-                placeholder="Steve Rogers"
-                required
-              />
-            </FormControl>
-
-            <FormControl>
-              <Label>Your email:</Label>
-              <Input
-                type="email"
-                name="email"
-                required
-                placeholder="cap@avengers.com"
-              />
-            </FormControl>
-
-            <FormControl>
-              <Label>Message:</Label>
-              <TextArea rows="5" name="message" required placeholder="" />
-            </FormControl>
-
-            <FormControl>
-              <SubmitButton>Send</SubmitButton>
-            </FormControl>
-          </form>
+          <ContactForm />
         </Column>
       </Grid>
     </Section>

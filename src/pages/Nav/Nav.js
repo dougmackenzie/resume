@@ -4,9 +4,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import Sidebar from "../../components/Sidebar/Sidebar";
 import Button from "../../components/Button/Button";
-import RainbowUnderline from "../../components/RainbowUnderline/RainbowUnderline";
 
-import { brand, socialLinks, resumePDF } from "../../content/content";
+import { socialLinks, resumePDF } from "../../content/content";
 
 import logo from "../../images/logo.png";
 

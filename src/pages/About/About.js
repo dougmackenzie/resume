@@ -107,7 +107,7 @@ const About = props => {
 
 const AboutSection = styled.div`
   font-size: 1rem;
-  border-left: 3px solid ${props => props.theme.color.highlight};
+  border-left: 4px solid ${props => props.theme.color.highlight};
   padding-left: 1rem;
 `;
 
