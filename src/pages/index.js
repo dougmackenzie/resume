@@ -83,20 +83,6 @@ const IndexPage = () => {
     new SmoothScroll("a[data-smoothscroll]");
     new Gumshoe("a[data-scrollspy]");
     new WOW().init();
-
-    // Listen for scrollspy callback and apply active class to <a> element
-    document.addEventListener(
-      "gumshoeActivate",
-      event => event.target.querySelector("a").classList.add("active"),
-      false
-    );
-
-    // Listen for scrollspy callback and remove active class from <a> element
-    document.addEventListener(
-      "gumshoeDeactivate",
-      event => event.target.querySelector("a").classList.remove("active"),
-      false
-    );
   }, []);
 
   return (

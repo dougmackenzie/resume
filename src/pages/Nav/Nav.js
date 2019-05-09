@@ -12,13 +12,13 @@ import logo from "../../images/logo.png";
 const Nav = props => (
   <Sidebar>
     <header role="banner">
-      <ul style={{ margin: 0, padding: 0 }}>
+      <Brand>
         <li>
-          <Brand href="#intro" data-smoothscroll data-scrollspy>
+          <a href="#intro" data-smoothscroll data-scrollspy>
             <img src={logo} />
-          </Brand>
+          </a>
         </li>
-      </ul>
+      </Brand>
     </header>
     <nav role="navigation">
       <NavList>
@@ -61,26 +61,31 @@ const Nav = props => (
   </Sidebar>
 );
 
-const Brand = styled.a`
-  position: relative;
-  display: block;
-  text-align: center;
-  padding: 4rem 0;
-  opacity: 0.7;
-  transition: all 0.2s;
-  filter: gray;
-  webkit-filter: grayscale(1);
-  filter: grayscale(1);
+const Brand = styled.ul`
+  margin: 0;
+  padding: 0;
 
-  > img {
-    height: 7.8125rem;
-  }
+  > li {
+    position: relative;
+    display: block;
+    text-align: center;
+    padding: 4rem 0;
+    opacity: 0.7;
+    transition: all 0.2s;
+    filter: gray;
+    webkit-filter: grayscale(1);
+    filter: grayscale(1);
 
-  &.active,
-  :hover {
-    opacity: 1;
-    -webkit-filter: grayscale(0);
-    filter: none;
+    img {
+      height: 7.8125rem;
+    }
+
+    &.active,
+    :hover {
+      opacity: 1;
+      -webkit-filter: grayscale(0);
+      filter: none;
+    }
   }
 `;
 
@@ -103,15 +108,16 @@ const NavList = styled.ul`
       letter-spacing: 0.1rem;
       transition: all 0.2s;
 
-      :hover,
-      &.active {
+      :hover {
         opacity: 1;
         color: ${props => props.theme.color.highlight};
       }
+    }
 
-      &.active {
-        //margin-left: 0.5rem;
-      }
+    &.active > a {
+      opacity: 1;
+      color: ${props => props.theme.color.highlight};
+      // margin-left: 0.5rem;
     }
   }
 `;
