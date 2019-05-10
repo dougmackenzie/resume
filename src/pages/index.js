@@ -1,6 +1,5 @@
 import React from "react";
 import styled, { ThemeProvider } from "styled-components";
-import SmoothScroll from "smooth-scroll";
 import Gumshoe from "gumshoejs";
 import WOW from "wow.js";
 
@@ -80,7 +79,6 @@ const pages = [
 
 const IndexPage = () => {
   React.useEffect(() => {
-    new SmoothScroll("a[data-smoothscroll]");
     new Gumshoe("a[data-scrollspy]");
     new WOW().init();
   }, []);

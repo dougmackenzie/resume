@@ -14,3 +14,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Turn smooth scrolling off for users with the 'prefers-reduced-motion' setting */
+@media screen and (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
