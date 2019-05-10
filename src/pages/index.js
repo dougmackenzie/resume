@@ -6,18 +6,18 @@ import WOW from "wow.js";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import Nav from "../pages/Nav/Nav";
+import Nav from "../slides/Nav/Nav";
 import theme from "../theme";
 
 // Pages
-import Intro from "./Intro/Intro";
-import About from "./About/About";
-import Skills from "./Skills/Skills";
-import History from "./History/History";
-import Education from "./Education/Education";
+import Intro from "../slides/Intro/Intro";
+import About from "../slides/About/About";
+import Skills from "../slides/Skills/Skills";
+import History from "../slides/History/History";
+import Education from "../slides/Education/Education";
 //import Work from "./Work/Work";
-import Contact from "./Contact/Contact";
-import Endorsements from "./Endorsements/Endorsements";
+import Contact from "../slides/Contact/Contact";
+import Endorsements from "../slides/Endorsements/Endorsements";
 
 const pages = [
   {
