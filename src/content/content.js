@@ -36,6 +36,11 @@ import kdsLogo from "../images/kds-logo.png";
 import etapLogo from "../images/etap-logo.png";
 import webCoLogo from "../images/webco-logo.png";
 
+// Recommendations avatars
+import michelle from "../images/mich.jpg";
+import tom from "../images/tom.jpg";
+import megan from "../images/megan.jpeg";
+
 // Resume PDF file
 import resume from "../files/resume-doug-mackenzie.pdf";
 
@@ -340,5 +345,32 @@ export const educationHistory = [
     school: "Yoobee School of Design",
     course: "Diploma of Web Development",
     period: "2008 — 2009"
+  }
+];
+
+//-------------------------------------------
+// Recommendations
+//-------------------------------------------
+
+export const recommendations = [
+  {
+    person: {
+      name: "Michelle Lazarow",
+      company: "The King David School",
+      position: "Director of Learning Technologies and Innovation",
+      photo: michelle
+    },
+    recommendation:
+      "Doug was a critical team member at The King David School. He was extremely capable of managing various stakeholders priorities and developing any project the School wanted."
+  },
+  {
+    person: {
+      name: "Tom Sargent",
+      company: "The King David School",
+      position: "ICT Manager",
+      photo: tom
+    },
+    recommendation:
+      "Doug translated the School's vision and ideas into well designed and functional solutions. Doug has great attention to detail and an eye for clean, practical interfaces."
   }
 ];

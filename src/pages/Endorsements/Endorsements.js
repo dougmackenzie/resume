@@ -4,16 +4,7 @@ import Swiper from "swiper";
 
 import Section from "../../components/Section/Section";
 
-import michelle from "../../images/michelle.jpeg";
-import megan from "../../images/megan.jpeg";
-
-const SliderWrapper = styled.div`
-  padding: 50px 20px;
-
-  @media (min-width: ${props => props.theme.breakpoints.xxl}) {
-    padding: 100px 140px;
-  }
-`;
+import { recommendations } from "../../content/content";
 
 const Endorsements = props => {
   React.useEffect(() => {
@@ -38,55 +29,30 @@ const Endorsements = props => {
       noPadding
     >
       <div data-slider className="swiper-container">
-        <SliderWrapper className="swiper-wrapper">
-          <div className="swiper-slide">
-            <Endorsement>
-              <PortraitImage>
-                <img src={michelle} />
-              </PortraitImage>
+        <div className="swiper-wrapper">
+          {recommendations.map((recommendation, index) => (
+            <SliderSlide key={index}>
+              <Endorsement>
+                <PortraitImage>
+                  <img src={recommendation.person.photo} />
+                </PortraitImage>
 
-              <Quote>
-                Doug was always very good at moving data back into Synergetic.
-                <footer>
-                  <div>Michelle Lazarow</div>
-                  <div>
-                    Director of Learning Technologies and Innovation &mdash; The
-                    King David School
-                  </div>
-                </footer>
-              </Quote>
-            </Endorsement>
-          </div>
-
-          <div className="swiper-slide">
-            <Endorsement>
-              <PortraitImage>
-                <img src={megan} />
-              </PortraitImage>
-
-              <Quote>
-                He was a great guy to work with!
-                <footer>
-                  <div>Megan Conley</div>
-                  <div>
-                    Online Learning &amp; Education Consultant &mdash; Schoolbox
-                    (Previously)
-                  </div>
-                </footer>
-              </Quote>
-            </Endorsement>
-          </div>
-        </SliderWrapper>
-        <div
-          className="swiper-button-prev swiper-button-white"
-          data-slider-prev
-          style={{ left: "2rem" }}
-        />
-        <div
-          className="swiper-button-next swiper-button-white"
-          data-slider-next
-          style={{ right: "2rem" }}
-        />
+                <Quote>
+                  {recommendation.recommendation}
+                  <footer>
+                    <div>{recommendation.person.name}</div>
+                    <div>
+                      {recommendation.person.position} &mdash;
+                      {recommendation.person.company}
+                    </div>
+                  </footer>
+                </Quote>
+              </Endorsement>
+            </SliderSlide>
+          ))}
+        </div>
+        <SliderNavPrev />
+        <SliderNavNext />
       </div>
     </Section>
   );
@@ -96,32 +62,83 @@ const Endorsement = styled.div`
   display: flex;
 `;
 
-const Quote = styled.blockquote`
-  font-size: 1.5rem;
-  color: #fff;
-
-  :before {
-    color: ${props => props.theme.color.highlight};
-    content: open-quote;
-    font-size: 4rem;
-    line-height: 0.1rem;
-    margin-right: 0.25rem;
-    vertical-align: -0.4rem;
-  }
-
-  footer {
-    font-size: 1rem;
-    color: #ccc;
-  }
-`;
-
 const PortraitImage = styled.div`
-  max-width: 120px;
+  flex: 0 0 100px;
+  margin-right: 1rem;
+  display: none;
 
   > img {
     width: 100%;
     border: 2px solid #ccc;
     border-radius: 50%;
+  }
+
+  @media (min-width: ${props => props.theme.breakpoints.lg}) {
+    display: block;
+  }
+`;
+
+const Quote = styled.blockquote`
+  font-size: 1.25rem;
+  color: #fff;
+  position: relative;
+  margin: 0;
+  padding: 0.75rem 0 0.5rem 1.5rem;
+
+  :before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-family: ${props => props.theme.font.heading};
+    color: ${props => props.theme.color.highlight};
+    content: "“";
+    font-size: 8rem;
+    line-height: 6rem;
+    opacity: 0.2;
+  }
+
+  footer {
+    font-size: 1rem;
+    color: #ccc;
+    margin-top: 0.75rem;
+  }
+`;
+
+const SliderSlide = styled.div.attrs({
+  className: "swiper-slide"
+})`
+  padding: 50px 20px;
+
+  @media (min-width: ${props => props.theme.breakpoints.md}) {
+    padding: ${props => !props.noPadding && `80px 50px`};
+  }
+
+  @media (min-width: ${props => props.theme.breakpoints.xxl}) {
+    padding: ${props => !props.noPadding && `100px `};
+  }
+`;
+
+const SliderNavPrev = styled.div.attrs({
+  className: "swiper-button-prev swiper-button-white",
+  dataSliderPrev: true
+})`
+  display: none;
+  left: 2rem;
+
+  @media (min-width: ${props => props.theme.breakpoints.xxl}) {
+    display: block;
+  }
+`;
+
+const SliderNavNext = styled.div.attrs({
+  className: "swiper-button-next swiper-button-white",
+  dataSliderNext: true
+})`
+  display: none;
+  right: 2rem;
+
+  @media (min-width: ${props => props.theme.breakpoints.xxl}) {
+    display: block;
   }
 `;
 

@@ -14,14 +14,10 @@ import scrumLogo from "../../images/scrum-logo.png";
 
 const Education = props => {
   return (
-    <Section
-      id={props.id}
-      backgroundColor={props.theme.color.secondary}
-      color="#ccc"
-    >
+    <Section id={props.id} backgroundColor="#f5f5f5">
       <Grid>
         <Column>
-          <StyledHeading style={{ color: "#fff" }}>Education</StyledHeading>
+          <StyledHeading>Education</StyledHeading>
           <EducationItem className="wow animated fadeIn">
             <EducationLogo>
               <img src={yoobeeLogo} />
@@ -32,18 +28,9 @@ const Education = props => {
               <EducationPeriod>2008 &mdash; 2009</EducationPeriod>
             </EducationDetails>
           </EducationItem>
-          {/* <p>
-            Modules: - Client side development - XHTML, CSS & JavaScript -
-            Server side development - PHP / MySQL development, e-commerce
-            development, object oriented programming. - Multimedia web scripting
-            - Flash animation with ActionScript - Introduction to Wordpress &
-            Joomla - Industry project & portfolio
-          </p> */}
         </Column>
         <Column>
-          <StyledHeading style={{ color: "#fff" }}>
-            Certifications
-          </StyledHeading>
+          <StyledHeading>Certifications</StyledHeading>
           <EducationItem className="wow animated fadeIn">
             <EducationLogo>
               <img src={scrumLogo} />
@@ -80,7 +67,6 @@ const EducationDetails = styled.div`
 
 const EducationCourse = styled.div`
   font-size: 1.25rem;
-  color: #ddd;
   font-weight: 400;
 `;
 

@@ -42,13 +42,6 @@ const pages = [
     navTitle: "Skills"
   },
   {
-    id: "endorsements",
-    page: Endorsements,
-    title: "",
-    subtitle: "",
-    navTitle: ""
-  },
-  {
     id: "experience",
     page: History,
     title: "Experience",
@@ -61,6 +54,13 @@ const pages = [
     title: "Education",
     subtitle: "My qualifications",
     navTitle: "Education"
+  },
+  {
+    id: "endorsements",
+    page: Endorsements,
+    title: "",
+    subtitle: "",
+    navTitle: "References"
   },
   // {
   //   id: "work",

@@ -110,7 +110,6 @@ const NavList = styled.ul`
 
       :hover {
         opacity: 1;
-        color: ${props => props.theme.color.highlight};
       }
     }
 
