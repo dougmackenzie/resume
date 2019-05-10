@@ -1,7 +1,6 @@
 import React from "react";
 import styled, { ThemeProvider } from "styled-components";
 import Gumshoe from "gumshoejs";
-import WOW from "wow.js";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -17,6 +16,19 @@ import Education from "../slides/Education/Education";
 //import Work from "./Work/Work";
 import Contact from "../slides/Contact/Contact";
 import Endorsements from "../slides/Endorsements/Endorsements";
+
+// Import any third party libraries that use the window object
+// These can't be imported with SSR because window doesn't exist
+// See https://github.com/gatsbyjs/gatsby/issues/309
+const isServer = typeof window === "undefined";
+
+let WOW;
+let SmoothScroll;
+
+if (!isServer) {
+  WOW = require("wow.js");
+  SmoothScroll = require("smooth-scroll");
+}
 
 const pages = [
   {
@@ -80,7 +92,11 @@ const pages = [
 const IndexPage = () => {
   React.useEffect(() => {
     new Gumshoe("a[data-scrollspy]");
-    new WOW().init();
+
+    if (!isServer) {
+      new WOW().init();
+      new SmoothScroll("a[data-smoothscroll]");
+    }
   }, []);
 
   return (
