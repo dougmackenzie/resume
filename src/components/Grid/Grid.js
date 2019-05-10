@@ -1,15 +1,18 @@
 import styled from "styled-components";
 
 const Grid = styled.div`
+  display: -ms-grid;
   display: grid;
 
   @media (min-width: ${props => props.theme.breakpoints.md}) {
+    -ms-grid-columns: (1fr) [2];
     grid-template-columns: repeat(2, 1fr);
   }
 
   ${props =>
     props.fours &&
     `@media (min-width: ${props.theme.breakpoints.xl}) {
+        -ms-grid-columns: (1fr)[4];
         grid-template-columns: repeat(4, 1fr);
       }
     `}

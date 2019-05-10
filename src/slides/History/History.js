@@ -72,6 +72,7 @@ const ExperienceTimeline = styled(Timeline)`
   display: none;
 
   @media (min-width: ${props => props.theme.breakpoints.md}) {
+    display: -ms-grid;
     display: grid;
   }
 `;

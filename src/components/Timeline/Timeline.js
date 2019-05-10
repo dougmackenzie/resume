@@ -144,7 +144,9 @@ export const TimelineMain = styled.div`
 `;
 
 const Timeline = styled.div`
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: auto 5fr;
   grid-template-columns: auto 5fr;
   width: 100%;
   padding: 0 3rem;

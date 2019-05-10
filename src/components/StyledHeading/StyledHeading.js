@@ -10,6 +10,7 @@ const StyledHeading = styled.h5`
   margin: 1rem 0 1.5rem;
   text-align: center;
 
+  display: -ms-grid;
   display: grid;
   grid-template-columns: 1rem max-content 0;
   grid-template-rows: 1rem 0;

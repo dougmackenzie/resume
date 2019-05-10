@@ -126,9 +126,11 @@ const Caption = styled.div`
 `;
 
 const AboutGrid = styled(Grid)`
+  -ms-grid-columns: 100% !important;
   grid-template-columns: 100% !important;
 
   @media (min-width: ${props => props.theme.breakpoints.lg}) {
+    -ms-grid-columns: auto 1fr !important;
     grid-template-columns: auto 1fr !important;
   }
 `;
