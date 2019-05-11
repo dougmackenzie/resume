@@ -9,6 +9,7 @@ import Section, {
 } from "../../components/Section/Section";
 import Grid from "../../components/Grid/Grid";
 import Column from "../../components/Grid/Column";
+import Slider, { Slides, Slide } from "../../components/Slider/Slider";
 
 import { slideshowImages, stats, aboutText } from "../../content/content";
 
@@ -22,10 +23,6 @@ const About = props => {
         nextEl: "[data-slider-next]",
         prevEl: "[data-slider-prev]"
       }
-      // pagination: {
-      //   el: "[data-swiper-pagination]",
-      //   clickable: true
-      // }
     });
   }, []);
 
@@ -60,29 +57,23 @@ const About = props => {
         </Column>
 
         <AboutSlider className="wow animated fadeInRight">
-          <div
-            data-slider
-            className="swiper-container"
+          <Slider
             style={{
               width: "400px",
               boxShadow: "0 1.5rem 3rem rgba(0,0,0,.2)"
             }}
           >
-            <div className="swiper-wrapper">
+            <Slides>
               {slideshowImages.map((image, index) => (
-                <div
-                  className="swiper-slide"
-                  key={index}
-                  style={{ lineHeight: 0 }}
-                >
+                <Slide key={index} style={{ lineHeight: 0 }}>
                   <img
                     src={image.image}
                     alt={image.alt}
                     style={{ width: "100%" }}
                   />
-                </div>
+                </Slide>
               ))}
-            </div>
+            </Slides>
 
             <SwiperNav
               className="swiper-button-prev swiper-button-white"
@@ -92,12 +83,7 @@ const About = props => {
               className="swiper-button-next swiper-button-white"
               data-slider-next
             />
-
-            {/* <SwiperPagination
-              className="swiper-pagination"
-              data-swiper-pagination
-            /> */}
-          </div>
+          </Slider>
           {/* <Caption>Captions here</Caption> */}
         </AboutSlider>
       </AboutGrid>
@@ -142,18 +128,6 @@ const AboutSlider = styled(Column)`
 
   @media (min-width: ${props => props.theme.breakpoints.lg}) {
     display: block;
-  }
-`;
-
-const SwiperPagination = styled.div`
-  display: flex;
-  bottom: 0;
-
-  .swiper-pagination-bullet {
-    flex-grow: 1;
-    border-radius: 0;
-    height: 4px;
-    margin: 0 !important;
   }
 `;
 

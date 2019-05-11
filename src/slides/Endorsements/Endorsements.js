@@ -3,6 +3,11 @@ import styled, { withTheme } from "styled-components";
 import Swiper from "swiper";
 
 import Section from "../../components/Section/Section";
+import Slider, {
+  Slides,
+  Slide,
+  SliderPagination
+} from "../../components/Slider/Slider";
 
 import { recommendations } from "../../content/content";
 
@@ -10,14 +15,10 @@ const Endorsements = props => {
   React.useEffect(() => {
     // Init slider
     new Swiper("[data-slider]", {
-      navigation: {
-        nextEl: "[data-slider-next]",
-        prevEl: "[data-slider-prev]"
+      pagination: {
+        el: "[data-slider-pagination]",
+        clickable: true
       }
-      // pagination: {
-      //   el: "[data-swiper-pagination]",
-      //   clickable: true
-      // }
     });
   });
 
@@ -28,10 +29,10 @@ const Endorsements = props => {
       color="#ccc"
       noPadding
     >
-      <div data-slider className="swiper-container">
-        <div className="swiper-wrapper">
+      <Slider>
+        <Slides>
           {recommendations.map((recommendation, index) => (
-            <SliderSlide key={index}>
+            <Slide key={index} padded>
               <Endorsement>
                 <PortraitImage>
                   <img src={recommendation.person.photo} />
@@ -48,12 +49,11 @@ const Endorsements = props => {
                   </footer>
                 </Quote>
               </Endorsement>
-            </SliderSlide>
+            </Slide>
           ))}
-        </div>
-        <SliderNavPrev />
-        <SliderNavNext />
-      </div>
+        </Slides>
+        <SliderPagination />
+      </Slider>
     </Section>
   );
 };
@@ -101,44 +101,6 @@ const Quote = styled.blockquote`
     font-size: 1rem;
     color: #ccc;
     margin-top: 0.75rem;
-  }
-`;
-
-const SliderSlide = styled.div.attrs({
-  className: "swiper-slide"
-})`
-  padding: 50px 20px;
-
-  @media (min-width: ${props => props.theme.breakpoints.md}) {
-    padding: ${props => !props.noPadding && `80px 50px`};
-  }
-
-  @media (min-width: ${props => props.theme.breakpoints.xxl}) {
-    padding: ${props => !props.noPadding && `100px `};
-  }
-`;
-
-const SliderNavPrev = styled.div.attrs({
-  className: "swiper-button-prev swiper-button-white",
-  dataSliderPrev: true
-})`
-  display: none;
-  left: 2rem;
-
-  @media (min-width: ${props => props.theme.breakpoints.xxl}) {
-    display: block;
-  }
-`;
-
-const SliderNavNext = styled.div.attrs({
-  className: "swiper-button-next swiper-button-white",
-  dataSliderNext: true
-})`
-  display: none;
-  right: 2rem;
-
-  @media (min-width: ${props => props.theme.breakpoints.xxl}) {
-    display: block;
   }
 `;
 
