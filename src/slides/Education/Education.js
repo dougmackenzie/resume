@@ -7,10 +7,7 @@ import StyledHeading from "../../components/StyledHeading/StyledHeading";
 import Grid from "../../components/Grid/Grid";
 import Column from "../../components/Grid/Column";
 
-//import { educationHistory } from "../../content/content";
-
-import yoobeeLogo from "../../images/yoobee-logo.png";
-import scrumLogo from "../../images/scrum-logo.png";
+import { education, certifications } from "../../content/content";
 
 const Education = props => {
   return (
@@ -18,29 +15,33 @@ const Education = props => {
       <Grid>
         <Column>
           <StyledHeading>Education</StyledHeading>
-          <EducationItem className="wow animated fadeIn">
-            <EducationLogo>
-              <img src={yoobeeLogo} />
-            </EducationLogo>
-            <EducationDetails>
-              <EducationCourse>Diploma of Web Development</EducationCourse>
-              <div>Yoobee School of Design</div>
-              <EducationPeriod>2008 &mdash; 2009</EducationPeriod>
-            </EducationDetails>
-          </EducationItem>
+          {education.map((educationItem, index) => (
+            <EducationItem className="wow animated fadeIn" key={index}>
+              <EducationLogo>
+                <img src={educationItem.logo} />
+              </EducationLogo>
+              <EducationDetails>
+                <EducationCourse>{educationItem.course}</EducationCourse>
+                <div>{educationItem.school}</div>
+                <EducationPeriod>{educationItem.period}</EducationPeriod>
+              </EducationDetails>
+            </EducationItem>
+          ))}
         </Column>
         <Column>
           <StyledHeading>Certifications</StyledHeading>
-          <EducationItem className="wow animated fadeIn">
-            <EducationLogo>
-              <img src={scrumLogo} />
-            </EducationLogo>
-            <EducationDetails>
-              <EducationCourse>Professional Scrum Master I</EducationCourse>
-              <div>Scrum.org</div>
-              <EducationPeriod>Aug 2018</EducationPeriod>
-            </EducationDetails>
-          </EducationItem>
+          {certifications.map((certification, index) => (
+            <EducationItem className="wow animated fadeIn">
+              <EducationLogo>
+                <img src={certification.logo} />
+              </EducationLogo>
+              <EducationDetails>
+                <EducationCourse>{certification.name}</EducationCourse>
+                <div>{certification.issuer}</div>
+                <EducationPeriod>{certification.issueDate}</EducationPeriod>
+              </EducationDetails>
+            </EducationItem>
+          ))}
         </Column>
       </Grid>
     </Section>

@@ -30,11 +30,13 @@ import RainbowUnderline from "../components/RainbowUnderline/RainbowUnderline";
 import butterflyImage from "../images/about/butterfly.jpg";
 import vivianImage from "../images/about/vvn.jpg";
 
-// Company logos for employment history
+// Company logos for employment & education history
 import schoolboxLogo from "../images/schoolbox-logo-square.png";
 import kdsLogo from "../images/kds-logo.png";
 import etapLogo from "../images/etap-logo.png";
 import webCoLogo from "../images/webco-logo.png";
+import yoobeeLogo from "../images/yoobee-logo.png";
+import scrumLogo from "../images/scrum-logo.png";
 
 // Recommendations avatars
 import michelle from "../images/mich.jpg";
@@ -338,13 +340,23 @@ export const workHistory = [
 ];
 
 //-------------------------------------------
-// Education
+// Education & Certifications
 //-------------------------------------------
-export const educationHistory = [
+export const education = [
   {
     school: "Yoobee School of Design",
     course: "Diploma of Web Development",
-    period: "2008 — 2009"
+    period: "2008 — 2009",
+    logo: yoobeeLogo
+  }
+];
+
+export const certifications = [
+  {
+    name: "Professional Scrum Master I",
+    issuer: "Scrum.org",
+    issueDate: "Aug 2018",
+    logo: scrumLogo
   }
 ];
 
