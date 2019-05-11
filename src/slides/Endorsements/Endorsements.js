@@ -29,7 +29,7 @@ const Endorsements = props => {
       color="#ccc"
       noPadding
     >
-      <Slider>
+      <Slider className="wow animated fadeIn">
         <Slides>
           {recommendations.map((recommendation, index) => (
             <Slide key={index} padded>
