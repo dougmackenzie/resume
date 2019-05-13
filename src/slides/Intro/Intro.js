@@ -7,7 +7,6 @@ import { title, subtitle } from "../../content/content";
 
 import bgPattern from "../../images/bg-pattern.png";
 import featureImage from "../../images/feature-image.jpg";
-import logo from "../../images/logo.png";
 import portrait from "../../images/portrait.png";
 
 const Intro = props => {
@@ -17,7 +16,6 @@ const Intro = props => {
   return (
     <IntroContainer id={props.id}>
       <IntroCard>
-        {/* <img src={logo} style={{ opacity: "0.5" }} /> */}
         {/* <img
           src={portrait}
           style={{

@@ -7,15 +7,19 @@ import Button from "../../components/Button/Button";
 
 import { socialLinks, resumePDF } from "../../content/content";
 
-import logo from "../../images/logo.png";
-
 const Nav = props => (
   <Sidebar>
     <header role="banner">
       <Brand>
         <li>
           <a href="#intro" data-smoothscroll data-scrollspy>
-            <img src={logo} />
+            <Logo>
+              Doug
+              <br />
+              mack
+              <br />
+              nz
+            </Logo>
           </a>
         </li>
       </Brand>
@@ -86,7 +90,26 @@ const Brand = styled.ul`
       -webkit-filter: grayscale(0);
       filter: none;
     }
+
+    a {
+      text-decoration: none;
+      color: ${props => props.theme.color.primary};
+    }
   }
+`;
+
+const Logo = styled.div`
+  display: inline-block;
+  width: 125px;
+  height: 125px;
+  background-color: ${props => props.theme.color.highlight};
+  font-family: ${props => props.theme.font.heading};
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 26px;
+  letter-spacing: 2px;
+  padding: 16px 0;
+  line-height: 32px;
 `;
 
 const NavList = styled.ul`
