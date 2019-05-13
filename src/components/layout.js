@@ -1,8 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { StaticQuery, graphql } from "gatsby";
-require("typeface-lato");
-require("typeface-oswald");
 
 import "normalize.css/normalize.css";
 import "./layout.css";
