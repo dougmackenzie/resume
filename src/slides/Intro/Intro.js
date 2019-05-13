@@ -50,6 +50,7 @@ const IntroContainer = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  padding: 0 20px;
 `;
 
 const BackgroundImage = styled.div`
@@ -84,15 +85,16 @@ const IntroTitle = styled.h1`
   letter-spacing: 0.15rem;
   font-size: 3.75rem;
   color: #eee;
-  margin: 0 0 0.3rem;
+  margin: 0 0 0.75rem;
   flex: 0 0 100%;
   text-align: center;
+  line-height: 1.1;
   animation: slideIn 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) both;
 }
 `;
 
 const IntroSubTitle = styled.h2`
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.4rem;
