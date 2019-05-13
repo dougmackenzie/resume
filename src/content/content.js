@@ -31,12 +31,12 @@ import butterflyImage from "../images/about/butterfly.jpg";
 import vivianImage from "../images/about/vvn.jpg";
 
 // Company logos for employment & education history
-import schoolboxLogo from "../images/schoolbox-logo-square.png";
-import kdsLogo from "../images/kds-logo.png";
-import etapLogo from "../images/etap-logo.png";
-import webCoLogo from "../images/webco-logo.png";
-import yoobeeLogo from "../images/yoobee-logo.png";
-import scrumLogo from "../images/scrum-logo.png";
+import schoolboxLogo from "../images/logos/schoolbox.png";
+import kdsLogo from "../images/logos/kds.png";
+import etapLogo from "../images/logos/etap.png";
+import webCoLogo from "../images/logos/webco.png";
+import yoobeeLogo from "../images/logos/yoobee.png";
+import scrumLogo from "../images/logos/scrum.png";
 
 // Recommendations avatars
 import michelle from "../images/references/mich.jpg";
