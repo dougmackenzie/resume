@@ -39,9 +39,8 @@ import yoobeeLogo from "../images/yoobee-logo.png";
 import scrumLogo from "../images/scrum-logo.png";
 
 // Recommendations avatars
-import michelle from "../images/mich.jpg";
-import tom from "../images/tom.jpg";
-import megan from "../images/megan.jpeg";
+import michelle from "../images/references/mich.jpg";
+import tom from "../images/references/tom.jpg";
 
 // Resume PDF file
 import resume from "../files/resume-doug-mackenzie.pdf";
