@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import Section, {
   SectionHeader,
+  SectionContainer,
   SectionTitle,
   SectionSubTitle
 } from "../../components/Section/Section";
@@ -24,86 +25,92 @@ const Skills = props => {
 
   return (
     <Section id={props.id} backgroundColor="#f5f5f5">
-      <SectionHeader>
-        <SectionTitle>{props.title}</SectionTitle>
-        <SectionSubTitle>{props.subtitle}</SectionSubTitle>
-      </SectionHeader>
+      <SectionContainer>
+        <SectionHeader>
+          <SectionTitle>{props.title}</SectionTitle>
+          <SectionSubTitle>{props.subtitle}</SectionSubTitle>
+        </SectionHeader>
 
-      <StyledHeading>Specialties</StyledHeading>
+        <StyledHeading>Specialties</StyledHeading>
 
-      <Grid fours style={{ marginBottom: "3rem" }}>
-        {mainSkills.map((mainSkill, index) => {
-          const content = (
-            <Column key={index}>
-              <Card
-                className="wow flipInY animated"
-                data-wow-delay={`${delayMainSkill}s`}
-              >
-                <CardContent>
-                  <div style={{ textAlign: "center", marginBottom: "1.25rem" }}>
-                    <FontAwesomeIcon
-                      icon={mainSkill.icon}
-                      size="3x"
-                      fixedWidth
-                      style={{ color: mainSkill.iconColor }}
-                    />
-                  </div>
+        <Grid fours style={{ marginBottom: "3rem" }}>
+          {mainSkills.map((mainSkill, index) => {
+            const content = (
+              <Column key={index}>
+                <Card
+                  className="wow flipInY animated"
+                  data-wow-delay={`${delayMainSkill}s`}
+                >
+                  <CardContent>
+                    <div
+                      style={{ textAlign: "center", marginBottom: "1.25rem" }}
+                    >
+                      <FontAwesomeIcon
+                        icon={mainSkill.icon}
+                        size="3x"
+                        fixedWidth
+                        style={{ color: mainSkill.iconColor }}
+                      />
+                    </div>
 
-                  <CardTitle
-                    style={{
-                      fontSize: "1.1rem",
-                      textAlign: "center",
-                      marginBottom: "0.75rem"
-                    }}
+                    <CardTitle
+                      style={{
+                        fontSize: "1.1rem",
+                        textAlign: "center",
+                        marginBottom: "0.75rem"
+                      }}
+                    >
+                      {mainSkill.title}
+                    </CardTitle>
+                    {mainSkill.description}
+                  </CardContent>
+                  <SkillBar yearsExperience={mainSkill.yearsExperience}>
+                    {mainSkill.yearsExperience} year
+                    {mainSkill.yearsExperience > 1 ? "s" : ""} of experience
+                  </SkillBar>
+                </Card>
+              </Column>
+            );
+
+            delayMainSkill += 0.2;
+            return content;
+          })}
+        </Grid>
+
+        <StyledHeading>Additional Skills</StyledHeading>
+
+        <Grid fours>
+          {additionalSkills.map((additionalSkill, index) => {
+            const skillContent = (
+              <Column key={index}>
+                <Card
+                  className="wow fadeInUp animated"
+                  data-wow-delay={`${delayAdditionalSkill}s`}
+                  compact
+                >
+                  <CardContent
+                    style={{ display: "flex", alignItems: "center" }}
                   >
-                    {mainSkill.title}
-                  </CardTitle>
-                  {mainSkill.description}
-                </CardContent>
-                <SkillBar yearsExperience={mainSkill.yearsExperience}>
-                  {mainSkill.yearsExperience} year
-                  {mainSkill.yearsExperience > 1 ? "s" : ""} of experience
-                </SkillBar>
-              </Card>
-            </Column>
-          );
+                    <FontAwesomeIcon
+                      icon={additionalSkill.icon}
+                      size="2x"
+                      fixedWidth
+                      style={{
+                        marginRight: "1rem",
+                        color: additionalSkill.iconColor
+                      }}
+                    />
+                    <CardTitle>{additionalSkill.title}</CardTitle>
+                  </CardContent>
+                </Card>
+              </Column>
+            );
 
-          delayMainSkill += 0.2;
-          return content;
-        })}
-      </Grid>
-
-      <StyledHeading>Additional Skills</StyledHeading>
-
-      <Grid fours>
-        {additionalSkills.map((additionalSkill, index) => {
-          const skillContent = (
-            <Column key={index}>
-              <Card
-                className="wow fadeInUp animated"
-                data-wow-delay={`${delayAdditionalSkill}s`}
-                compact
-              >
-                <CardContent style={{ display: "flex", alignItems: "center" }}>
-                  <FontAwesomeIcon
-                    icon={additionalSkill.icon}
-                    size="2x"
-                    fixedWidth
-                    style={{
-                      marginRight: "1rem",
-                      color: additionalSkill.iconColor
-                    }}
-                  />
-                  <CardTitle>{additionalSkill.title}</CardTitle>
-                </CardContent>
-              </Card>
-            </Column>
-          );
-
-          delayAdditionalSkill += 0.1;
-          return skillContent;
-        })}
-      </Grid>
+            delayAdditionalSkill += 0.1;
+            return skillContent;
+          })}
+        </Grid>
+      </SectionContainer>
     </Section>
   );
 };

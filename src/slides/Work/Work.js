@@ -2,6 +2,7 @@ import * as React from "react";
 
 import Section, {
   SectionHeader,
+  SectionContainer,
   SectionTitle,
   SectionSubTitle
 } from "../../components/Section/Section";
@@ -37,26 +38,28 @@ const workExamples = [
 const Work = props => {
   return (
     <Section id={props.id} style={{ backgroundColor: "#f5f5f5" }}>
-      <SectionHeader>
-        <SectionTitle>{props.title}</SectionTitle>
-        <SectionSubTitle>{props.subtitle}</SectionSubTitle>
-      </SectionHeader>
-      <Grid>
-        {workExamples.map((workExample, index) => (
-          <Column key={index}>
-            <Card>
-              <CardImage>
-                <img src="https://placeimg.com/400/200/any" alt="" />
-              </CardImage>
-              <CardContent>
-                <CardTitle>{workExample.title}</CardTitle>
-                <CardSubtitle>{workExample.date}</CardSubtitle>
-                <p>{workExample.blurb}</p>
-              </CardContent>
-            </Card>
-          </Column>
-        ))}
-      </Grid>
+      <SectionContainer>
+        <SectionHeader>
+          <SectionTitle>{props.title}</SectionTitle>
+          <SectionSubTitle>{props.subtitle}</SectionSubTitle>
+        </SectionHeader>
+        <Grid>
+          {workExamples.map((workExample, index) => (
+            <Column key={index}>
+              <Card>
+                <CardImage>
+                  <img src="https://placeimg.com/400/200/any" alt="" />
+                </CardImage>
+                <CardContent>
+                  <CardTitle>{workExample.title}</CardTitle>
+                  <CardSubtitle>{workExample.date}</CardSubtitle>
+                  <p>{workExample.blurb}</p>
+                </CardContent>
+              </Card>
+            </Column>
+          ))}
+        </Grid>
+      </SectionContainer>
     </Section>
   );
 };

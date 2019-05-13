@@ -4,6 +4,7 @@ import Swiper from "swiper";
 
 import Section, {
   SectionHeader,
+  SectionContainer,
   SectionTitle,
   SectionSubTitle
 } from "../../components/Section/Section";
@@ -28,65 +29,67 @@ const About = props => {
 
   return (
     <Section id={props.id}>
-      <SectionHeader>
-        <SectionTitle>{props.title}</SectionTitle>
-        <SectionSubTitle>{props.subtitle}</SectionSubTitle>
-      </SectionHeader>
+      <SectionContainer>
+        <SectionHeader>
+          <SectionTitle>{props.title}</SectionTitle>
+          <SectionSubTitle>{props.subtitle}</SectionSubTitle>
+        </SectionHeader>
 
-      <AboutGrid>
-        <Column style={{ marginRight: "1.5rem" }}>
-          <div className="wow animated fadeIn">{aboutText}</div>
-          <Grid>
-            {stats.map((info, index) => {
-              const content = (
-                <Column>
-                  <AboutSection
-                    className="wow animated fadeInUp"
-                    data-wow-delay={`${statDelay}s`}
-                    key={index}
-                  >
-                    <AboutSubHeading>{info.label}</AboutSubHeading>
-                    {info.value}
-                  </AboutSection>
-                </Column>
-              );
-              statDelay += 0.1;
-              return content;
-            })}
-          </Grid>
-        </Column>
+        <AboutGrid>
+          <Column style={{ marginRight: "1.5rem" }}>
+            <div className="wow animated fadeIn">{aboutText}</div>
+            <Grid>
+              {stats.map((info, index) => {
+                const content = (
+                  <Column>
+                    <AboutSection
+                      className="wow animated fadeInUp"
+                      data-wow-delay={`${statDelay}s`}
+                      key={index}
+                    >
+                      <AboutSubHeading>{info.label}</AboutSubHeading>
+                      {info.value}
+                    </AboutSection>
+                  </Column>
+                );
+                statDelay += 0.1;
+                return content;
+              })}
+            </Grid>
+          </Column>
 
-        <AboutSlider className="wow animated fadeInRight">
-          <Slider
-            style={{
-              width: "400px",
-              boxShadow: "0 1.5rem 3rem rgba(0,0,0,.2)"
-            }}
-          >
-            <Slides>
-              {slideshowImages.map((image, index) => (
-                <Slide key={index} style={{ lineHeight: 0 }}>
-                  <img
-                    src={image.image}
-                    alt={image.alt}
-                    style={{ width: "100%" }}
-                  />
-                </Slide>
-              ))}
-            </Slides>
+          <AboutSlider className="wow animated fadeInRight">
+            <Slider
+              style={{
+                width: "400px",
+                boxShadow: "0 1.5rem 3rem rgba(0,0,0,.2)"
+              }}
+            >
+              <Slides>
+                {slideshowImages.map((image, index) => (
+                  <Slide key={index} style={{ lineHeight: 0 }}>
+                    <img
+                      src={image.image}
+                      alt={image.alt}
+                      style={{ width: "100%" }}
+                    />
+                  </Slide>
+                ))}
+              </Slides>
 
-            <SwiperNav
-              className="swiper-button-prev swiper-button-white"
-              data-slider-prev
-            />
-            <SwiperNav
-              className="swiper-button-next swiper-button-white"
-              data-slider-next
-            />
-          </Slider>
-          {/* <Caption>Captions here</Caption> */}
-        </AboutSlider>
-      </AboutGrid>
+              <SwiperNav
+                className="swiper-button-prev swiper-button-white"
+                data-slider-prev
+              />
+              <SwiperNav
+                className="swiper-button-next swiper-button-white"
+                data-slider-next
+              />
+            </Slider>
+            {/* <Caption>Captions here</Caption> */}
+          </AboutSlider>
+        </AboutGrid>
+      </SectionContainer>
     </Section>
   );
 };

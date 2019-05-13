@@ -2,7 +2,7 @@ import * as React from "react";
 import styled, { withTheme } from "styled-components";
 import Swiper from "swiper";
 
-import Section from "../../components/Section/Section";
+import Section, { SectionContainer } from "../../components/Section/Section";
 import Slider, {
   Slides,
   Slide,
@@ -29,31 +29,33 @@ const Endorsements = props => {
       color="#ccc"
       noPadding
     >
-      <Slider className="wow animated fadeIn">
-        <Slides>
-          {recommendations.map((recommendation, index) => (
-            <Slide key={index} padded>
-              <Endorsement>
-                <PortraitImage>
-                  <img src={recommendation.person.photo} />
-                </PortraitImage>
+      <SectionContainer>
+        <Slider className="wow animated fadeIn">
+          <Slides>
+            {recommendations.map((recommendation, index) => (
+              <Slide key={index} padded>
+                <Endorsement>
+                  <PortraitImage>
+                    <img src={recommendation.person.photo} />
+                  </PortraitImage>
 
-                <Quote>
-                  {recommendation.recommendation}
-                  <footer>
-                    <div>{recommendation.person.name}</div>
-                    <div>
-                      {recommendation.person.position} &mdash;
-                      {recommendation.person.company}
-                    </div>
-                  </footer>
-                </Quote>
-              </Endorsement>
-            </Slide>
-          ))}
-        </Slides>
-        <SliderPagination />
-      </Slider>
+                  <Quote>
+                    {recommendation.recommendation}
+                    <footer>
+                      <div>{recommendation.person.name}</div>
+                      <div>
+                        {recommendation.person.position} &mdash;
+                        {recommendation.person.company}
+                      </div>
+                    </footer>
+                  </Quote>
+                </Endorsement>
+              </Slide>
+            ))}
+          </Slides>
+          <SliderPagination />
+        </Slider>
+      </SectionContainer>
     </Section>
   );
 };

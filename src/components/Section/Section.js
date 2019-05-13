@@ -15,6 +15,11 @@ const Section = styled.section`
   }
 `;
 
+const SectionContainer = styled.div`
+  max-width: 75rem;
+  margin: 0 auto;
+`;
+
 const SectionHeader = styled.div`
   margin-bottom: 50px;
 
@@ -42,4 +47,4 @@ const SectionSubTitle = styled.h4`
 `;
 
 export default Section;
-export { SectionHeader, SectionTitle, SectionSubTitle };
+export { SectionHeader, SectionContainer, SectionTitle, SectionSubTitle };

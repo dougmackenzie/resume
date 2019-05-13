@@ -7,6 +7,7 @@ import { faCircle } from "@fortawesome/free-solid-svg-icons";
 
 import Section, {
   SectionHeader,
+  SectionContainer,
   SectionTitle,
   SectionSubTitle
 } from "../../components/Section/Section";
@@ -20,71 +21,81 @@ import { email, phone, socialLinks } from "../../content/content";
 const Contact = props => {
   return (
     <Section id={props.id}>
-      <SectionHeader>
-        <SectionTitle>{props.title}</SectionTitle>
-        <SectionSubTitle>{props.subtitle}</SectionSubTitle>
-      </SectionHeader>
-      <Grid>
-        <Column>
-          <StyledHeading>Contact Details</StyledHeading>
-          <ContactCard
-            href="mailto:dougmacknz@0077b5mail.com"
-            className="wow animated fadeIn"
-          >
-            <ContactIcon className="fa-3x">
-              <span className="fa-layers fa-fw">
-                <FontAwesomeIcon icon={faCircle} color="#071737" />
-                <FontAwesomeIcon
-                  icon={faEnvelope}
-                  inverse
-                  transform="shrink-8"
-                />
-              </span>
-            </ContactIcon>
-            <div>
-              <ContactCardSub>Send me an email</ContactCardSub>
-              <ContactCardMain>{email}</ContactCardMain>
-            </div>
-          </ContactCard>
+      <SectionContainer>
+        <SectionHeader>
+          <SectionTitle>{props.title}</SectionTitle>
+          <SectionSubTitle>{props.subtitle}</SectionSubTitle>
+        </SectionHeader>
+        <Grid>
+          <Column>
+            <StyledHeading>Contact Details</StyledHeading>
+            <ContactCard
+              href="mailto:dougmacknz@0077b5mail.com"
+              className="wow animated fadeIn"
+            >
+              <ContactIcon className="fa-3x">
+                <span className="fa-layers fa-fw">
+                  <FontAwesomeIcon icon={faCircle} color="#071737" />
+                  <FontAwesomeIcon
+                    icon={faEnvelope}
+                    inverse
+                    transform="shrink-8"
+                  />
+                </span>
+              </ContactIcon>
+              <div>
+                <ContactCardSub>Send me an email</ContactCardSub>
+                <ContactCardMain>{email}</ContactCardMain>
+              </div>
+            </ContactCard>
 
-          <ContactCard className="wow animated fadeIn">
-            <ContactIcon className="fa-3x">
-              <span className="fa-layers fa-fw">
-                <FontAwesomeIcon icon={faCircle} color="#58afd1" />
-                <FontAwesomeIcon icon={faMobile} inverse transform="shrink-8" />
-              </span>
-            </ContactIcon>
-            <div>
-              <ContactCardSub>Give me a call</ContactCardSub>
-              <ContactCardMain>{phone}</ContactCardMain>
-            </div>
-          </ContactCard>
+            <ContactCard className="wow animated fadeIn">
+              <ContactIcon className="fa-3x">
+                <span className="fa-layers fa-fw">
+                  <FontAwesomeIcon icon={faCircle} color="#58afd1" />
+                  <FontAwesomeIcon
+                    icon={faMobile}
+                    inverse
+                    transform="shrink-8"
+                  />
+                </span>
+              </ContactIcon>
+              <div>
+                <ContactCardSub>Give me a call</ContactCardSub>
+                <ContactCardMain>{phone}</ContactCardMain>
+              </div>
+            </ContactCard>
 
-          <StyledHeading>Social</StyledHeading>
+            <StyledHeading>Social</StyledHeading>
 
-          <SocialList>
-            {socialLinks.map((socialLink, index) => (
-              <li key={index} className="wow animated fadeIn">
-                <a
-                  href={socialLink.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={socialLink.name}
-                  style={{ backgroundColor: socialLink.color }}
-                >
-                  <FontAwesomeIcon icon={socialLink.icon} inverse fixedWidth />
-                  <span>{socialLink.name}</span>
-                </a>
-              </li>
-            ))}
-          </SocialList>
-        </Column>
+            <SocialList>
+              {socialLinks.map((socialLink, index) => (
+                <li key={index} className="wow animated fadeIn">
+                  <a
+                    href={socialLink.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={socialLink.name}
+                    style={{ backgroundColor: socialLink.color }}
+                  >
+                    <FontAwesomeIcon
+                      icon={socialLink.icon}
+                      inverse
+                      fixedWidth
+                    />
+                    <span>{socialLink.name}</span>
+                  </a>
+                </li>
+              ))}
+            </SocialList>
+          </Column>
 
-        <Column>
-          <StyledHeading>Send me a message</StyledHeading>
-          <ContactForm />
-        </Column>
-      </Grid>
+          <Column>
+            <StyledHeading>Send me a message</StyledHeading>
+            <ContactForm />
+          </Column>
+        </Grid>
+      </SectionContainer>
     </Section>
   );
 };

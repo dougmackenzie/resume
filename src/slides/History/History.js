@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import Section, {
   SectionHeader,
+  SectionContainer,
   SectionTitle,
   SectionSubTitle
 } from "../../components/Section/Section";
@@ -20,50 +21,52 @@ import { workHistory } from "../../content/content";
 const History = props => {
   return (
     <Section id={props.id}>
-      <SectionHeader>
-        <SectionTitle>{props.title}</SectionTitle>
-        <SectionSubTitle>{props.subtitle}</SectionSubTitle>
-      </SectionHeader>
+      <SectionContainer>
+        <SectionHeader>
+          <SectionTitle>{props.title}</SectionTitle>
+          <SectionSubTitle>{props.subtitle}</SectionSubTitle>
+        </SectionHeader>
 
-      <ExperienceTimeline className="wow">
-        {workHistory.map((historyItem, index) => (
-          <React.Fragment key={index}>
-            <TimelineSide>
-              <TimelineSideHeading>{historyItem.period}</TimelineSideHeading>
-              <TimelineSideImage>
-                <img src={historyItem.logo} />
-              </TimelineSideImage>
-            </TimelineSide>
-            <TimelineMain>
-              <TimelineHeading>{historyItem.company}</TimelineHeading>
-              {historyItem.summary.map((paragraph, pIndex) => (
-                <p key={pIndex}>{paragraph}</p>
-              ))}
-            </TimelineMain>
-          </React.Fragment>
-        ))}
-      </ExperienceTimeline>
+        <ExperienceTimeline className="wow">
+          {workHistory.map((historyItem, index) => (
+            <React.Fragment key={index}>
+              <TimelineSide>
+                <TimelineSideHeading>{historyItem.period}</TimelineSideHeading>
+                <TimelineSideImage>
+                  <img src={historyItem.logo} />
+                </TimelineSideImage>
+              </TimelineSide>
+              <TimelineMain>
+                <TimelineHeading>{historyItem.company}</TimelineHeading>
+                {historyItem.summary.map((paragraph, pIndex) => (
+                  <p key={pIndex}>{paragraph}</p>
+                ))}
+              </TimelineMain>
+            </React.Fragment>
+          ))}
+        </ExperienceTimeline>
 
-      <ExperienceMobile>
-        {workHistory.map((historyItem, index) => (
-          <HistoryItem key={index}>
-            <HistoryHeading>
-              <HistoryImage>
-                <img src={historyItem.logo} />
-              </HistoryImage>
-              <div>
-                <HistoryCompany>{historyItem.company}</HistoryCompany>
-                <HistoryPeriod>{historyItem.period}</HistoryPeriod>
-              </div>
-            </HistoryHeading>
-            <HistoryMain>
-              {historyItem.summary.map((paragraph, pIndex) => (
-                <p key={pIndex}>{paragraph}</p>
-              ))}
-            </HistoryMain>
-          </HistoryItem>
-        ))}
-      </ExperienceMobile>
+        <ExperienceMobile>
+          {workHistory.map((historyItem, index) => (
+            <HistoryItem key={index}>
+              <HistoryHeading>
+                <HistoryImage>
+                  <img src={historyItem.logo} />
+                </HistoryImage>
+                <div>
+                  <HistoryCompany>{historyItem.company}</HistoryCompany>
+                  <HistoryPeriod>{historyItem.period}</HistoryPeriod>
+                </div>
+              </HistoryHeading>
+              <HistoryMain>
+                {historyItem.summary.map((paragraph, pIndex) => (
+                  <p key={pIndex}>{paragraph}</p>
+                ))}
+              </HistoryMain>
+            </HistoryItem>
+          ))}
+        </ExperienceMobile>
+      </SectionContainer>
     </Section>
   );
 };
