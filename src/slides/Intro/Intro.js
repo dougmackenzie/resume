@@ -24,8 +24,10 @@ const Intro = props => {
             width: "175px"
           }}
         /> */}
-        <IntroTitle>{title}</IntroTitle>
-        <IntroSubTitle>{subtitle}</IntroSubTitle>
+        <IntroTitle className="wow animated fadeIn">{title}</IntroTitle>
+        <IntroSubTitle className="wow animated fadeIn" data-wow-delay="0.2s">
+          {subtitle}
+        </IntroSubTitle>
       </IntroCard>
       <DownArrow>
         <a href={`#${nextPage}`} data-smoothscroll>
@@ -89,7 +91,6 @@ const IntroTitle = styled.h1`
   flex: 0 0 100%;
   text-align: center;
   line-height: 1.1;
-  animation: slideIn 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) both;
 }
 `;
 

@@ -49,3 +49,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
+
+/* Hide all animated elements immediately, waiting for WOW's JS will result in FOUC, then animations */
+.animated {
+  visibility: hidden;
+}
