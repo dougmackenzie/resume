@@ -32,7 +32,7 @@ const Education = props => {
           <Column>
             <StyledHeading>Certifications</StyledHeading>
             {certifications.map((certification, index) => (
-              <EducationItem className="wow animated fadeIn">
+              <EducationItem className="wow animated fadeIn" key={index}>
                 <EducationLogo>
                   <img src={certification.logo} />
                 </EducationLogo>

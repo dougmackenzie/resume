@@ -41,11 +41,10 @@ const About = props => {
             <Grid>
               {stats.map((info, index) => {
                 const content = (
-                  <Column>
+                  <Column key={index}>
                     <AboutSection
                       className="wow animated fadeInUp"
                       data-wow-delay={`${statDelay}s`}
-                      key={index}
                     >
                       <AboutSubHeading>{info.label}</AboutSubHeading>
                       {info.value}
