@@ -12,6 +12,16 @@ const commonInput = css`
   :disabled {
     color: #999;
   }
+
+  /*  Remove validation box shadows for Firefox cause of a bug:
+      https://bugzilla.mozilla.org/show_bug.cgi?id=1399046
+  */
+  :-moz-submit-invalid {
+    box-shadow: none;
+  }
+  :-moz-ui-invalid {
+    box-shadow: none;
+  }
 `;
 
 export default commonInput;
