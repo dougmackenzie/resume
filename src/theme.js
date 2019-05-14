@@ -8,8 +8,7 @@ const theme = {
     success: "#128479"
   },
   font: {
-    main:
-      '"Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif',
+    // main font is found in layout.css, which cannot pull values from here
     heading:
       '"Oswald", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif'
   },
