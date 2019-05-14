@@ -98,7 +98,9 @@ const IndexPage = () => {
     new Gumshoe("a[data-scrollspy]");
 
     if (!isServer) {
-      new WOW().init();
+      new WOW({
+        mobile: false
+      }).init();
       new SmoothScroll("a[data-smoothscroll]");
     }
   }, []);
