@@ -19,7 +19,7 @@ const About = props => {
 
   React.useEffect(() => {
     // Init slider
-    new Swiper("[data-slider]", {
+    new Swiper("#about-slider", {
       navigation: {
         nextEl: "[data-slider-next]",
         prevEl: "[data-slider-prev]"
@@ -57,8 +57,9 @@ const About = props => {
             </Grid>
           </Column>
 
-          <AboutSlider className="wow animated fadeInRight">
+          <AboutSliderContainer className="wow animated fadeInRight">
             <Slider
+              id="about-slider"
               style={{
                 width: "400px",
                 boxShadow: "0 1.5rem 3rem rgba(0,0,0,.2)"
@@ -86,7 +87,7 @@ const About = props => {
               />
             </Slider>
             {/* <Caption>Captions here</Caption> */}
-          </AboutSlider>
+          </AboutSliderContainer>
         </AboutGrid>
       </SectionContainer>
     </Section>
@@ -123,7 +124,7 @@ const AboutGrid = styled(Grid)`
   }
 `;
 
-const AboutSlider = styled(Column)`
+const AboutSliderContainer = styled(Column)`
   display: none;
   text-align: center;
   margin-left: 1.5rem;

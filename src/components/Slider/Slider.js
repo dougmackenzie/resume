@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
 const Slider = styled.div.attrs({
-  className: "swiper-container",
-  "data-slider": true
+  className: "swiper-container"
 })``;
 
 export const Slides = styled.div.attrs({

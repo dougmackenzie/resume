@@ -14,13 +14,13 @@ import { recommendations } from "../../content/content";
 const Endorsements = props => {
   React.useEffect(() => {
     // Init slider
-    new Swiper("[data-slider]", {
+    new Swiper("#reference-slider", {
       pagination: {
         el: "[data-slider-pagination]",
         clickable: true
       }
     });
-  });
+  }, []);
 
   return (
     <Section
@@ -30,7 +30,7 @@ const Endorsements = props => {
       noPadding
     >
       <SectionContainer>
-        <Slider className="wow animated fadeIn">
+        <Slider className="wow animated fadeIn" id="reference-slider">
           <Slides>
             {recommendations.map((recommendation, index) => (
               <Slide key={index} padded>
