@@ -36,7 +36,7 @@ const Endorsements = props => {
               <Slide key={index} padded>
                 <Endorsement>
                   <PortraitImage>
-                    <img src={recommendation.person.photo} />
+                    <img src={recommendation.person.photo} alt="" />
                   </PortraitImage>
 
                   <Quote>

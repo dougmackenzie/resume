@@ -33,7 +33,7 @@ const History = props => {
               <TimelineSide>
                 <TimelineSideHeading>{historyItem.period}</TimelineSideHeading>
                 <TimelineSideImage>
-                  <img src={historyItem.logo} />
+                  <img src={historyItem.logo} alt="" />
                 </TimelineSideImage>
               </TimelineSide>
               <TimelineMain>
@@ -51,7 +51,7 @@ const History = props => {
             <HistoryItem key={index}>
               <HistoryHeading>
                 <HistoryImage>
-                  <img src={historyItem.logo} />
+                  <img src={historyItem.logo} alt="" />
                 </HistoryImage>
                 <div>
                   <HistoryCompany>{historyItem.company}</HistoryCompany>

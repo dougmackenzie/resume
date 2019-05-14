@@ -19,7 +19,7 @@ const Education = props => {
             {education.map((educationItem, index) => (
               <EducationItem className="wow animated fadeIn" key={index}>
                 <EducationLogo>
-                  <img src={educationItem.logo} />
+                  <img src={educationItem.logo} alt="" />
                 </EducationLogo>
                 <EducationDetails>
                   <EducationCourse>{educationItem.course}</EducationCourse>
@@ -34,7 +34,7 @@ const Education = props => {
             {certifications.map((certification, index) => (
               <EducationItem className="wow animated fadeIn" key={index}>
                 <EducationLogo>
-                  <img src={certification.logo} />
+                  <img src={certification.logo} alt="" />
                 </EducationLogo>
                 <EducationDetails>
                   <EducationCourse>{certification.name}</EducationCourse>
