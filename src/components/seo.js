@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 import { StaticQuery, graphql } from "gatsby";
+import { dom } from "@fortawesome/fontawesome-svg-core";
 
 function SEO({ description, lang, meta, keywords, title }) {
   return (
@@ -59,7 +60,9 @@ function SEO({ description, lang, meta, keywords, title }) {
                   : []
               )
               .concat(meta)}
-          />
+          >
+            <style>{dom.css()}</style>
+          </Helmet>
         );
       }}
     />

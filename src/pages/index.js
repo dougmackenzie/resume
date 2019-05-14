@@ -1,6 +1,7 @@
 import React from "react";
 import styled, { ThemeProvider } from "styled-components";
 import Gumshoe from "gumshoejs";
+import { config } from "@fortawesome/fontawesome-svg-core";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -16,6 +17,9 @@ import Education from "../slides/Education/Education";
 //import Work from "./Work/Work";
 import Contact from "../slides/Contact/Contact";
 import Endorsements from "../slides/Endorsements/Endorsements";
+
+// Disable Font Awesome from adding CSS, we're doing it inline instead to avoid FOUC
+config.autoAddCss = false;
 
 // Import any third party libraries that use the window object
 // These can't be imported with SSR because window doesn't exist
