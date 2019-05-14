@@ -7,7 +7,7 @@ import { title, subtitle } from "../../content/content";
 
 import bgPattern from "../../images/bg-pattern.png";
 import featureImage from "../../images/feature-image.jpg";
-import portrait from "../../images/portrait.png";
+//import portrait from "../../images/portrait.png";
 
 const Intro = props => {
   // Grab the ID of the next page for the down arrow link

@@ -26,9 +26,9 @@ import {
 
 import RainbowUnderline from "../components/RainbowUnderline/RainbowUnderline";
 
-// Images for about slider
+// Images for about section
 import butterflyImage from "../images/about/butterfly.jpg";
-import vivianImage from "../images/about/vvn.jpg";
+//import vivianImage from "../images/about/vvn.jpg";
 
 // Company logos for employment & education history
 import schoolboxLogo from "../images/logos/schoolbox.png";
@@ -134,17 +134,18 @@ export const aboutText = (
   </>
 );
 
-export const slideshowImages = [
+// Specify one image only to disable the slider
+export const aboutImages = [
   {
     image: butterflyImage,
     alt: "",
     caption: "I live in Melbourne - the land of street art"
-  },
-  {
-    image: vivianImage,
-    alt: "",
-    caption: "I have a partner in crime - Vivian"
   }
+  // {
+  //   image: vivianImage,
+  //   alt: "",
+  //   caption: "I have a partner in crime - Vivian"
+  // }
 ];
 
 export const stats = [

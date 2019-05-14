@@ -1,5 +1,5 @@
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import Swiper from "swiper";
 
 import Section, {
@@ -12,19 +12,21 @@ import Grid from "../../components/Grid/Grid";
 import Column from "../../components/Grid/Column";
 import Slider, { Slides, Slide } from "../../components/Slider/Slider";
 
-import { slideshowImages, stats, aboutText } from "../../content/content";
+import { aboutImages, stats, aboutText } from "../../content/content";
 
 const About = props => {
   let statDelay = 0.2;
 
   React.useEffect(() => {
-    // Init slider
-    new Swiper("#about-slider", {
-      navigation: {
-        nextEl: "[data-slider-next]",
-        prevEl: "[data-slider-prev]"
-      }
-    });
+    if (aboutImages.length > 1) {
+      // Init slider
+      new Swiper("#about-slider", {
+        navigation: {
+          nextEl: "[data-slider-next]",
+          prevEl: "[data-slider-prev]"
+        }
+      });
+    }
   }, []);
 
   return (
@@ -57,43 +59,85 @@ const About = props => {
             </Grid>
           </Column>
 
-          <AboutSliderContainer className="wow animated fadeInRight">
-            <Slider
-              id="about-slider"
-              style={{
-                width: "400px",
-                boxShadow: "0 1.5rem 3rem rgba(0,0,0,.2)"
-              }}
-            >
-              <Slides>
-                {slideshowImages.map((image, index) => (
-                  <Slide key={index} style={{ lineHeight: 0 }}>
-                    <img
-                      src={image.image}
-                      alt={image.alt}
-                      style={{ width: "100%" }}
-                    />
-                  </Slide>
-                ))}
-              </Slides>
+          <SliderColumn className="wow animated fadeInRight">
+            {aboutImages.length === 1 && (
+              <SingleImage
+                src={aboutImages[0].image}
+                alt={aboutImages[0].alt}
+              />
+            )}
 
-              <SwiperNav
-                className="swiper-button-prev swiper-button-white"
-                data-slider-prev
-              />
-              <SwiperNav
-                className="swiper-button-next swiper-button-white"
-                data-slider-next
-              />
-            </Slider>
+            {aboutImages.length > 1 && (
+              <AboutSlider id="about-slider">
+                <Slides>
+                  {aboutImages.map((image, index) => (
+                    <Slide key={index} style={{ lineHeight: 0 }}>
+                      <img
+                        src={image.image}
+                        alt={image.alt}
+                        style={{ width: "100%" }}
+                      />
+                    </Slide>
+                  ))}
+                </Slides>
+
+                <div
+                  className="swiper-button-prev swiper-button-white"
+                  data-slider-prev
+                />
+                <div
+                  className="swiper-button-next swiper-button-white"
+                  data-slider-next
+                />
+              </AboutSlider>
+            )}
             {/* <Caption>Captions here</Caption> */}
-          </AboutSliderContainer>
+          </SliderColumn>
         </AboutGrid>
       </SectionContainer>
     </Section>
   );
 };
 
+const AboutGrid = styled(Grid)`
+  -ms-grid-columns: 100% !important;
+  grid-template-columns: 100% !important;
+
+  @media (min-width: ${props => props.theme.breakpoints.lg}) {
+    -ms-grid-columns: auto 1fr !important;
+    grid-template-columns: auto 1fr !important;
+  }
+`;
+
+const SliderColumn = styled(Column)`
+  display: none;
+  text-align: center;
+  margin-left: 1.5rem;
+
+  @media (min-width: ${props => props.theme.breakpoints.lg}) {
+    display: block;
+  }
+`;
+
+const ImageStyles = css`
+  width: 400px;
+  box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2);
+`;
+
+const AboutSlider = styled(Slider)`
+  ${ImageStyles}
+`;
+
+const SingleImage = styled.img`
+  ${ImageStyles}
+`;
+
+// const Caption = styled.div`
+//   font-size: 0.8rem;
+//   text-align: center;
+// `;
+
+// TODO: move to own component
 const AboutSection = styled.div`
   font-size: 1rem;
   border-left: 4px solid ${props => props.theme.color.highlight};
@@ -108,32 +152,5 @@ const AboutSubHeading = styled.h4`
   margin: 0 0 2px;
   letter-spacing: 1px;
 `;
-
-const Caption = styled.div`
-  font-size: 0.8rem;
-  text-align: center;
-`;
-
-const AboutGrid = styled(Grid)`
-  -ms-grid-columns: 100% !important;
-  grid-template-columns: 100% !important;
-
-  @media (min-width: ${props => props.theme.breakpoints.lg}) {
-    -ms-grid-columns: auto 1fr !important;
-    grid-template-columns: auto 1fr !important;
-  }
-`;
-
-const AboutSliderContainer = styled(Column)`
-  display: none;
-  text-align: center;
-  margin-left: 1.5rem;
-
-  @media (min-width: ${props => props.theme.breakpoints.lg}) {
-    display: block;
-  }
-`;
-
-const SwiperNav = styled.div``;
 
 export default About;
