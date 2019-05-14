@@ -10,8 +10,16 @@ const Grid = styled.div`
   }
 
   ${props =>
+    props.threes &&
+    `@media (min-width: ${props.theme.breakpoints.lg}) {
+        -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+      }
+    `}
+
+  ${props =>
     props.fours &&
-    `@media (min-width: ${props.theme.breakpoints.xl}) {
+    `@media (min-width: ${props.theme.breakpoints.xxl}) {
         -ms-grid-columns: (1fr)[4];
         grid-template-columns: repeat(4, 1fr);
       }
