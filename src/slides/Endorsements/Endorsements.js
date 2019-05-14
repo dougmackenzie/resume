@@ -96,7 +96,7 @@ const Quote = styled.blockquote`
     content: "“";
     font-size: 8rem;
     line-height: 6rem;
-    opacity: 0.2;
+    opacity: 0.25;
   }
 
   footer {

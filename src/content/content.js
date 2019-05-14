@@ -39,6 +39,8 @@ import yoobeeLogo from "../images/logos/yoobee.png";
 import scrumLogo from "../images/logos/scrum.png";
 
 // Recommendations avatars
+import matt from "../images/references/matt.jpg";
+import megan from "../images/references/megan.jpg";
 import michelle from "../images/references/mich.jpg";
 import tom from "../images/references/tom.jpg";
 
@@ -364,6 +366,26 @@ export const certifications = [
 //-------------------------------------------
 
 export const recommendations = [
+  {
+    person: {
+      name: "Matt Day",
+      company: "Schoolbox (formerly)",
+      position: "Product Lead",
+      photo: matt
+    },
+    recommendation:
+      "Doug took initiative where he could see things to be improved, and was always willing to assist others. His willingness to step up–whether to drive and self-teach the adoption of new technologies within projects, or take on Scrum Master duties–is testament to his work ethic and aptitude."
+  },
+  {
+    person: {
+      name: "Megan Conley",
+      company: "Schoolbox (formerly)",
+      position: "Online Learning and Education Consultant",
+      photo: megan
+    },
+    recommendation:
+      "Doug is a strong communicator who is able to translate complex web development concepts into simple language for lay-people. Doug was a great bridge between teams and was always open to feedback or seeking input on concepts and solutions."
+  },
   {
     person: {
       name: "Michelle Lazarow",
