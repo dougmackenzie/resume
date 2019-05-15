@@ -16,6 +16,7 @@ import styled from "@react-pdf/styled-components";
 import {
   title,
   subtitle,
+  summary,
   workHistory,
   location,
   website,
@@ -58,6 +59,101 @@ const pageStyles = StyleSheet.create({
   fontSize: 11,
   color: "#555"
 });
+
+const Resume = () => (
+  <Document>
+    <Page size="A4" style={pageStyles} wrap={false}>
+      <Side>
+        <Section>
+          <Image
+            src={{ data: portraitImage, format: "png" }}
+            style={{ border: "2pt solid #ccc", borderRadius: "1000pt" }}
+          />
+        </Section>
+
+        <Section>
+          <SectionHeading>@dougmacknz</SectionHeading>
+          <ContactItem>{location}</ContactItem>
+          <ContactItem>{phone}</ContactItem>
+          <ContactItem>{email}</ContactItem>
+          <ContactItem>
+            <Link src="http://www.dougmack.nz">{website}</Link>
+          </ContactItem>
+        </Section>
+
+        <Section>
+          <SectionHeading>Specialities</SectionHeading>
+          {mainSkills.map((skill, index) => (
+            <Skill key={index}>
+              <Text>{skill.title}</Text>
+              <SkillSubtext>
+                {skill.yearsExperience} year{skill.yearsExperience > 1 && "s"}{" "}
+                of experience
+              </SkillSubtext>
+            </Skill>
+          ))}
+        </Section>
+
+        <Section>
+          <SectionHeading>Additional Skills</SectionHeading>
+          {additionalSkills.map((skill, index) => (
+            <Text key={index} style={{ marginBottom: 1 }}>
+              {skill.title}
+            </Text>
+          ))}
+        </Section>
+
+        <Section>
+          <SectionHeading>Education</SectionHeading>
+          {educationHistory.map((educationItem, index) => (
+            <View key={index}>
+              <Text>{educationItem.course}</Text>
+              <Text style={{ color: "#888" }}>{educationItem.school}</Text>
+              <Text style={{ letterSpacing: 0.5, fontSize: 10 }}>
+                {educationItem.period}
+              </Text>
+            </View>
+          ))}
+        </Section>
+      </Side>
+
+      <Main>
+        <Header>
+          <Title>{title}</Title>
+          <Subtitle>{subtitle}</Subtitle>
+        </Header>
+
+        <Section>
+          <SectionHeading>Summary</SectionHeading>
+          <Paragraph>{summary}</Paragraph>
+        </Section>
+
+        <Section>
+          <SectionHeading>Experience</SectionHeading>
+
+          {workHistory.map((workHistoryItem, index) => (
+            <HistorySection key={index}>
+              <HistoryHeading>
+                <Text style={{ fontWeight: 700, marginRight: 3 }}>
+                  {workHistoryItem.company},
+                </Text>
+                <Text>{workHistoryItem.position}</Text>
+              </HistoryHeading>
+
+              <HistorySubheading>{workHistoryItem.period}</HistorySubheading>
+
+              {workHistoryItem.summary.map((paragraph, index) => (
+                <Paragraph key={index} style={index && { marginTop: 10 }}>
+                  {paragraph}
+                </Paragraph>
+              ))}
+            </HistorySection>
+          ))}
+        </Section>
+      </Main>
+    </Page>
+  </Document>
+);
 
 const Side = styled.View`
   padding: 30pt;
@@ -144,105 +240,6 @@ const Paragraph = styled.Text`
   line-height: 1.5;
   color: #777;
 `;
-
-const Resume = () => (
-  <Document>
-    <Page size="A4" style={pageStyles} wrap={false}>
-      <Side>
-        <Section>
-          <Image
-            src={{ data: portraitImage, format: "png" }}
-            style={{ border: "2pt solid #ccc", borderRadius: "1000pt" }}
-          />
-        </Section>
-
-        <Section>
-          <SectionHeading>@dougmacknz</SectionHeading>
-          <ContactItem>{location}</ContactItem>
-          <ContactItem>{phone}</ContactItem>
-          <ContactItem>{email}</ContactItem>
-          <ContactItem>
-            <Link src="http://www.dougmack.nz">{website}</Link>
-          </ContactItem>
-        </Section>
-
-        <Section>
-          <SectionHeading>Specialities</SectionHeading>
-          {mainSkills.map((skill, index) => (
-            <Skill key={index}>
-              <Text>{skill.title}</Text>
-              <SkillSubtext>
-                {skill.yearsExperience} years of experience
-              </SkillSubtext>
-            </Skill>
-          ))}
-        </Section>
-
-        <Section>
-          <SectionHeading>Additional Skills</SectionHeading>
-          {additionalSkills.map((skill, index) => (
-            <Text key={index} style={{ marginBottom: 1 }}>
-              {skill.title}
-            </Text>
-          ))}
-        </Section>
-
-        <Section>
-          <SectionHeading>Education</SectionHeading>
-          {educationHistory.map((educationItem, index) => (
-            <View key={index}>
-              <Text>{educationItem.course}</Text>
-              <Text style={{ color: "#888" }}>{educationItem.school}</Text>
-              <Text style={{ letterSpacing: 0.5, fontSize: 10 }}>
-                {educationItem.period}
-              </Text>
-            </View>
-          ))}
-        </Section>
-      </Side>
-
-      <Main>
-        <Header>
-          <Title>{title}</Title>
-          <Subtitle>{subtitle}</Subtitle>
-        </Header>
-
-        <Section>
-          <SectionHeading>Summary</SectionHeading>
-          <Paragraph>
-            I'm passionate about creating and improving software on the web. Ten
-            years ago I studied design &amp; web development &mdash; since then
-            I have worked on numerous commerical and personal projects to
-            improve user experience, internal processes, and coding standards.
-          </Paragraph>
-        </Section>
-
-        <Section>
-          <SectionHeading>Experience</SectionHeading>
-
-          {workHistory.map((workHistoryItem, index) => (
-            <HistorySection key={index}>
-              <HistoryHeading>
-                <Text style={{ fontWeight: 700, marginRight: 3 }}>
-                  {workHistoryItem.company},
-                </Text>
-                <Text>{workHistoryItem.position}</Text>
-              </HistoryHeading>
-
-              <HistorySubheading>{workHistoryItem.period}</HistorySubheading>
-
-              {workHistoryItem.summary.map((paragraph, index) => (
-                <Paragraph key={index} style={index && { marginTop: 10 }}>
-                  {paragraph}
-                </Paragraph>
-              ))}
-            </HistorySection>
-          ))}
-        </Section>
-      </Main>
-    </Page>
-  </Document>
-);
 
 const defaultPath = path.resolve(
   __dirname,

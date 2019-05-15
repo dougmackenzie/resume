@@ -17,7 +17,7 @@ import {
   faMicrosoft
 } from "@fortawesome/fontawesome-free-brands";
 import {
-  faPenAlt,
+  faPencilRuler,
   faUsers,
   faCode,
   faUniversalAccess,
@@ -86,15 +86,14 @@ export const socialLinks = [
 // About
 //-------------------------------------------
 const FeatureText = styled.p`
-  font-size: 2.25rem;
+  font-size: 2rem;
   font-weight: 300;
   color: #666;
-  margin: 0 0 2rem;
+  margin: 0 0 1rem;
 `;
 
 const FeatureTextHighlight = styled(RainbowUnderline)`
-  color: #333;
-  background-size: 100% 0.2em;
+  background-size: 100% 0.3rem;
 `;
 
 const SupportingText = styled.div`
@@ -103,26 +102,20 @@ const SupportingText = styled.div`
 
 export const aboutText = (
   <>
-    <FeatureText>
-      I like making software{" "}
-      <FeatureTextHighlight opacity="0.7">
-        less painful for people
-      </FeatureTextHighlight>
-      .
-    </FeatureText>
+    <FeatureText>I like making software less painful for people.</FeatureText>
     <SupportingText>
       <p>
-        I'm passionate about creating and improving software on the web. Ten
-        years ago I studied design &amp; web development &mdash; since then I
-        have worked on numerous commerical and personal projects to improve user
+        I'm passionate about front-end code, problem solving, and UI design. Ten
+        years ago I studied web design &amp; development&mdash;since then I have
+        worked on numerous commercial and hobby projects to improve user
         experience, internal processes, and coding standards.
       </p>
-      <p>Some of my greatest achievements include:</p>
+      <p>A couple of my proudest achievements are:</p>
       <ul>
         <li>
-          Leading front-end development on a product used by over 500,000 people
-          &mdash; including the uphill task of introducing React &amp;
-          TypeScript to the codebase and porting old code.
+          Leading front-end development on a product used by over 500,000
+          people&mdash;including spearheading an initiative to move from jQuery
+          to React &amp; TypeScript.
         </li>
         <li>
           Contributions to widely used open source projects such as Storybook
@@ -171,7 +164,7 @@ export const stats = [
   },
   {
     label: "Hobbies",
-    value: <>Bass Guitar &bull; Gymnastics &bull; Cycling</>
+    value: <>Gymnastics &bull; Cycling &bull; Bass Guitar</>
   }
 ];
 
@@ -210,12 +203,12 @@ export const mainSkills = [
     iconColor: "rgb(0, 216, 255)",
     yearsExperience: 1,
     description:
-      "React has been my component based JS framework of choice. For the past year I have been working with it exclusively and I am looking to continue working and improving in creating scalable React applications."
+      "React has been my component based JS framework of choice. For the past year I have been working with it exclusively and I am continuing to improve my ability to create scalable applications with it."
   },
   {
     title: "UI Design",
-    icon: faPenAlt,
-    iconColor: "#f6921e",
+    icon: faPencilRuler,
+    iconColor: "#342b56",
     yearsExperience: 10,
     description:
       "Creating intuitive interfaces for users has long been a passion of mine. I am often called upon when there is an innovative solution required for a user need or problem."
@@ -306,8 +299,8 @@ export const workHistory = [
     period: "Sep 2016 — Feb 2019",
     logo: schoolboxLogo,
     summary: [
-      "I was brought on to the Schoolbox development team to help out wherever I could. I quickly started contributing with bug fixes, UI & design improvements, and code reviews.",
-      "After time I took on responsibilities in the front-end & Scrum areas. My produest work was initiating a project to introduce a new structured front-end code & UI standard with React & TypeScript, moving away from spaghetti jQuery and markup."
+      "I joined the Schoolbox product team and quickly started contributing with bug fixes, UI & design improvements, and code reviews.",
+      "After time I took on responsibilities in the front-end & Scrum areas. My produest work was initiating and spearheading a project to introduce a new front-end code standard with React & TypeScript—moving away from spaghetti jQuery and markup."
     ]
   },
   {
@@ -316,8 +309,8 @@ export const workHistory = [
     period: "Sep 2012 — Apr 2016",
     logo: kdsLogo,
     summary: [
-      "I was brought on to build web solutions for many staff and parent processes such as attendance marking, assessment marking and reporting, excursion management.",
-      "Many of the solutions I built were a success in the school and are still being used today."
+      "I was brought on to build web-based software for many staff and parent processes such as attendance marking, assessment marking, and excursion management.",
+      "Many of the solutions that I designed and built for the School were a success in automating manual processes—receiving high praise and achieving the goals set out by the School."
     ]
   },
   {
@@ -326,8 +319,8 @@ export const workHistory = [
     period: "May 2010 — Jul 2012",
     logo: etapLogo,
     summary: [
-      "My role revolved largely around building custom PDF reports for clients. I liaised with clients to gather requirements, quoted for the work, and created the reports with PHP.",
-      "As I progressed I was put in charge of a new developer and managed his work. That allowed me to make improvements to the core product. Most notably I rebuilt the helpdesk system to improve support processes for both our staff and our clients."
+      "My role revolved largely around building custom PDF reports for clients. I liaised with clients to gather requirements, provide quotes, and create the reports with PHP.",
+      "As I progressed I was put in charge of a new developer and managed his work. That allowed me to make improvements to the core product—most notably rebuilding the custom helpdesk system to improve support processes for both our staff and our clients."
     ]
   },
   {
@@ -336,7 +329,7 @@ export const workHistory = [
     period: "Jun 2009 — Mar 2010",
     logo: webCoLogo,
     summary: [
-      "My first commerical experience in web development was doing freelance work for a web agency. I built sites for small companies with e-commerce solutions. As I progressed I started to become a go to consultant for payment gateway integrations."
+      "My first commerical experience in web development was doing freelance work for a web agency. I built sites for small companies with e-commerce solutions. As I progressed I started to become a go-to consultant for payment gateway integrations."
     ]
   }
 ];
