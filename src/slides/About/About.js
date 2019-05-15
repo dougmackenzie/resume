@@ -103,7 +103,10 @@ const AboutGrid = styled(Grid)`
   -ms-grid-columns: 100% !important;
   grid-template-columns: 100% !important;
 
-  @media (min-width: ${props => props.theme.breakpoints.lg}) {
+  @media (min-width: ${props =>
+      props.theme.breakpoints.lg}) and (max-width: ${props =>
+      props.theme.breakpoints.xl}),
+    (min-width: ${props => props.theme.breakpoints.xxl}) {
     -ms-grid-columns: auto 1fr !important;
     grid-template-columns: auto 1fr !important;
   }
@@ -114,7 +117,10 @@ const SliderColumn = styled(Column)`
   text-align: center;
   margin-left: 1.5rem;
 
-  @media (min-width: ${props => props.theme.breakpoints.lg}) {
+  @media (min-width: ${props =>
+      props.theme.breakpoints.lg}) and (max-width: ${props =>
+      props.theme.breakpoints.xl}),
+    (min-width: ${props => props.theme.breakpoints.xxl}) {
     display: block;
   }
 `;
