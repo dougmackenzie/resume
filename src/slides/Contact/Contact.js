@@ -105,7 +105,6 @@ const ContactCard = styled.div`
   margin-bottom: 0.25rem;
   align-items: center;
   text-decoration: none;
-  color: #333;
   border-radius: 3px;
 `;
 
@@ -122,7 +121,7 @@ const ContactCardSub = styled.div`
 const ContactCardMain = styled.div`
   font-size: 1.2rem;
   font-weight: 400;
-  color: #666;
+  color: ${props => props.theme.color.bodyText};
 `;
 
 const SocialList = styled.ul`

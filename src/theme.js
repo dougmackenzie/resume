@@ -5,7 +5,8 @@ const theme = {
     info: "#58afd1",
     highlight: "#ffe593",
     highdark: "#f6921e",
-    success: "#128479"
+    success: "#128479",
+    bodyText: "#555"
   },
   font: {
     // main font is found in layout.css, which cannot pull values from here

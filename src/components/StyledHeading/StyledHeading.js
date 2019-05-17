@@ -8,8 +8,8 @@ const StyledHeading = styled.h5`
   color: #666;
   text-transform: uppercase;
   margin: 1rem 0 1.5rem;
-  text-align: center;
 
+  text-align: center;
   display: -ms-grid;
   display: grid;
   grid-template-columns: 1rem max-content 0;
@@ -21,7 +21,7 @@ const StyledHeading = styled.h5`
   :before {
     content: " ";
     display: block;
-    border-top: 3px solid ${props => props.theme.color.highlight};
+    border-top: 3px solid ${props => props.theme.color.highdark};
   }
 `;
 

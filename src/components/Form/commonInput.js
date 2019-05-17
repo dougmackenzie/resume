@@ -2,7 +2,7 @@ import { css } from "styled-components";
 
 const commonInput = css`
   background: #fff;
-  color: #333;
+  color: inherit;
   border-radius: 2px;
   border: 1px solid #ccc;
   padding: 1rem 0.75rem;

@@ -88,7 +88,6 @@ export const socialLinks = [
 const FeatureText = styled.p`
   font-size: 2rem;
   font-weight: 300;
-  color: #666;
   margin: 0 0 1rem;
 `;
 
@@ -98,11 +97,16 @@ const FeatureTextHighlight = styled(RainbowUnderline)`
 
 const SupportingText = styled.div`
   margin-bottom: 2rem;
+  color: ${props => props.theme.color.bodyText};
 `;
 
 export const aboutText = (
   <>
-    <FeatureText>I like making software less painful for people.</FeatureText>
+    <FeatureText>
+      I like making software{" "}
+      <FeatureTextHighlight opacity="0.7">less painful</FeatureTextHighlight>{" "}
+      for people.
+    </FeatureText>
     <SupportingText>
       <p>
         I'm passionate about front-end code, problem solving, and UI design. Ten

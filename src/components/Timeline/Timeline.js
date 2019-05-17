@@ -115,6 +115,7 @@ export const TimelineSide = styled.div`
 `;
 
 export const TimelineMain = styled.div`
+  color: ${props => props.theme.color.bodyText};
   padding-left: ${gutter};
   padding-bottom: 3rem;
 

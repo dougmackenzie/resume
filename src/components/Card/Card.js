@@ -14,7 +14,7 @@ const CardImage = styled.div`
 `;
 
 const CardContent = styled.div`
-  color: #666;
+  color: ${props => props.theme.color.bodyText};
 `;
 
 const CardAction = styled.button`
@@ -29,7 +29,6 @@ const CardTitle = styled.h4`
   font-weight: 400;
   font-size: 1.1rem;
   margin: 0;
-  color: #333;
 `;
 
 const CardSubtitle = styled.h5`

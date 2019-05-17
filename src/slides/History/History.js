@@ -105,7 +105,7 @@ const HistoryPeriod = styled.div`
   text-transform: uppercase;
   font-size: 0.8rem;
   letter-spacing: 0.05rem;
-  color: #666;
+  color: ${props => props.theme.color.bodyText};
   font-family: ${props => props.theme.font.heading};
 `;
 
