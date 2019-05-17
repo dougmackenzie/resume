@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-const Column = styled.div`
-  padding: 0.5rem 0.75rem;
-`;
+const Column = styled.div``;
 
 export default Column;

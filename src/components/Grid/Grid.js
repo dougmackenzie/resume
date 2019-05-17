@@ -3,6 +3,7 @@ import styled from "styled-components";
 const Grid = styled.div`
   display: -ms-grid;
   display: grid;
+  grid-gap: 1rem 1.5rem;
 
   @media (min-width: ${props => props.theme.breakpoints.md}) {
     -ms-grid-columns: (1fr) [2];
