@@ -14,7 +14,7 @@ import About from "../slides/About/About";
 import Skills from "../slides/Skills/Skills";
 import History from "../slides/History/History";
 import Education from "../slides/Education/Education";
-//import Work from "./Work/Work";
+import Work from "../slides/Work/Work";
 import Contact from "../slides/Contact/Contact";
 import Endorsements from "../slides/Endorsements/Endorsements";
 
@@ -71,19 +71,20 @@ const pages = [
     navTitle: "Education"
   },
   {
+    id: "work",
+    page: Work,
+    title: "Portfolio",
+    subtitle: "Examples of my work",
+    navTitle: "Portfolio"
+  },
+  {
     id: "endorsements",
     page: Endorsements,
     title: "",
     subtitle: "",
     navTitle: "References"
   },
-  // {
-  //   id: "work",
-  //   page: Work,
-  //   title: "Portfolio",
-  //   subtitle: "Examples of my work",
-  //   navTitle: "Portfolio"
-  // },
+
   {
     id: "contact",
     page: Contact,
