@@ -40,7 +40,7 @@ const CardSubtitle = styled.h5`
 `;
 
 const Card = styled.div`
-  background: #fff;
+  background: ${props => (props.grey ? `#f9f9f9` : `#fff`)};
   position: relative;
   border-radius: 2px;
 

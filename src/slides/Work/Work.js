@@ -63,7 +63,7 @@ const Work = props => {
           <Grid fours>
             {workExamples.map((workExample, index) => (
               <Column key={index}>
-                <Card>
+                <Card grey>
                   <CardImage>
                     <img src="https://placeimg.com/400/200/any" alt="" />
                   </CardImage>
