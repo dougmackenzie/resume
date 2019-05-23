@@ -15,6 +15,7 @@ import Skills from "../slides/Skills/Skills";
 import History from "../slides/History/History";
 import Education from "../slides/Education/Education";
 import Work from "../slides/Work/Work";
+import Blog from "../slides/Blog/Blog";
 import Contact from "../slides/Contact/Contact";
 import Endorsements from "../slides/Endorsements/Endorsements";
 
@@ -82,9 +83,15 @@ const pages = [
     page: Endorsements,
     title: "",
     subtitle: "",
-    navTitle: "References"
+    navTitle: ""
   },
-
+  {
+    id: "blog",
+    page: Blog,
+    title: "Blog",
+    subtitle: "My writings",
+    navTitle: "Blog"
+  },
   {
     id: "contact",
     page: Contact,

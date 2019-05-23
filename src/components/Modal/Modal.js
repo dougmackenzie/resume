@@ -48,11 +48,10 @@ export const ModalTitle = styled.h2`
 
 export const ModalSubtitle = styled.h3`
   font-size: 1rem;
-  letter-spacing: 0.1rem;
   font-weight: normal;
   text-transform: uppercase;
   margin: 0;
-  color: #aaa;
+  color: #888;
 `;
 
 export const ModalContainer = styled.div`
