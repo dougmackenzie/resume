@@ -1,23 +1,45 @@
 import styled from "styled-components";
 
 const Section = styled.section`
-  padding: ${props => !props.noPadding && `50px 20px`};
   background-color: ${props => props.backgroundColor};
   color: ${props => props.color};
   position: relative;
+`;
+
+const verticalPadding = {
+  default: {
+    default: 3.125,
+    md: 5,
+    xxl: 6.25
+  },
+  condensed: {
+    default: 2,
+    md: 4,
+    xxl: 5
+  }
+};
+
+const SectionContainer = styled.div`
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: ${props =>
+    `${
+      verticalPadding[props.condensed ? "condensed" : "default"]["default"]
+    }rem 1.5rem`};
 
   @media (min-width: ${props => props.theme.breakpoints.md}) {
-    padding: ${props => !props.noPadding && `80px 50px`};
+    padding: ${props =>
+      `${
+        verticalPadding[props.condensed ? "condensed" : "default"]["md"]
+      }rem 3.125rem`};
   }
 
   @media (min-width: ${props => props.theme.breakpoints.xxl}) {
-    padding: ${props => !props.noPadding && `100px`};
+    padding: ${props =>
+      `${
+        verticalPadding[props.condensed ? "condensed" : "default"]["md"]
+      }rem 6.25rem`};
   }
-`;
-
-const SectionContainer = styled.div`
-  max-width: 75rem;
-  margin: 0 auto;
 `;
 
 const SectionHeader = styled.div`

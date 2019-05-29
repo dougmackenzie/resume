@@ -23,7 +23,7 @@ const Education = props => {
                 </EducationLogo>
                 <EducationDetails>
                   <EducationCourse>{educationItem.course}</EducationCourse>
-                  <div>{educationItem.school}</div>
+                  <EducationSchool>{educationItem.school}</EducationSchool>
                   <EducationPeriod>{educationItem.period}</EducationPeriod>
                 </EducationDetails>
               </EducationItem>
@@ -38,7 +38,7 @@ const Education = props => {
                 </EducationLogo>
                 <EducationDetails>
                   <EducationCourse>{certification.name}</EducationCourse>
-                  <div>{certification.issuer}</div>
+                  <EducationSchool>{certification.issuer}</EducationSchool>
                   <EducationPeriod>{certification.issueDate}</EducationPeriod>
                 </EducationDetails>
               </EducationItem>
@@ -61,6 +61,7 @@ const EducationLogo = styled.div`
   > img {
     border-radius: 60px;
     width: 100%;
+    //border: 2px solid #eee;
   }
 `;
 
@@ -68,15 +69,18 @@ const EducationDetails = styled.div`
   padding-left: 1rem;
 `;
 
+const EducationSchool = styled.div`
+  font-size: 0.875rem;
+`;
+
 const EducationCourse = styled.div`
-  font-size: 1.25rem;
-  font-weight: 400;
+  font-weight: 700;
 `;
 
 const EducationPeriod = styled.div`
   letter-spacing: 0.05rem;
   text-transform: uppercase;
-  font-size: 0.85rem;
+  font-size: 0.875rem;
 `;
 
 export default withTheme(Education);

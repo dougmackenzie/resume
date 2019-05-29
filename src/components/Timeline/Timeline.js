@@ -176,25 +176,29 @@ const Timeline = styled.div`
 
 export const TimelineHeading = styled.h5`
   margin: 0;
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   font-weight: bold;
+  //font-family: "Lato";
 `;
 
 export const TimelineSideHeading = styled.div`
   text-transform: uppercase;
   color: #666;
-  margin-bottom: 0.5rem;
-  letter-spacing: 0.05rem;
-  font-family: ${props => props.theme.font.heading};
+  margin-bottom: 0.4rem;
+  //letter-spacing: 0.05rem;
+  //font-family: ${props => props.theme.font.heading};
   font-size: 0.9rem;
 `;
 
 export const TimelineSideImage = styled.div`
-  max-width: 80px;
-  float: right;
+  max-width: 75px;
+  //float: right;
+  background: #fff;
+  border-radius: 50%;
 
   > img {
     width: 100%;
+    border-radius: 50%;
   }
 `;
 

@@ -48,6 +48,8 @@ const CardImageSubtitle = styled.div`
 
 const CardContent = styled.div`
   color: ${props => props.theme.color.bodyText};
+  line-height: 2;
+  font-size: 0.875rem;
 `;
 
 const CardAction = styled.button`
@@ -59,9 +61,10 @@ const CardAction = styled.button`
 `;
 
 const CardTitle = styled.h4`
-  font-weight: 400;
-  font-size: 1.1rem;
+  font-weight: 700;
+  font-size: 1.125rem;
   margin: 0;
+  font-family: "Lato";
 
   // When it's a button
   ${props =>
@@ -104,13 +107,8 @@ const CardHover = styled.div`
 const Card = styled.div`
   background: ${props => (props.grey ? `#f9f9f9` : `#fff`)};
   position: relative;
-  border-radius: 2px;
-
-  // When the card is a button
-  text-align: left;
-  border: 0;
-  padding: 0;
-  line-height: inherit;
+  border-radius: 3px;
+  box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1);
 
   ${CardContent} {
     padding: ${props => (props.compact ? `1.25rem 1.5rem` : `1.5rem`)};

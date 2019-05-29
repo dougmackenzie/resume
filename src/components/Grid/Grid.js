@@ -4,7 +4,9 @@ const Grid = styled.div`
   display: -ms-grid;
   display: grid;
   grid-gap: 1rem 1.5rem;
-  //grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+
+  ${props => props.alignItems && `align-items: ${props.alignItems}`};
+  ${props => props.justifyItems && `justify-items: ${props.justifyItems}`};
 
   @media (min-width: ${props => props.theme.breakpoints.md}) {
     -ms-grid-columns: (1fr) [2];
@@ -27,7 +29,5 @@ const Grid = styled.div`
         }
       `}
 `;
-
-/*// */
 
 export default Grid;

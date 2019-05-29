@@ -1,162 +1,98 @@
 import * as React from "react";
-import styled, { css } from "styled-components";
-import Swiper from "swiper";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import Section, {
-  SectionHeader,
-  SectionContainer,
-  SectionTitle,
-  SectionSubTitle
-} from "../../components/Section/Section";
+import Section, { SectionContainer } from "../../components/Section/Section";
 import Grid from "../../components/Grid/Grid";
 import Column from "../../components/Grid/Column";
-import Slider, { Slides, Slide } from "../../components/Slider/Slider";
+import Title from "../../components/Title/Title";
 
-import { aboutImages, stats, aboutText } from "../../content/content";
+import { stats } from "../../content/content";
+import featureImage from "../../images/web-design-graphic.png";
 
 const About = props => {
-  let statDelay = 0.2;
-
-  React.useEffect(() => {
-    if (aboutImages.length > 1) {
-      // Init slider
-      new Swiper("#about-slider", {
-        navigation: {
-          nextEl: "[data-slider-next]",
-          prevEl: "[data-slider-prev]"
-        }
-      });
-    }
-  }, []);
-
   return (
-    <Section id={props.id}>
-      <SectionContainer>
-        <SectionHeader>
-          <SectionTitle>{props.title}</SectionTitle>
-          <SectionSubTitle>{props.subtitle}</SectionSubTitle>
-        </SectionHeader>
+    <>
+      <Section id={props.id} backgroundColor="#fff">
+        <SectionContainer>
+          <div>
+            <Grid
+              alignItems="center"
+              justifyItems="center"
+              style={{ gridGap: "2rem 1.5rem" }}
+            >
+              <Column right>
+                <img
+                  src={featureImage}
+                  alt=""
+                  style={{
+                    width: "100%",
+                    maxWidth: "400px",
+                    opacity: 1
+                  }}
+                />
+              </Column>
 
-        <AboutGrid>
-          <Column style={{ marginRight: "1.5rem" }}>
-            <div className="wow animated fadeIn">{aboutText}</div>
-            <Grid>
-              {stats.map((info, index) => {
-                const content = (
-                  <Column key={index}>
-                    <AboutSection
-                      className="wow animated fadeInUp"
-                      data-wow-delay={`${statDelay}s`}
-                    >
-                      <AboutSubHeading>{info.label}</AboutSubHeading>
-                      {info.value}
-                    </AboutSection>
-                  </Column>
-                );
-                statDelay += 0.1;
-                return content;
-              })}
+              <Column left>
+                <div>
+                  <Title>I like making software less painful for people.</Title>
+                  <p>
+                    My passion is designing and building user interfaces and
+                    experiences that make people's lives better.
+                  </p>
+                  <p>
+                    I get excited about efficient code, team work, sleek design,
+                    fast page loads and usability.
+                  </p>
+                </div>
+              </Column>
             </Grid>
-          </Column>
+          </div>
+        </SectionContainer>
+      </Section>
 
-          <SliderColumn className="wow animated fadeInRight">
-            {aboutImages.length === 1 && (
-              <SingleImage
-                src={aboutImages[0].image}
-                alt={aboutImages[0].alt}
-              />
-            )}
-
-            {aboutImages.length > 1 && (
-              <AboutSlider id="about-slider">
-                <Slides>
-                  {aboutImages.map((image, index) => (
-                    <Slide key={index} style={{ lineHeight: 0 }}>
-                      <img
-                        src={image.image}
-                        alt={image.alt}
-                        style={{ width: "100%" }}
-                      />
-                    </Slide>
-                  ))}
-                </Slides>
-
+      <Section style={{ backgroundColor: "#f5f5f5" }}>
+        <SectionContainer condensed>
+          <Grid threes style={{ justifyItems: "left", gridGap: "2rem 1.5rem" }}>
+            {stats.map((info, index) => (
+              <Column key={index}>
                 <div
-                  className="swiper-button-prev swiper-button-white"
-                  data-slider-prev
-                />
-                <div
-                  className="swiper-button-next swiper-button-white"
-                  data-slider-next
-                />
-              </AboutSlider>
-            )}
-            {/* <Caption>Captions here</Caption> */}
-          </SliderColumn>
-        </AboutGrid>
-      </SectionContainer>
-    </Section>
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    padding: "0"
+                  }}
+                >
+                  <FontAwesomeIcon
+                    icon={info.icon}
+                    fixedWidth
+                    style={{ fontSize: "2rem", marginRight: "1.25rem" }}
+                  />
+                  <div>
+                    <div
+                      style={{
+                        fontFamily: `"Oswald", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif`,
+                        textTransform: "uppercase",
+                        fontSize: "14px",
+                        fontWeight: "400",
+                        color: "#333",
+                        lineHeight: 1,
+                        margin: "0 0 0.675rem"
+                      }}
+                    >
+                      {info.label}
+                    </div>
+                    <div style={{ lineHeight: 1, fontSize: "0.875rem" }}>
+                      {info.value}
+                    </div>
+                  </div>
+                </div>
+              </Column>
+            ))}
+          </Grid>
+        </SectionContainer>
+      </Section>
+    </>
   );
 };
-
-const AboutGrid = styled(Grid)`
-  -ms-grid-columns: 100% !important;
-  grid-template-columns: 100% !important;
-
-  @media (min-width: ${props =>
-      props.theme.breakpoints.lg}) and (max-width: ${props =>
-      props.theme.breakpoints.xl}),
-    (min-width: ${props => props.theme.breakpoints.xxl}) {
-    -ms-grid-columns: auto 1fr !important;
-    grid-template-columns: auto 1fr !important;
-  }
-`;
-
-const SliderColumn = styled(Column)`
-  display: none;
-  text-align: center;
-  margin-left: 1.5rem;
-
-  @media (min-width: ${props =>
-      props.theme.breakpoints.lg}) and (max-width: ${props =>
-      props.theme.breakpoints.xl}),
-    (min-width: ${props => props.theme.breakpoints.xxl}) {
-    display: block;
-  }
-`;
-
-const ImageStyles = css`
-  width: 400px;
-  box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2);
-`;
-
-const AboutSlider = styled(Slider)`
-  ${ImageStyles}
-`;
-
-const SingleImage = styled.img`
-  ${ImageStyles}
-`;
-
-// const Caption = styled.div`
-//   font-size: 0.8rem;
-//   text-align: center;
-// `;
-
-// TODO: move to own component
-const AboutSection = styled.div`
-  font-size: 1rem;
-  border-left: 4px solid ${props => props.theme.color.highlight};
-  padding-left: 1rem;
-`;
-
-const AboutSubHeading = styled.h4`
-  font-size: 0.8rem;
-  font-weight: 400;
-  text-transform: uppercase;
-  color: #999;
-  margin: 0 0 2px;
-  letter-spacing: 1px;
-`;
 
 export default About;

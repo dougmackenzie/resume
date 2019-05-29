@@ -1,60 +1,30 @@
 import * as React from "react";
 import styled, { withTheme } from "styled-components";
-import Swiper from "swiper";
 
 import Section, { SectionContainer } from "../../components/Section/Section";
-import Slider, {
-  Slides,
-  Slide,
-  SliderPagination
-} from "../../components/Slider/Slider";
 
-import { recommendations } from "../../content/content";
+import { testimonal } from "../../content/content";
 
 const Endorsements = props => {
-  React.useEffect(() => {
-    // Init slider
-    new Swiper("#reference-slider", {
-      pagination: {
-        el: "[data-slider-pagination]",
-        clickable: true
-      }
-    });
-  }, []);
-
   return (
-    <Section
-      id={props.id}
-      backgroundColor={props.theme.color.secondary}
-      color="#ccc"
-      noPadding
-    >
-      <SectionContainer>
-        <Slider className="wow animated fadeIn" id="reference-slider">
-          <Slides>
-            {recommendations.map((recommendation, index) => (
-              <Slide key={index} padded>
-                <Endorsement>
-                  <PortraitImage>
-                    <img src={recommendation.person.photo} alt="" />
-                  </PortraitImage>
+    <Section id={props.id} backgroundColor="#f5f5f5">
+      <SectionContainer condensed>
+        <Endorsement>
+          <PortraitImage>
+            <img src={testimonal.person.photo} alt="" />
+          </PortraitImage>
 
-                  <Quote>
-                    {recommendation.recommendation}
-                    <footer>
-                      <div>{recommendation.person.name}</div>
-                      <div>
-                        {recommendation.person.position} &mdash;
-                        {recommendation.person.company}
-                      </div>
-                    </footer>
-                  </Quote>
-                </Endorsement>
-              </Slide>
-            ))}
-          </Slides>
-          <SliderPagination />
-        </Slider>
+          <Quote>
+            {testimonal.recommendation}
+            <footer>
+              <div style={{ fontWeight: "700" }}>{testimonal.person.name}</div>
+              <div>
+                {testimonal.person.position} &mdash;
+                {testimonal.person.company}
+              </div>
+            </footer>
+          </Quote>
+        </Endorsement>
       </SectionContainer>
     </Section>
   );
@@ -65,13 +35,12 @@ const Endorsement = styled.div`
 `;
 
 const PortraitImage = styled.div`
-  flex: 0 0 100px;
-  margin-right: 1rem;
+  flex: 0 0 125px;
+  margin-right: 1.5rem;
   display: none;
 
   > img {
     width: 100%;
-    border: 2px solid #ccc;
     border-radius: 50%;
   }
 
@@ -81,28 +50,40 @@ const PortraitImage = styled.div`
 `;
 
 const Quote = styled.blockquote`
-  font-size: 1.25rem;
-  color: #fff;
+  font-size: 1.125rem;
   position: relative;
   margin: 0;
-  padding: 0.75rem 0 0.5rem 1.5rem;
+  padding: 0.75rem 0.75rem;
+  line-height: 1.75;
+  font-weight: 400;
+
+  @media (min-width: ${props => props.theme.breakpoints.md}) {
+    padding-left: 4rem;
+  }
 
   :before {
     position: absolute;
     left: 0;
     top: 0;
     font-family: ${props => props.theme.font.heading};
-    color: ${props => props.theme.color.highlight};
+    color: ${props => props.theme.color.highdark};
     content: "“";
-    font-size: 8rem;
-    line-height: 6rem;
-    opacity: 0.25;
+    font-size: 6rem;
+    line-height: 1;
+    opacity: 0.3;
+    font-weight: 700;
+
+    @media (min-width: ${props => props.theme.breakpoints.md}) {
+      font-size: 8rem;
+    }
   }
 
   footer {
     font-size: 1rem;
-    color: #ccc;
-    margin-top: 0.75rem;
+    font-weight: 300;
+    line-height: 1.75;
+    color: #666;
+    margin-top: 1rem;
   }
 `;
 

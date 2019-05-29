@@ -1,16 +1,25 @@
 import { css } from "styled-components";
 
 const commonInput = css`
-  background: #fff;
+  background: transparent;
   color: inherit;
   border-radius: 2px;
-  border: 1px solid #ccc;
-  padding: 1rem 0.75rem;
-  font-size: 1rem;
+  border: none;
+  border-bottom: 1px solid #555;
+  padding: 0.5rem 0;
+  font-size: 0.875rem;
+  font-weight: 400;
   width: 100%;
+  color: #eee;
+  transition: all 0.2s;
 
   :disabled {
     color: #999;
+  }
+
+  :focus {
+    border-bottom-color: #ccc;
+    outline: none;
   }
 
   /*  Remove validation box shadows for Firefox cause of a bug:

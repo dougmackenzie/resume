@@ -7,19 +7,17 @@ const SubmitButton = styled.button.attrs({
   ${buttonStyles}
   width: 100%;
   color: ${props => (props.success ? "#fff" : "#333")};
-  background-color: ${props =>
-    props.success ? props.theme.color.success : props.theme.color.highlight};
   transition: all 0.2s;
 
   @media (min-width: ${props => props.theme.breakpoints.md}) {
-    padding: 0.9rem 3rem;
-    width: 14rem;
+    padding: 0.9rem 0;
+    width: 12rem;
   }
 
-  :not(:disabled):hover {
-    background: ${props => props.theme.color.primary};
-    color: #fff;
-  }
+  // :not(:disabled):hover {
+  //   background: ${props => props.theme.color.primary};
+  //   color: #fff;
+  // }
 
   ${props =>
     props.submitting &&

@@ -1,8 +1,6 @@
 import * as React from "react";
 import styled from "styled-components";
 import axios from "axios";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPaperPlane, faCheck } from "@fortawesome/pro-light-svg-icons";
 
 import FormControl from "../Form/FormControl";
 import Label from "../Form/Label";
@@ -46,12 +44,13 @@ const ContactForm = () => {
   };
 
   return (
-    <Form className="wow animated fadeIn" onSubmit={handleFormSubmit}>
+    <Form onSubmit={handleFormSubmit}>
       <FormControl>
-        <Label>Your name:</Label>
+        <Label htmlFor="contact-name">Your name:</Label>
         <Input
           type="text"
           name="name"
+          id="contact-name"
           onChange={event => setName(event.target.value)}
           required
           disabled={sending || sent}
@@ -59,10 +58,11 @@ const ContactForm = () => {
       </FormControl>
 
       <FormControl>
-        <Label>Your email address:</Label>
+        <Label htmlFor="contact-email">Your email address:</Label>
         <Input
           type="email"
           name="email"
+          id="contact-email"
           onChange={event => setEmail(event.target.value)}
           required
           disabled={sending || sent}
@@ -70,10 +70,11 @@ const ContactForm = () => {
       </FormControl>
 
       <FormControl>
-        <Label>Message:</Label>
+        <Label htmlFor="contact-message">Message:</Label>
         <TextArea
           rows="5"
           name="message"
+          id="contact-message"
           onChange={event => setMessage(event.target.value)}
           required
           disabled={sending || sent}
@@ -82,17 +83,18 @@ const ContactForm = () => {
 
       <FormControl>
         <SubmitButton
+          small
           submitting={sending}
           success={sent}
           disabled={sending || sent}
         >
-          {!sending && (
+          {/* {!sending && (
             <FontAwesomeIcon
               icon={sent ? faCheck : faPaperPlane}
               style={{ marginRight: "0.5rem" }}
             />
-          )}
-          {sent ? "Sent!" : sending ? "Sending..." : "Send Message"}
+          )} */}
+          {sent ? "Sent!" : sending ? "Sending..." : "Send message"}
         </SubmitButton>
       </FormControl>
     </Form>

@@ -22,22 +22,47 @@ import {
   website,
   email,
   phone,
-  mainSkills,
-  additionalSkills,
+  skills,
   educationHistory
 } from "../../src/content/pdf";
 
 Font.register({
-  family: "Lato",
+  family: "Lora",
   fonts: [
-    { src: "http://fonts.gstatic.com/s/lato/v15/S6uyw4BMUTPHjx4wWyWtFCc.ttf" },
+    {
+      src: "http://fonts.gstatic.com/s/lora/v13/0QIvMX1D_JOuMwr7JvFMl_E.ttf"
+    },
+    {
+      src: "http://fonts.gstatic.com/s/lora/v13/0QIhMX1D_JOuMw_LIftOtfOm8w.ttf",
+      fontStyle: "italic"
+    },
     {
       src:
-        "http://fonts.gstatic.com/s/lato/v15/S6u9w4BMUTPHh6UVSwiPHA3q5d0.ttf",
+        "http://fonts.gstatic.com/s/lora/v13/0QIgMX1D_JOuO7HeNtxun9us-7w.ttf",
       fontWeight: 700
     }
   ]
 });
+
+// Font.register({
+//   family: "Merriweather",
+//   fonts: [
+//     {
+//       src:
+//         "http://fonts.gstatic.com/s/merriweather/v20/u-440qyriQwlOrhSvowK_l5-fCZJdeX3rg.ttf"
+//     },
+//     {
+//       src:
+//         "http://fonts.gstatic.com/s/merriweather/v20/u-4m0qyriQwlOrhSvowK_l5-eRZOf-fVrPHp.ttf",
+//       fontStyle: "italic"
+//     },
+//     {
+//       src:
+//         "http://fonts.gstatic.com/s/merriweather/v20/u-4n0qyriQwlOrhSvowK_l52xwNZWMf_hPvhPQ.ttf",
+//       fontWeight: 700
+//     }
+//   ]
+// });
 
 Font.register({
   family: "Oswald",
@@ -46,6 +71,11 @@ Font.register({
       src:
         "http://fonts.gstatic.com/s/oswald/v17/TK3iWkUHHAIjg752GT8Dl-1PKw.ttf",
       fontWeight: 400
+    },
+    {
+      src:
+        "http://fonts.gstatic.com/s/oswald/v17/TK3hWkUHHAIjg75-6hwTus9HAZek1w.ttf",
+      fontWeight: 700 // it's actually 500, but react-pdf is a bit buggy in this area
     }
   ]
 });
@@ -53,67 +83,70 @@ Font.register({
 Font.registerHyphenationCallback(word => [word]);
 
 const pageStyles = StyleSheet.create({
-  fontFamily: "Lato",
+  fontFamily: "Lora",
   flexDirection: "row",
-  backgroundColor: "#E4E4E4",
-  fontSize: 11,
-  color: "#555"
+  fontSize: 10,
+  color: "#333",
+  lineHeight: "1.5"
 });
 
 const Resume = () => (
   <Document>
     <Page size="A4" style={pageStyles} wrap={false}>
       <Side>
-        <Section>
+        <Section
+          style={{
+            paddingLeft: "8pt",
+            paddingRight: "8pt"
+          }}
+        >
           <Image
             src={{ data: portraitImage, format: "png" }}
-            style={{ border: "2pt solid #ccc", borderRadius: "1000pt" }}
+            style={{ borderRadius: "1000pt" }}
           />
         </Section>
 
         <Section>
-          <SectionHeading>@dougmacknz</SectionHeading>
-          <ContactItem>{location}</ContactItem>
-          <ContactItem>{phone}</ContactItem>
-          <ContactItem>{email}</ContactItem>
-          <ContactItem>
-            <Link src="http://www.dougmack.nz">{website}</Link>
-          </ContactItem>
+          <SectionHeading dark>@dougmacknz</SectionHeading>
+          <SectionContent>
+            <ContactItem>
+              <ContactItemLabel>Location</ContactItemLabel>
+              <ContactItemValue>{location}</ContactItemValue>
+            </ContactItem>
+            <ContactItem>
+              <ContactItemLabel>Phone</ContactItemLabel>
+              <ContactItemValue>{phone}</ContactItemValue>
+            </ContactItem>
+            <ContactItem>
+              <ContactItemLabel>Email</ContactItemLabel>
+              <ContactItemValue>{email}</ContactItemValue>
+            </ContactItem>
+            <ContactItem>
+              <ContactItemLabel>Website</ContactItemLabel>
+              <ContactItemValue>
+                <Link src="http://www.dougmack.nz">{website}</Link>
+              </ContactItemValue>
+            </ContactItem>
+          </SectionContent>
         </Section>
 
         <Section>
-          <SectionHeading>Specialities</SectionHeading>
-          {mainSkills.map((skill, index) => (
-            <Skill key={index}>
-              <Text>{skill.title}</Text>
-              <SkillSubtext>
-                {skill.yearsExperience} year{skill.yearsExperience > 1 && "s"}{" "}
-                of experience
-              </SkillSubtext>
-            </Skill>
-          ))}
-        </Section>
-
-        <Section>
-          <SectionHeading>Additional Skills</SectionHeading>
-          {additionalSkills.map((skill, index) => (
-            <Text key={index} style={{ marginBottom: 1 }}>
-              {skill.title}
-            </Text>
-          ))}
-        </Section>
-
-        <Section>
-          <SectionHeading>Education</SectionHeading>
-          {educationHistory.map((educationItem, index) => (
-            <View key={index}>
-              <Text>{educationItem.course}</Text>
-              <Text style={{ color: "#888" }}>{educationItem.school}</Text>
-              <Text style={{ letterSpacing: 0.5, fontSize: 10 }}>
-                {educationItem.period}
-              </Text>
-            </View>
-          ))}
+          <SectionHeading dark>Specialties</SectionHeading>
+          <SectionContent>
+            {skills.map((skill, index) => (
+              <Skill key={index}>
+                <SkillHeading>{skill.title}</SkillHeading>
+                {skill.list.map((listItem, index2) => (
+                  <Text
+                    key={index2}
+                    style={{ paddingLeft: "6pt", color: "#aaa" }}
+                  >
+                    {listItem}
+                  </Text>
+                ))}
+              </Skill>
+            ))}
+          </SectionContent>
         </Section>
       </Side>
 
@@ -125,38 +158,95 @@ const Resume = () => (
 
         <Section>
           <SectionHeading>Summary</SectionHeading>
-          <Paragraph>{summary}</Paragraph>
+          <SectionContent>
+            <Paragraph style={{ fontSize: 10 }}>{summary}</Paragraph>
+          </SectionContent>
         </Section>
 
         <Section>
           <SectionHeading>Experience</SectionHeading>
+          <SectionContent>
+            {workHistory.map((workHistoryItem, index) => (
+              <HistorySection
+                key={index}
+                style={index && { padding: "16pt 0 0" }}
+              >
+                <View style={{ width: "15%" }}>
+                  <Image
+                    src={{ data: workHistoryItem.logo, format: "png" }}
+                    style={{
+                      width: "35pt",
+                      height: "35pt"
+                    }}
+                  />
+                </View>
 
-          {workHistory.map((workHistoryItem, index) => (
-            <HistorySection key={index}>
-              <HistoryHeading>
-                <Text style={{ fontWeight: 700, marginRight: 3 }}>
-                  {workHistoryItem.company},
-                </Text>
-                <Text>{workHistoryItem.position}</Text>
-              </HistoryHeading>
+                <View style={{ width: "85%" }}>
+                  <HistoryHeader>
+                    <View
+                      style={{ flexDirection: "row", alignItems: "flex-start" }}
+                    >
+                      <HistoryTitle>{workHistoryItem.company}</HistoryTitle>
+                      <Text style={{ margin: "0 5pt", color: "#666" }}>/</Text>
+                      <HistorySubtitle>
+                        {workHistoryItem.position}
+                      </HistorySubtitle>
+                    </View>
+                    <HistoryDate>
+                      {workHistoryItem.dateStart} - {workHistoryItem.dateEnd}
+                    </HistoryDate>
+                  </HistoryHeader>
 
-              <HistorySubheading>{workHistoryItem.period}</HistorySubheading>
+                  {workHistoryItem.summary.map((paragraph, index) => (
+                    <HistorySummary
+                      key={index}
+                      style={index && { marginTop: 10 }}
+                    >
+                      {paragraph}
+                    </HistorySummary>
+                  ))}
+                </View>
+              </HistorySection>
+            ))}
+          </SectionContent>
+        </Section>
 
-              {workHistoryItem.summary.map((paragraph, index) => (
-                <Paragraph key={index} style={index && { marginTop: 10 }}>
-                  {paragraph}
-                </Paragraph>
+        <Section>
+          <SectionHeading>Education</SectionHeading>
+          <SectionContent>
+            <View style={{ flexDirection: "row" }}>
+              {educationHistory.map((educationItem, index) => (
+                <View key={index} style={{ width: "50%" }}>
+                  <HistoryTitle>{educationItem.course}</HistoryTitle>
+                  <HistorySubtitle>{educationItem.school}</HistorySubtitle>
+                  <HistoryDate>{educationItem.period}</HistoryDate>
+                </View>
               ))}
-            </HistorySection>
-          ))}
+            </View>
+          </SectionContent>
         </Section>
       </Main>
     </Page>
   </Document>
 );
 
+const theme = {
+  font: {
+    serif: "Lora"
+  }
+};
+
+const sectionSidePadding = "6pt";
+
+const Paragraph = styled.Text`
+  line-height: 1.7;
+  color: #444;
+  font-family: ${theme.font.serif};
+  font-size: 9pt;
+`;
+
 const Side = styled.View`
-  padding: 30pt;
+  padding: 24pt;
   background-color: #1c1e26;
   width: 30%;
   color: #ccc;
@@ -174,10 +264,24 @@ const Section = styled.View`
 
 const SectionHeading = styled.Text`
   font-family: "Oswald";
-  font-size: 12pt;
-  margin-bottom: 8;
-  color: #58afd1;
+  font-size: 11pt;
+  margin-bottom: 15pt;
+  color: ${props => (props.dark ? "#58afd1" : "#1c1e26")};
   text-transform: uppercase;
+  letter-spacing: 1pt;
+  line-height: 1.5;
+  padding: 4pt 0 4pt ${sectionSidePadding};
+
+  ${props => !props.dark && "background: #f5f5f5;"}
+  ${props => props.dark && " border-bottom: 1pt solid #555;"}
+`;
+
+/*border-top: 1pt solid ${props => (props.dark ? "#555" : "#ddd")};
+  border-bottom: 1pt solid ${props => (props.dark ? "#555" : "#ddd")};
+  */
+
+const SectionContent = styled.View`
+  padding: 0 ${sectionSidePadding};
 `;
 
 const Header = styled.View`
@@ -187,59 +291,88 @@ const Header = styled.View`
 const Title = styled.Text`
   font-family: "Oswald";
   font-size: 28pt;
-  font-weight: normal;
+  font-weight: bold;
   color: #1c1e26;
-  margin-bottom: 3pt;
 `;
 
 const Subtitle = styled.Text`
-  font-size: 10pt;
-  text-transform: uppercase;
-  letter-spacing: 2pt;
+  font-family: ${theme.font.serif};
+  font-size: 14pt;
+  //font-style: italic;
+  text-transform: lowercase;
+  color: #999;
+`;
+
+const ContactItem = styled.View`
+  margin-bottom: 6pt;
+`;
+
+const ContactItemLabel = styled.Text`
+  font-weight: bold;
+  font-size: 11pt;
+  margin-bottom: 1pt;
+`;
+
+const ContactItemValue = styled.Text`
   color: #aaa;
+  font-size: 10pt;
+  font-family: ${theme.font.serif};
 `;
 
 const HistorySection = styled.View`
-  margin-bottom: 16pt;
-`;
-
-const ContactItem = styled.Text`
-  margin-bottom: 3pt;
-`;
-
-const HistoryHeading = styled.View`
   flex-direction: row;
-  margin-bottom: 4pt;
 `;
 
-const HistorySubheading = styled.Text`
-  font-size: 9pt;
+const HistoryHeader = styled.View`
+  padding: 5pt 0 8pt;
+`;
+
+const HistoryTitle = styled.Text`
+  font-weight: bold;
+`;
+
+const HistorySubtitle = styled.Text`
+  font-style: italic;
+  color: #666;
+`;
+
+const HistoryDate = styled.Text`
+  font-size: 8pt;
   text-transform: uppercase;
-  margin-bottom: 8pt;
-  color: #aaa;
-  letter-spacing: 0.5pt;
+`;
+
+const HistorySummary = styled(Paragraph)`
+  font-size: 9pt;
+  // line-height: 1.6;
 `;
 
 const Skill = styled.View`
-  padding-left: 5pt;
-  border-left: 1pt double #f6921e;
-  margin-bottom: 8pt;
+  margin-bottom: 12pt;
 `;
 
-const SkillSubtext = styled.Text`
-  color: #666;
-  font-size: 10pt;
+const SkillHeading = styled.Text`
+  font-size: 11pt;
+  margin-bottom: 4pt;
+  font-weight: bold;
+`;
+
+const SkillBar = styled.View`
+  height: 4pt;
+  background: #333;
+  border-radius: 3pt;
+`;
+
+const SkillBarInsert = styled.View`
+  position: absolute;
+  width: ${props => props.width};
+  height: 100%;
+  border-radius: 3pt;
+  background: #f6921e;
 `;
 
 const portraitImage = fs.readFileSync(
   path.join(__dirname, "../../src/images/portrait.png")
 );
-
-const Paragraph = styled.Text`
-  font-size: 10pt;
-  line-height: 1.5;
-  color: #777;
-`;
 
 const defaultPath = path.resolve(
   __dirname,

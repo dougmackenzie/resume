@@ -16,16 +16,20 @@ import Timeline, {
   TimelineSideImage
 } from "../../components/Timeline/Timeline";
 
+import Title from "../../components/Title/Title";
+
 import { workHistory } from "../../content/content";
 
 const History = props => {
   return (
     <Section id={props.id}>
       <SectionContainer>
-        <SectionHeader>
+        {/* <SectionHeader>
           <SectionTitle>{props.title}</SectionTitle>
           <SectionSubTitle>{props.subtitle}</SectionSubTitle>
-        </SectionHeader>
+        </SectionHeader> */}
+
+        {/* <Title>Work Experience</Title> */}
 
         <ExperienceTimeline className="wow">
           {workHistory.map((historyItem, index) => (
@@ -97,8 +101,8 @@ const HistoryHeading = styled.div`
 `;
 
 const HistoryCompany = styled.div`
-  font-weight: 700;
-  font-size: 1.1rem;
+  font-weight: 400;
+  //font-size: 1rem;
 `;
 
 const HistoryPeriod = styled.div`
