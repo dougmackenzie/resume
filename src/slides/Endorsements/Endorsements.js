@@ -1,5 +1,6 @@
 import * as React from "react";
-import styled, { withTheme } from "styled-components";
+import Img from "gatsby-image";
+import styled from "styled-components";
 
 import Section, { SectionContainer } from "../../components/Section/Section";
 
@@ -11,7 +12,7 @@ const Endorsements = props => {
       <SectionContainer condensed>
         <Endorsement>
           <PortraitImage>
-            <img src={testimonal.person.photo} alt="" />
+            <Img fixed={props.mattPortrait} alt="" />
           </PortraitImage>
 
           <Quote>
@@ -39,7 +40,7 @@ const PortraitImage = styled.div`
   margin-right: 1.5rem;
   display: none;
 
-  > img {
+  img {
     width: 100%;
     border-radius: 50%;
   }
@@ -87,4 +88,4 @@ const Quote = styled.blockquote`
   }
 `;
 
-export default withTheme(Endorsements);
+export default Endorsements;

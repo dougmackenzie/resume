@@ -77,7 +77,7 @@ const pages = [
   }
 ];
 
-const IndexPage = () => {
+const IndexPage = props => {
   React.useEffect(() => {
     if (!isServer) {
       new SmoothScroll("a[data-smoothscroll]");
@@ -91,13 +91,96 @@ const IndexPage = () => {
         <Content role="main">
           {pages.map(page => {
             const PageComponent = page.page;
-            return <PageComponent key={page.id} pages={pages} {...page} />;
+            return (
+              <PageComponent
+                key={page.id}
+                pages={pages}
+                {...page}
+                featureImage={props.data.featureImage.childImageSharp.fluid}
+                cssIcon={props.data.cssIcon.childImageSharp.fixed}
+                jsIcon={props.data.jsIcon.childImageSharp.fixed}
+                uiIcon={props.data.uiIcon.childImageSharp.fixed}
+                kdsLogo={props.data.kdsLogo.childImageSharp.fixed}
+                etapLogo={props.data.etapLogo.childImageSharp.fixed}
+                schoolboxLogo={props.data.schoolboxLogo.childImageSharp.fixed}
+                webcoLogo={props.data.webcoLogo.childImageSharp.fixed}
+                mattPortrait={props.data.mattPortrait.childImageSharp.fixed}
+              />
+            );
           })}
         </Content>
       </Layout>
     </ThemeProvider>
   );
 };
+
+export const query = graphql`
+  query {
+    featureImage: file(relativePath: { eq: "feature-image-large.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1574) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    cssIcon: file(relativePath: { eq: "icons/css.png" }) {
+      childImageSharp {
+        fixed(width: 75, height: 75) {
+          ...GatsbyImageSharpFixed_withWebp
+        }
+      }
+    }
+    jsIcon: file(relativePath: { eq: "icons/javascript.png" }) {
+      childImageSharp {
+        fixed(width: 75, height: 75) {
+          ...GatsbyImageSharpFixed_withWebp
+        }
+      }
+    }
+    uiIcon: file(relativePath: { eq: "icons/ui-design.png" }) {
+      childImageSharp {
+        fixed(width: 75, height: 75) {
+          ...GatsbyImageSharpFixed_withWebp
+        }
+      }
+    }
+    kdsLogo: file(relativePath: { eq: "logos/kds.png" }) {
+      childImageSharp {
+        fixed(width: 125, height: 125) {
+          ...GatsbyImageSharpFixed_withWebp
+        }
+      }
+    }
+    etapLogo: file(relativePath: { eq: "logos/etap.png" }) {
+      childImageSharp {
+        fixed(width: 125, height: 125) {
+          ...GatsbyImageSharpFixed_withWebp
+        }
+      }
+    }
+    schoolboxLogo: file(relativePath: { eq: "logos/schoolbox.png" }) {
+      childImageSharp {
+        fixed(width: 125, height: 125) {
+          ...GatsbyImageSharpFixed_withWebp
+        }
+      }
+    }
+    webcoLogo: file(relativePath: { eq: "logos/webco.png" }) {
+      childImageSharp {
+        fixed(width: 125, height: 125) {
+          ...GatsbyImageSharpFixed_withWebp
+        }
+      }
+    }
+    mattPortrait: file(relativePath: { eq: "references/matt.jpg" }) {
+      childImageSharp {
+        fixed(width: 125, height: 125) {
+          ...GatsbyImageSharpFixed_withWebp
+        }
+      }
+    }
+  }
+`;
 
 const Content = styled.main`
   width: 100%;

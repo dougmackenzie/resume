@@ -1,5 +1,7 @@
 import * as React from "react";
 import styled from "styled-components";
+import Img from "gatsby-image";
+import BackgroundImage from "gatsby-background-image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDoubleDown } from "@fortawesome/pro-light-svg-icons";
 
@@ -7,7 +9,6 @@ import Section, { SectionContainer } from "../../components/Section/Section";
 
 import { title, subtitle, socialLinks } from "../../content/content";
 import bgPattern from "../../images/bg-pattern.png";
-import featureImage from "../../images/feature-image-large.jpg";
 
 const Intro = props => {
   // Grab the ID of the next page for the down arrow link
@@ -15,6 +16,7 @@ const Intro = props => {
 
   return (
     <>
+      {/* <FeatureImage fluid={props.featureImage} /> */}
       <Header>
         <BrandContainer>
           <Brand>DOUGMACKNZ</Brand>
@@ -39,7 +41,12 @@ const Intro = props => {
         </SocialList>
       </Header>
 
-      <IntroContainer id={props.id}>
+      <IntroContainer
+        id={props.id}
+        Tag="section"
+        fluid={props.featureImage}
+        backgroundColor={`#040e18`}
+      >
         <SectionContainer>
           <IntroCard>
             <IntroTitle>{title}</IntroTitle>
@@ -56,12 +63,8 @@ const Intro = props => {
   );
 };
 
-const IntroContainer = styled(Section)`
-  background: linear-gradient(rgba(28, 30, 38, 0.75), rgba(28, 30, 38, 0.75)),
-    url(${bgPattern}), url(${featureImage});
-  background-size: auto, auto, cover;
-  background-attachment: scroll, fixed, fixed;
-  background-position: center, center, center;
+const IntroContainer = styled(BackgroundImage)`
+  background: rgba(28, 30, 38);
   width: 100%;
   height: 100vh;
   display: flex;
@@ -69,6 +72,25 @@ const IntroContainer = styled(Section)`
   justify-content: center;
   align-items: center;
   position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  :before {
+    opacity: 0.25 !important;
+  }
+
+  :after {
+    opacity: 0;
+  }
+`;
+
+const FeatureImage = styled(Img)`
+  position: fixed !important;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
 `;
 
 const IntroCard = styled.div`

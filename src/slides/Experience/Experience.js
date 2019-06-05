@@ -1,4 +1,5 @@
 import * as React from "react";
+import Img from "gatsby-image";
 
 import Section, { SectionContainer } from "../../components/Section/Section";
 import Grid from "../../components/Grid/Grid";
@@ -24,11 +25,7 @@ const About = props => {
               {workHistory.map((historyItem, index) => (
                 <React.Fragment key={index}>
                   <div>
-                    <img
-                      src={historyItem.logo}
-                      alt=""
-                      style={{ width: "125px" }}
-                    />
+                    <Img fixed={props[historyItem.logo]} alt="" />
                   </div>
                 </React.Fragment>
               ))}

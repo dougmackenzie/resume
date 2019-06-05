@@ -1,4 +1,5 @@
 import * as React from "react";
+import Img from "gatsby-image";
 import styled from "styled-components";
 
 import Section, { SectionContainer } from "../../components/Section/Section";
@@ -30,10 +31,10 @@ const Skills = props => {
                 <div>
                   <div style={{ display: "flex", alignItems: "center" }}>
                     <div>
-                      <img
-                        src={mainSkill.icon}
+                      <Img
+                        fixed={props[mainSkill.icon]}
                         alt=""
-                        style={{ maxWidth: "75px", marginRight: "1rem" }}
+                        style={{ marginRight: "1rem" }}
                       />
                     </div>
                     <div>

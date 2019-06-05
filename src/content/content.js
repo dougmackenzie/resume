@@ -18,14 +18,6 @@ import kdsLogo from "../images/logos/kds.png";
 import etapLogo from "../images/logos/etap.png";
 import webCoLogo from "../images/logos/webco.png";
 
-// Testimonal avatar
-import matt from "../images/references/matt.jpg";
-
-// Skill icons
-import iconJavaScript from "../images/icons/javascript.png";
-import iconCSS from "../images/icons/css.png";
-import iconUiDesign from "../images/icons/ui-design.png";
-
 // Resume PDF file
 import resume from "../files/resume-doug-mackenzie.pdf";
 
@@ -91,21 +83,21 @@ export const stats = [
 export const mainSkills = [
   {
     title: "HTML + CSS",
-    icon: iconCSS,
+    icon: "cssIcon", // A little hacky- refers to the name of the query defined in index.js
     description:
       "Accessibility, CSS quirks, cross-browser compatibility and making things look good.",
     list: ["Accessibility", "Mobile first", "Flexbox", "Grid"]
   },
   {
     title: "JavaScript",
-    icon: iconJavaScript,
+    icon: "jsIcon",
     description:
       "A jQuery veteran who has progressed to vanilla JS & scalable web apps with React or Vue.",
     list: ["Vanilla", "React", "Vue.js", "TypeScript"]
   },
   {
     title: "UI Design",
-    icon: iconUiDesign,
+    icon: "uiIcon",
     description:
       "Brainstorming, wireframing & prototyping interfaces to solve user problems.",
     list: ["Brainstorming", "Wireframing", "Prototyping", "User testing"]
@@ -121,25 +113,25 @@ export const workHistory = [
     company: "Schoolbox",
     position: "Web Developer",
     period: "2016—2019",
-    logo: schoolboxLogo
+    logo: "schoolboxLogo" // A little hacky- refers to the name of the query defined in index.js
   },
   {
     company: "The King David School",
     position: "Web Developer",
     period: "2012—2016",
-    logo: kdsLogo
+    logo: "kdsLogo"
   },
   {
     company: "ETAP School Management System",
     position: "Web Developer",
     period: "2010—2012",
-    logo: etapLogo
+    logo: "etapLogo"
   },
   {
     company: "The Web Company",
     position: "Web Developer (Freelance)",
     period: "2009—2010",
-    logo: webCoLogo
+    logo: "webcoLogo"
   }
 ];
 
@@ -151,8 +143,7 @@ export const testimonal = {
   person: {
     name: "Matt Day",
     company: "Schoolbox (formerly)",
-    position: "Product Lead",
-    photo: matt
+    position: "Product Lead"
   },
   recommendation:
     "Doug's willingness to step up–whether to drive and self-teach the adoption of new technologies within projects, or take on Scrum Master duties–is testament to his work ethic and aptitude."
