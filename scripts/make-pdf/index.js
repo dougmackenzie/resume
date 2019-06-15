@@ -44,26 +44,6 @@ Font.register({
   ]
 });
 
-// Font.register({
-//   family: "Merriweather",
-//   fonts: [
-//     {
-//       src:
-//         "http://fonts.gstatic.com/s/merriweather/v20/u-440qyriQwlOrhSvowK_l5-fCZJdeX3rg.ttf"
-//     },
-//     {
-//       src:
-//         "http://fonts.gstatic.com/s/merriweather/v20/u-4m0qyriQwlOrhSvowK_l5-eRZOf-fVrPHp.ttf",
-//       fontStyle: "italic"
-//     },
-//     {
-//       src:
-//         "http://fonts.gstatic.com/s/merriweather/v20/u-4n0qyriQwlOrhSvowK_l52xwNZWMf_hPvhPQ.ttf",
-//       fontWeight: 700
-//     }
-//   ]
-// });
-
 Font.register({
   family: "Oswald",
   fonts: [
@@ -246,7 +226,7 @@ const Paragraph = styled.Text`
 `;
 
 const Side = styled.View`
-  padding: 24pt;
+  padding: 30pt 23pt;
   background-color: #1c1e26;
   width: 30%;
   color: #ccc;
@@ -275,10 +255,6 @@ const SectionHeading = styled.Text`
   ${props => !props.dark && "background: #f5f5f5;"}
   ${props => props.dark && " border-bottom: 1pt solid #555;"}
 `;
-
-/*border-top: 1pt solid ${props => (props.dark ? "#555" : "#ddd")};
-  border-bottom: 1pt solid ${props => (props.dark ? "#555" : "#ddd")};
-  */
 
 const SectionContent = styled.View`
   padding: 0 ${sectionSidePadding};

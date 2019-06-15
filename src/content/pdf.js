@@ -29,7 +29,7 @@ const scrumLogo = fs.readFileSync(
 // General
 //-------------------------------------------
 export const title = "Doug MacKenzie";
-export const subtitle = "UI Designer. Front End Developer.";
+export const subtitle = "UI Developer. JavaScript Engineer.";
 export const location = "Melbourne, Australia";
 export const email = "dougmacknz@gmail.com";
 export const phone = "+61 413 620 431";
@@ -108,17 +108,14 @@ export const educationHistory = [
 export const skills = [
   {
     title: "HTML + CSS",
-    width: "85%",
-    list: ["Accessibility", "Mobile first", "Flexbox", "Grid"]
+    list: ["Accessibility", "Flexbox", "Grid", "Mobile first"]
   },
   {
     title: "JavaScript",
-    width: "75%",
-    list: ["Vanilla", "React", "Vue.js", "TypeScript"]
+    list: ["Functional programming", "React", "TypeScript", "Testing"]
   },
   {
     title: "UI Design",
-    width: "75%",
     list: ["Brainstorming", "Wireframing", "Prototyping", "User testing"]
   }
 ];

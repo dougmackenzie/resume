@@ -12,12 +12,6 @@ import {
   faBicycle
 } from "@fortawesome/pro-light-svg-icons";
 
-// Company logos for employment history
-import schoolboxLogo from "../images/logos/schoolbox.png";
-import kdsLogo from "../images/logos/kds.png";
-import etapLogo from "../images/logos/etap.png";
-import webCoLogo from "../images/logos/webco.png";
-
 // Resume PDF file
 import resume from "../files/resume-doug-mackenzie.pdf";
 
@@ -25,7 +19,7 @@ import resume from "../files/resume-doug-mackenzie.pdf";
 // General
 //-------------------------------------------
 export const title = "Doug MacKenzie";
-export const subtitle = "UI Designer. Front End Developer.";
+export const subtitle = "UI Developer. JavaScript Engineer.";
 export const email = "dougmacknz@gmail.com";
 export const phone = "+61 413 620 431";
 
@@ -86,14 +80,14 @@ export const mainSkills = [
     icon: "cssIcon", // A little hacky- refers to the name of the query defined in index.js
     description:
       "Accessibility, CSS quirks, cross-browser compatibility and making things look good.",
-    list: ["Accessibility", "Mobile first", "Flexbox", "Grid"]
+    list: ["Accessibility", "Flexbox", "Grid", "Mobile first"]
   },
   {
     title: "JavaScript",
     icon: "jsIcon",
     description:
       "A jQuery veteran who has progressed to vanilla JS & scalable web apps with React or Vue.",
-    list: ["Vanilla", "React", "Vue.js", "TypeScript"]
+    list: ["Functional programming", "React", "TypeScript", "Testing"]
   },
   {
     title: "UI Design",
