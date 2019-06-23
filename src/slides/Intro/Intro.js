@@ -1,3 +1,4 @@
+
 import * as React from "react";
 import styled from "styled-components";
 import Img from "gatsby-image";
@@ -19,7 +20,7 @@ const Intro = props => {
       {/* <FeatureImage fluid={props.featureImage} /> */}
       <Header>
         <BrandContainer>
-          <Brand>DOUGMACKNZ</Brand>
+          <Brand>dougmacknz</Brand>
         </BrandContainer>
         <SocialList>
           {socialLinks.map((socialLink, index) => (
@@ -164,6 +165,7 @@ const Brand = styled.div`
   font-family: ${props => props.theme.font.heading};
   font-size: 1.15rem;
   letter-spacing: 1px;
+  text-transform: uppercase;
   display: inline-block;
   border-top: medium double #888;
   border-bottom: medium double #888;
