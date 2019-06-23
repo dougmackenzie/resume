@@ -76,6 +76,7 @@ const IntroContainer = styled(BackgroundImage)`
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  background-position: center 30%;
 
   :before {
     opacity: 0.25 !important;
